@@ -1,0 +1,18 @@
+$fontOswald: "Oswald", sans-serif;
+
+$tablet: 1024px;
+// $mobile: 768px;
+$mobile: 568px;
+
+@mixin h2 {
+   font-family: $fontOswald;
+   font-size: 45px;
+   line-height: calc(67 / 45);
+   letter-spacing: -0.01em;
+}
+@mixin h4 {
+   //styleName: h4;
+   font-family: $fontOswald;
+   font-size: 25px;
+   line-height: calc(37 / 25);
+}
