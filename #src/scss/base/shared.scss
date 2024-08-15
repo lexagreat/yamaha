@@ -12,6 +12,7 @@
 
 .h2 {
    @include h2;
+   text-transform: uppercase;
 }
 .h4 {
    @include h4;
@@ -68,6 +69,10 @@
    right: unset !important;
    bottom: unset !important;
    position: relative !important;
+   transition: 0.3s;
+   &:hover {
+      border-color: white;
+   }
    &.swiper-button-next {
       rotate: 180deg;
    }
@@ -77,5 +82,26 @@
    }
    &::after {
       display: none;
+   }
+}
+
+.section {
+   padding: 135px 0;
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+   }
+   @media (max-width: $tablet) {
+      padding: 90px 0;
+      &__wrapper {
+         gap: 30px;
+      }
+   }
+   @media (max-width: $mobile) {
+      padding: 60px 0;
+      &__wrapper {
+         gap: 25px;
+      }
    }
 }

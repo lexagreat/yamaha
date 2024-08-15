@@ -143,6 +143,7 @@ svg path {
   font-size: 45px;
   line-height: 1.4888888889;
   letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
 .h4 {
@@ -231,6 +232,13 @@ svg path {
   right: unset !important;
   bottom: unset !important;
   position: relative !important;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.slider-btn:hover {
+  border-color: white;
 }
 
 .slider-btn.swiper-button-next {
@@ -244,6 +252,21 @@ svg path {
 
 .slider-btn::after {
   display: none;
+}
+
+.section {
+  padding: 135px 0;
+}
+
+.section__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
 }
 
 .header {
@@ -681,6 +704,71 @@ svg path {
   pointer-events: none;
 }
 
+.home-catalog {
+  padding-top: 50px;
+  background-color: black;
+}
+
+.home-catalog__title {
+  color: white;
+}
+
+.home-catalog__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.catalog-card {
+  height: 310px;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 25px;
+  background-color: #171717;
+  cursor: pointer;
+}
+
+.catalog-card__front {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.catalog-card__image {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 40px;
+}
+
+.catalog-card__title {
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  line-height: 1.48;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.catalog-card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: -100%;
+  pointer-events: none;
+}
+
 @media (max-width: 1440px) {
   .home-hero__footer {
     left: 35px;
@@ -691,6 +779,14 @@ svg path {
 @media (max-width: 1024px) {
   .container {
     padding: 0 20px;
+  }
+
+  .section {
+    padding: 90px 0;
+  }
+
+  .section__wrapper {
+    gap: 30px;
   }
 
   .header__left {
@@ -766,6 +862,14 @@ svg path {
 @media (max-width: 568px) {
   .container {
     padding: 0 12px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section__wrapper {
+    gap: 25px;
   }
 
   .header__wrapper {
