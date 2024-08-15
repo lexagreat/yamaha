@@ -9,3 +9,73 @@
       padding: 0 12px;
    }
 }
+
+.h2 {
+   @include h2;
+}
+.h4 {
+   @include h4;
+}
+.body-text {
+   @include text-ya;
+}
+
+.wrapper {
+   height: 500000px;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   font-family: $fontOswald;
+}
+.main {
+   flex: 1;
+}
+
+.btn {
+   // .btn_transparent
+   height: 35px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 81px;
+   padding-left: 13px;
+   padding-right: 13px;
+   transition: 0.3s;
+   &_transparent {
+      border: 1px solid #ffffff4d;
+      font-family: $fontHelvetica;
+      font-size: 12px;
+      font-weight: 500;
+      color: white;
+      &:hover {
+         border-color: white;
+      }
+   }
+}
+
+.slider-btn {
+   width: 36px;
+   height: 36px;
+   flex: 0 0 36px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   border: 1px solid #ffffff4d;
+   margin: unset !important;
+   left: unset !important;
+   top: unset !important;
+   right: unset !important;
+   bottom: unset !important;
+   position: relative !important;
+   &.swiper-button-next {
+      rotate: 180deg;
+   }
+   svg {
+      width: 16px;
+      height: 16px;
+   }
+   &::after {
+      display: none;
+   }
+}

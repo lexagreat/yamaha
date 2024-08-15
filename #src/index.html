@@ -5,11 +5,59 @@
 })
 
 <body>
-   @@include('html/header.html', {})
-   <main>
-      <span>hello</span>sda
-   </main>
-   @@include('html/footer.html', {})
+   <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="main">
+         <section class="home-hero hero">
+            <div class="home-hero__wrapper">
+               <div class="swiper">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <img src="img/home/hero.png" alt="">
+                        <h1 class="home-hero__title">Уникальный звук в яркой <br> симфонии</h1>
+                     </div>
+                     <div class="swiper-slide">
+                        <img src="img/home/hero.png" alt="">
+                        <h2 class="home-hero__title">Уникальный звук в <br> симфонии</h2>
+                     </div>
+                     <div class="swiper-slide">
+                        <img src="img/home/hero.png" alt="">
+                        <h2 class="home-hero__title">Уникальный звук в яркой</h2>
+                     </div>
+                     <div class="swiper-slide">
+                        <img src="img/home/hero.png" alt="">
+                        <h2 class="home-hero__title">Уникальный в яркой <br> симфонии</h2>
+                     </div>
+                  </div>
+               </div>
+               <div class="home-hero__footer">
+                  <div class="swiper-pagination home-hero__pagination"></div>
+                  <div class="home-hero__sound">
+                     <button class="btn btn_transparent">включить звук</button>
+                  </div>
+                  <div class="home-hero__navigation">
+                     <div class="swiper-button-prev slider-btn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                              fill="white" />
+                        </svg>
+                     </div>
+                     <button class="swiper-button-next slider-btn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                              fill="white" />
+                        </svg>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+      @@include('html/footer.html', {})
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <script src="js/app.js"></script>
 </body>
 

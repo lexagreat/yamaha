@@ -1,8 +1,11 @@
 $fontOswald: "Oswald", sans-serif;
+$fontHelvetica: "Arial", sans-serif;
 
 $tablet: 1024px;
 // $mobile: 768px;
 $mobile: 568px;
+
+$colorPurple: #4b1e78;
 
 @mixin h2 {
    font-family: $fontOswald;
@@ -15,4 +18,11 @@ $mobile: 568px;
    font-family: $fontOswald;
    font-size: 25px;
    line-height: calc(37 / 25);
+}
+@mixin text-ya {
+   //styleName: txt ya;
+   font-family: $fontHelvetica;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: calc(20 / 14);
 }
