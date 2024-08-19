@@ -18,8 +18,8 @@
 const body = document.body;
 document.addEventListener("DOMContentLoaded", () => {
    headerWork();
-
    initHomeHeroSlider();
+   hoverOnCatalog();
 });
 
 function headerWork() {
@@ -112,5 +112,47 @@ function initHomeHeroSlider() {
             soundBtn.innerHTML = "Включить звук";
          }
       });
+   });
+}
+
+function hoverOnCatalog() {
+   const cards = document.querySelectorAll(".home-catalog__item");
+   if (!cards.length) return;
+   cards.forEach((item) => {
+      item.onmouseenter = (event) => {
+         console.log("mouseenter");
+         item.classList.add("hover");
+         const circle = item.querySelector(".catalog-card__bg");
+         circle.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+         circle.style.width =
+            2 *
+               Math.sqrt(
+                  item.clientWidth * item.clientWidth +
+                     item.clientHeight * item.clientHeight
+               ) +
+            "px";
+         circle.style.height =
+            2 *
+               Math.sqrt(
+                  item.clientWidth * item.clientWidth +
+                     item.clientHeight * item.clientHeight
+               ) +
+            "px";
+         console.log(item.clientWidth);
+         console.log(item.clientHeight);
+      };
+      item.onmousemove = (event) => {
+         console.log("mousemove");
+         const circle = item.querySelector(".catalog-card__bg");
+         circle.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+      };
+      item.onmouseleave = (event) => {
+         console.log("mouseleave");
+         item.classList.remove("hover");
+         const circle = item.querySelector(".catalog-card__bg");
+         circle.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+         circle.style.width = "";
+         circle.style.height = "";
+      };
    });
 }

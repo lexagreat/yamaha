@@ -6,23 +6,138 @@ $tablet: 1024px;
 $mobile: 568px;
 
 $colorPurple: #4b1e78;
-
+@mixin h1 {
+   //styleName: h1;
+   font-family: $fontOswald;
+   font-size: 75px;
+   font-weight: 400;
+   line-height: calc(86 / 75);
+   letter-spacing: -0.01em;
+}
+@mixin h1-tablet {
+   //styleName: tablet/h1;
+   font-family: $fontOswald;
+   font-size: 55px;
+   font-weight: 400;
+   line-height: 66px;
+   letter-spacing: -0.01em;
+}
+@mixin h1-mobile {
+   //styleName: mob/h1;
+   font-family: $fontOswald;
+   font-size: 45px;
+   font-weight: 400;
+   line-height: 54px;
+   letter-spacing: -0.01em;
+}
 @mixin h2 {
    font-family: $fontOswald;
    font-size: 45px;
+   font-weight: 400;
    line-height: calc(67 / 45);
    letter-spacing: -0.01em;
 }
-@mixin h4 {
+@mixin h2-tablet {
+   //styleName: tablet/h2;
+   font-family: $fontOswald;
+   font-size: 35px;
+   font-weight: 400;
+   line-height: calc(39 / 35);
+   letter-spacing: -0.01em;
+}
+@mixin h2-mobile {
+   //styleName: mob/h2;
+   font-family: $fontOswald;
+   font-size: 30px;
+   line-height: calc(33 / 30);
+   letter-spacing: -0.01em;
+}
+
+@mixin h3 {
    //styleName: h4;
    font-family: $fontOswald;
    font-size: 25px;
+   font-weight: 400;
    line-height: calc(37 / 25);
 }
-@mixin text-ya {
-   //styleName: txt ya;
+@mixin h3-tablet {
+   //styleName: tablet/h3;
+   font-family: $fontOswald;
+   font-size: 18px;
+   font-weight: 400;
+   line-height: 21.6px;
+}
+@mixin h3-mobile {
+   //styleName: mob/h3;
+   font-family: $fontOswald;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: calc(19 / 16);
+   letter-spacing: 0.01em;
+}
+
+@mixin h4 {
+   //styleName: h4;
+   font-family: $fontHelvetica;
+   font-size: 20px;
+   font-weight: 400;
+   line-height: calc(28 / 20);
+}
+@mixin h5 {
+   //styleName: h5;
+   font-family: $fontOswald;
+   font-size: 18px;
+   line-height: calc(20 / 18);
+}
+@mixin h5-tablet {
+   //styleName: tablet/h5;
+   font-family: $fontOswald;
+   font-size: 16px;
+   font-weight: 400;
+   line-height: 17.6px;
+   letter-spacing: 0.01em;
+   text-align: left;
+}
+@mixin text-body {
+   //styleName: text-body;
    font-family: $fontHelvetica;
    font-size: 14px;
    font-weight: 400;
    line-height: calc(20 / 14);
+}
+
+@mixin medium-14 {
+   //styleName: medium_14px;
+   font-family: $fontHelvetica;
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 19.6px;
+}
+@mixin medium-13 {
+   //styleName: medium_13px;
+   font-family: $fontHelvetica;
+   font-size: 13px;
+   font-weight: 500;
+   line-height: 18.2px;
+}
+@mixin medium-12 {
+   //styleName: medium_12px;
+   font-family: $fontHelvetica;
+   font-size: 12px;
+   font-weight: 500;
+   line-height: 16.8px;
+}
+@mixin regular-12 {
+   //styleName: regular_12px;
+   font-family: $fontHelvetica;
+   font-size: 12px;
+   font-weight: 400;
+   line-height: 16.8px;
+}
+@mixin tag {
+   //styleName: tag;
+   font-family: $fontHelvetica;
+   font-size: 12px;
+   font-weight: 400;
+   line-height: 8px;
 }

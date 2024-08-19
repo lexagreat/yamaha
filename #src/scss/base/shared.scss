@@ -13,12 +13,18 @@
 .h2 {
    @include h2;
    text-transform: uppercase;
+   @media (max-width: $tablet) {
+      @include h2-tablet;
+   }
+   @media (max-width: $mobile) {
+      @include h2-mobile;
+   }
 }
-.h4 {
-   @include h4;
+.h3 {
+   @include h3;
 }
 .body-text {
-   @include text-ya;
+   @include text-body;
 }
 
 .wrapper {
