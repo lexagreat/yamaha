@@ -136,3 +136,7 @@
       }
    }
 }
+
+.collapse:not(.collapse_show) {
+   display: none;
+}

@@ -1,0 +1,117 @@
+.home-about {
+   // .home-about__wrapper
+   min-height: 100vh;
+   max-height: 870px;
+   padding: 90px 0;
+   color: white;
+   position: relative;
+   // background-attachment: fixed;
+   .container {
+      position: relative;
+      z-index: 5;
+   }
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+   }
+
+   // .home-about__title
+
+   &__title {
+      @include h1;
+      text-transform: uppercase;
+   }
+
+   // .home-about__text
+
+   &__text {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      max-width: 449px;
+   }
+
+   // .home-about__link
+
+   &__link {
+      color: white;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
+      @include medium-14;
+      border: 1px solid #ffffff4d;
+      border-radius: 60px;
+      height: 52px;
+      width: 250px;
+      &:hover {
+         border-color: white;
+         div {
+            border-color: $colorPurple;
+            background-color: $colorPurple;
+         }
+      }
+      div {
+         width: 36px;
+         height: 36px;
+         flex: 0 0 36px;
+         border-radius: 50%;
+         border: 1px solid #ffffff4d;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: 0.3s;
+         svg {
+            rotate: 180deg;
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+         }
+      }
+   }
+   &__image {
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      img {
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+   @media (max-width: $tablet) {
+      &__title {
+         @include h1-tablet;
+      }
+   }
+   @media (max-width: $mobile) {
+      &__title {
+         @include h1-mobile;
+      }
+      &__text {
+         margin-top: 25px;
+         margin-bottom: 40px;
+      }
+      &__link {
+         font-size: 0;
+         width: unset;
+         border: 0;
+         padding: 0;
+         gap: 0;
+         div {
+            width: 36px;
+            height: 36px;
+            flex: 0 0 36px;
+         }
+      }
+   }
+}
