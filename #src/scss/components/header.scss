@@ -59,6 +59,9 @@
          }
          // opacity: 0;
       }
+      .header__upper {
+         border-color: transparent;
+      }
    }
    &__link,
    &__logo svg path,
@@ -111,16 +114,18 @@
       svg {
          position: relative;
          z-index: 1;
+         pointer-events: none;
       }
       div {
          border-radius: 50%;
-         width: 72px;
-         height: 72px;
+         width: 0;
+         height: 0;
          position: absolute;
-         transition: 0.3s;
+         transition: width 1s, height 1s;
+         transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
          background-color: $colorPurple;
-         scale: 0;
          translate: -50% -50%;
+         pointer-events: none;
       }
    }
 

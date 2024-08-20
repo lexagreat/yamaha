@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
    headerWork();
    initHomeHeroSlider();
    hoverOnCatalog();
+   initProductSlider();
+   productCardWork();
 });
 
 function headerWork() {
@@ -59,16 +61,31 @@ function headerWork() {
       const burger = document.querySelector(".header__burger");
       const fill = document.querySelector(".header__burger div");
 
-      burger.addEventListener("mouseover", (e) => {
-         fill.style.left = e.offsetX + "px";
-         fill.style.top = e.offsetY + "px";
-         fill.style.scale = 1;
-      });
-      burger.addEventListener("mouseout", (e) => {
-         fill.style.left = e.offsetX + "px";
-         fill.style.top = e.offsetY + "px";
-         fill.style.scale = 0;
-      });
+      burger.onmouseenter = (event) => {
+         fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+         fill.style.width =
+            2 *
+               Math.sqrt(
+                  burger.clientWidth * burger.clientWidth +
+                     burger.clientHeight * burger.clientHeight
+               ) +
+            "px";
+         fill.style.height =
+            2 *
+               Math.sqrt(
+                  burger.clientWidth * burger.clientWidth +
+                     burger.clientHeight * burger.clientHeight
+               ) +
+            "px";
+      };
+      burger.onmousemove = (event) => {
+         fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+      };
+      burger.onmouseleave = (event) => {
+         fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+         fill.style.width = "";
+         fill.style.height = "";
+      };
    };
 
    window.addEventListener("scroll", animateHeaderOnScroll);
@@ -89,6 +106,10 @@ function initHomeHeroSlider() {
       },
       effect: "fade",
       speed: 1000,
+      mousewheel: {
+         enabled: true,
+         forceToAxis: true,
+      },
       on: {
          slideChange(swiper) {
             // https://metanit.com/web/html5/7.3.php // тут можно взять методы
@@ -155,4 +176,97 @@ function hoverOnCatalog() {
          circle.style.height = "";
       };
    });
+}
+function initProductSlider() {
+   if (!document.querySelector(".product-section .swiper")) return;
+   let swiper = new Swiper(".product-section .swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      navigation: {
+         prevEl: ".product-section .swiper-button-prev",
+         nextEL: ".product-section .swiper-button-next",
+      },
+      breakpoints: {
+         1025: {
+            slidesPerView: 4,
+         },
+      },
+      mousewheel: {
+         enabled: true,
+         forceToAxis: true,
+      },
+   });
+}
+
+function productCardWork() {
+   const products = document.querySelectorAll(".product-card");
+   if (!products.length) return;
+
+   const hoverOnCart = () => {
+      const carts = document.querySelectorAll(".product-card__cart");
+      carts.forEach((item) => {
+         const fill = item.querySelector("div");
+         item.onmouseenter = (event) => {
+            console.log("mouseenter");
+            fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+            fill.style.width =
+               2 *
+                  Math.sqrt(
+                     item.clientWidth * item.clientWidth +
+                        item.clientHeight * item.clientHeight
+                  ) +
+               "px";
+            fill.style.height =
+               2 *
+                  Math.sqrt(
+                     item.clientWidth * item.clientWidth +
+                        item.clientHeight * item.clientHeight
+                  ) +
+               "px";
+         };
+         item.onmousemove = (event) => {
+            console.log("mousemove");
+
+            fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+         };
+         item.onmouseleave = (event) => {
+            console.log("mouseleave");
+
+            fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+            fill.style.width = "";
+            fill.style.height = "";
+         };
+      });
+   };
+   const toggleActions = () => {
+      const showBtns = document.querySelectorAll(".product-card__show");
+      showBtns.forEach((item) => {
+         item.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.target.closest(".product-card").classList.add("active");
+         });
+      });
+   };
+   const preventRouteChange = () => {
+      document.querySelectorAll(".product-card__actions").forEach((item) => {
+         item.addEventListener("click", (e) => {
+            e.preventDefault();
+         });
+      });
+      document
+         .querySelectorAll(".product-card__colors button")
+         .forEach((item) => {
+            item.addEventListener("click", (e) => {
+               e.preventDefault();
+            });
+         });
+      document
+         .querySelector(".product-card__cart")
+         .addEventListener("click", (e) => {
+            e.preventDefault();
+         });
+   };
+   toggleActions();
+   hoverOnCart();
+   preventRouteChange();
 }

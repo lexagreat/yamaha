@@ -28,7 +28,6 @@
 }
 
 .wrapper {
-   height: 500000px;
    min-height: 100vh;
    display: flex;
    flex-direction: column;
@@ -108,6 +107,32 @@
       padding: 60px 0;
       &__wrapper {
          gap: 25px;
+      }
+   }
+}
+
+.tabs-list {
+   display: flex;
+   gap: 8px;
+   input {
+      display: none;
+   }
+   label {
+      cursor: pointer;
+      color: #00000066;
+      padding: 4px 8px;
+      &:hover {
+         color: #020202;
+      }
+      &::after {
+         background-color: black;
+      }
+   }
+   input:checked + label {
+      color: #020202;
+      &::after {
+         transform-origin: left;
+         transform: scaleX(1) rotate(0.001deg);
       }
    }
 }
