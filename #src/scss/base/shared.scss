@@ -9,7 +9,16 @@
       padding: 0 12px;
    }
 }
-
+.h1 {
+   @include h1;
+   text-transform: uppercase;
+   @media (max-width: $tablet) {
+      @include h1-tablet;
+   }
+   @media (max-width: $mobile) {
+      @include h1-mobile;
+   }
+}
 .h2 {
    @include h2;
    text-transform: uppercase;

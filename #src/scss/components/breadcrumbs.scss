@@ -1,0 +1,29 @@
+.breadcrumbs {
+   // .breadcrumbs__list
+
+   &__list {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      li:last-child a {
+         &::after {
+            display: none;
+         }
+      }
+      a {
+         font-family: $fontHelvetica;
+         font-size: 12px;
+         color: #ffffff66;
+         transition: 0.4s;
+         &:hover {
+            color: white;
+         }
+         &::after {
+            content: " /";
+            font-family: $fontHelvetica;
+            font-size: 12px;
+            color: #ffffff66;
+         }
+      }
+   }
+}

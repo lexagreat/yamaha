@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
    initHomeHeroSlider();
    hoverOnCatalog();
    initProductSlider();
-   productCardWork();
    accordion(".garanty-item__header", ".garanty-item__spoiler");
    homeCardsSectionHover();
    accordion(
@@ -101,6 +100,7 @@ function headerWork() {
 }
 
 function initHomeHeroSlider() {
+   if (!document.querySelector(".home-hero .swiper")) return;
    const videos = document.querySelectorAll(".home-hero video");
 
    let slider = new Swiper(".home-hero .swiper", {
@@ -203,80 +203,81 @@ function initProductSlider() {
          forceToAxis: true,
       },
    });
-}
+   function productCardWork() {
+      const products = document.querySelectorAll(".product-card");
+      if (!products.length) return;
 
-function productCardWork() {
-   const products = document.querySelectorAll(".product-card");
-   if (!products.length) return;
+      const hoverOnCart = () => {
+         const carts = document.querySelectorAll(".product-card__cart");
+         carts.forEach((item) => {
+            const fill = item.querySelector("div");
+            item.onmouseenter = (event) => {
+               console.log("mouseenter");
+               fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+               fill.style.width =
+                  2 *
+                     Math.sqrt(
+                        item.clientWidth * item.clientWidth +
+                           item.clientHeight * item.clientHeight
+                     ) +
+                  "px";
+               fill.style.height =
+                  2 *
+                     Math.sqrt(
+                        item.clientWidth * item.clientWidth +
+                           item.clientHeight * item.clientHeight
+                     ) +
+                  "px";
+            };
+            item.onmousemove = (event) => {
+               console.log("mousemove");
 
-   const hoverOnCart = () => {
-      const carts = document.querySelectorAll(".product-card__cart");
-      carts.forEach((item) => {
-         const fill = item.querySelector("div");
-         item.onmouseenter = (event) => {
-            console.log("mouseenter");
-            fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
-            fill.style.width =
-               2 *
-                  Math.sqrt(
-                     item.clientWidth * item.clientWidth +
-                        item.clientHeight * item.clientHeight
-                  ) +
-               "px";
-            fill.style.height =
-               2 *
-                  Math.sqrt(
-                     item.clientWidth * item.clientWidth +
-                        item.clientHeight * item.clientHeight
-                  ) +
-               "px";
-         };
-         item.onmousemove = (event) => {
-            console.log("mousemove");
+               fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+            };
+            item.onmouseleave = (event) => {
+               console.log("mouseleave");
 
-            fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
-         };
-         item.onmouseleave = (event) => {
-            console.log("mouseleave");
-
-            fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
-            fill.style.width = "";
-            fill.style.height = "";
-         };
-      });
-   };
-   const toggleActions = () => {
-      const showBtns = document.querySelectorAll(".product-card__show");
-      showBtns.forEach((item) => {
-         item.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.target.closest(".product-card").classList.add("active");
+               fill.style.transform = `translate(${event.layerX}px, ${event.layerY}px)`;
+               fill.style.width = "";
+               fill.style.height = "";
+            };
          });
-      });
-   };
-   const preventRouteChange = () => {
-      document.querySelectorAll(".product-card__actions").forEach((item) => {
-         item.addEventListener("click", (e) => {
-            e.preventDefault();
+      };
+      const toggleActions = () => {
+         const showBtns = document.querySelectorAll(".product-card__show");
+         showBtns.forEach((item) => {
+            item.addEventListener("click", (e) => {
+               e.preventDefault();
+               e.target.closest(".product-card").classList.add("active");
+            });
          });
-      });
-      document
-         .querySelectorAll(".product-card__colors button")
-         .forEach((item) => {
+      };
+      const preventRouteChange = () => {
+         document.querySelectorAll(".product-card__actions").forEach((item) => {
             item.addEventListener("click", (e) => {
                e.preventDefault();
             });
          });
-      document
-         .querySelector(".product-card__cart")
-         .addEventListener("click", (e) => {
-            e.preventDefault();
-         });
-   };
-   toggleActions();
-   hoverOnCart();
-   preventRouteChange();
+         document
+            .querySelectorAll(".product-card__colors button")
+            .forEach((item) => {
+               item.addEventListener("click", (e) => {
+                  e.preventDefault();
+               });
+            });
+         document
+            .querySelector(".product-card__cart")
+            .addEventListener("click", (e) => {
+               e.preventDefault();
+            });
+      };
+      toggleActions();
+      hoverOnCart();
+      preventRouteChange();
+   }
+   productCardWork();
 }
+
 function homeCardsSectionHover() {
    const cards = document.querySelectorAll(".home-cards__item");
    if (!cards.length) return;
@@ -288,6 +289,26 @@ function homeCardsSectionHover() {
       item.onmouseleave = () => {
          slideHide(spoiler);
       };
+   });
+}
+function homeAboutParallax() {
+   const section = document.querySelector(".home-about");
+   if (!section) return;
+   const image = section.querySelector(".home-about__image img");
+   let headerHeight = document.querySelector(".header").clientHeight;
+   window.addEventListener("scroll", (e) => {
+      let start = section.getBoundingClientRect().top;
+      let end =
+         section.getBoundingClientRect().top +
+         section.clientHeight -
+         headerHeight;
+      if (start > 0) {
+         image.style.transform = `translate(0, 0px)`;
+      }
+      if (start < 0 && end > 0) {
+         let value = -1 * start * 0.3;
+         image.style.transform = `translate(0, ${value}px)`;
+      }
    });
 }
 
@@ -400,25 +421,4 @@ function slideHide(el, duration = 500) {
       el.style["transition"] = "";
       el.style["overflow"] = "";
    }, duration);
-}
-
-function homeAboutParallax() {
-   const section = document.querySelector(".home-about");
-   if (!section) return;
-   const image = section.querySelector(".home-about__image img");
-   let headerHeight = document.querySelector(".header").clientHeight;
-   window.addEventListener("scroll", (e) => {
-      let start = section.getBoundingClientRect().top;
-      let end =
-         section.getBoundingClientRect().top +
-         section.clientHeight -
-         headerHeight;
-      if (start > 0) {
-         image.style.transform = `translate(0, 0px)`;
-      }
-      if (start < 0 && end > 0) {
-         let value = -1 * start * 0.3;
-         image.style.transform = `translate(0, ${value}px)`;
-      }
-   });
 }

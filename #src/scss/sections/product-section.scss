@@ -95,13 +95,15 @@
    flex-direction: column;
    gap: 10px;
    // max-width: 335px;
-   &:hover {
-      .product-card {
-         &__colors,
-         &__actions,
-         &__cart {
-            opacity: 1;
-            pointer-events: all;
+   @media (hover: hover) {
+      &:hover {
+         .product-card {
+            &__colors,
+            &__actions,
+            &__cart {
+               opacity: 1;
+               pointer-events: all;
+            }
          }
       }
    }
