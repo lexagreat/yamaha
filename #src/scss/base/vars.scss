@@ -35,7 +35,7 @@ $colorPurple: #4b1e78;
    font-family: $fontOswald;
    font-size: 45px;
    font-weight: 400;
-   line-height: calc(67 / 45);
+   line-height: calc(50 / 45);
    letter-spacing: -0.01em;
 }
 @mixin h2-tablet {
@@ -59,7 +59,7 @@ $colorPurple: #4b1e78;
    font-family: $fontOswald;
    font-size: 25px;
    font-weight: 400;
-   line-height: calc(37 / 25);
+   line-height: calc(30 / 25);
 }
 @mixin h3-tablet {
    //styleName: tablet/h3;

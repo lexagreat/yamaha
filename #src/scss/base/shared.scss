@@ -22,6 +22,12 @@
 }
 .h3 {
    @include h3;
+   @media (max-width: $tablet) {
+      @include h3-tablet;
+   }
+   @media (max-width: $mobile) {
+      @include h3-mobile;
+   }
 }
 .body-text {
    @include text-body;

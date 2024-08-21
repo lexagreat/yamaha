@@ -23,6 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
    initProductSlider();
    productCardWork();
    accordion(".garanty-item__header", ".garanty-item__spoiler");
+   homeCardsSectionHover();
+   accordion(
+      ".footer__mobile .footer__block .footer__title",
+      ".footer__mobile .footer__block .footer__spoiler"
+   );
+   homeAboutParallax();
 });
 
 function headerWork() {
@@ -271,6 +277,19 @@ function productCardWork() {
    hoverOnCart();
    preventRouteChange();
 }
+function homeCardsSectionHover() {
+   const cards = document.querySelectorAll(".home-cards__item");
+   if (!cards.length) return;
+   cards.forEach((item) => {
+      let spoiler = item.querySelector(".collapse");
+      item.onmouseenter = () => {
+         slideShow(spoiler);
+      };
+      item.onmouseleave = () => {
+         slideHide(spoiler);
+      };
+   });
+}
 
 function accordion(linkSelector, contentSelector) {
    // получаем линки
@@ -381,4 +400,25 @@ function slideHide(el, duration = 500) {
       el.style["transition"] = "";
       el.style["overflow"] = "";
    }, duration);
+}
+
+function homeAboutParallax() {
+   const section = document.querySelector(".home-about");
+   if (!section) return;
+   const image = section.querySelector(".home-about__image img");
+   let headerHeight = document.querySelector(".header").clientHeight;
+   window.addEventListener("scroll", (e) => {
+      let start = section.getBoundingClientRect().top;
+      let end =
+         section.getBoundingClientRect().top +
+         section.clientHeight -
+         headerHeight;
+      if (start > 0) {
+         image.style.transform = `translate(0, 0px)`;
+      }
+      if (start < 0 && end > 0) {
+         let value = -1 * start * 0.3;
+         image.style.transform = `translate(0, ${value}px)`;
+      }
+   });
 }

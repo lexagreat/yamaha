@@ -186,6 +186,16 @@
 
    &__content {
       padding-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      b {
+         font-weight: 500;
+      }
+      ul li {
+         list-style-type: disc;
+         list-style-position: inside;
+      }
    }
    @media (max-width: $tablet) {
       &__title {
