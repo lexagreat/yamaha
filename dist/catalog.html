@@ -312,7 +312,672 @@
          <section class="catalog-content">
             <div class="container">
                <div class="catalog-content__wrapper">
-                  <aside class="catalog-content__aside catalog-aside"></aside>
+                  <aside class="catalog-content__aside catalog-filter">
+                     <div class="catalog-filter__header">
+                        <div class="catalog-filter__title body-text">
+                           Фильтр
+                           <span>9</span>
+                        </div>
+                        <button class="catalog-filter__reset">
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8 3C8 11 8 9.66667 8 8M8 8H3M8 8H13M8 8V13" stroke="currentColor"
+                                 stroke-width="0.85" stroke-linecap="round" />
+                           </svg>
+                           Сбросить
+                        </button>
+                     </div>
+                     <main class="catalog-filter__main scrollbar-none">
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Цена, ₽</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content filter-section__range" id="priceRange">
+                                 <div class="price-input-container">
+                                    <div class="price-input">
+                                       <div class="price-field">
+                                          <span class="body-text">от</span>
+                                          <input type="number" class="min-input" value="0">
+                                       </div>
+                                       <span>-</span>
+                                       <div class="price-field">
+                                          <span class="body-text">до</span>
+                                          <input type="number" class="max-input" value="4000000">
+                                       </div>
+                                    </div>
+                                    <div class="slider-container">
+                                       <div class="price-slider">
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- Slider -->
+                                 <div class="range-input">
+                                    <input type="range" class="min-range" min="0" max="4000000" value="0" step="1000">
+                                    <input type="range" class="max-range" min="0" max="4000000" value="4000000"
+                                       step="1000">
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Серия</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content">
+                                 <ul class="filter-section__checkboxes app-checkbox">
+                                    <li>
+                                       <input type="checkbox" name="filterSeria" id="filterSeria0" value="0">
+                                       <label for="filterSeria0">
+                                          <div></div> <span>Silent Piano</span>
+                                       </label>
+                                    </li>
+
+                                    <li>
+                                       <input type="checkbox" name="filterSeria" id="filterSeria1" value="1">
+                                       <label for="filterSeria1">
+                                          <div></div> <span>AvantGrand</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterSeria" id="filterSeria2" value="2">
+                                       <label for="filterSeria2">
+                                          <div></div> <span>Clavinova</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterSeria" id="filterSeria3" value="3">
+                                       <label for="filterSeria3">
+                                          <div></div> <span>Arius</span>
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Страна-изготовитель</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content">
+                                 <ul class="filter-section__checkboxes app-checkbox">
+
+                                    <li>
+                                       <input type="checkbox" name="filterCountry" id="filterCountry1" value="1">
+                                       <label for="filterCountry1">
+                                          <div></div> <span>Индонезия</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterCountry" id="filterCountry2" value="2">
+                                       <label for="filterCountry2">
+                                          <div></div> <span>Китай</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterCountry" id="filterCountry3" value="3">
+                                       <label for="filterCountry3">
+                                          <div></div> <span>Япония</span>
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Цвет</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content">
+                                 <ul class="filter-section__colors">
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="0" id="filterColors0">
+                                       <label for="filterColors0" style="background-color: #764E47;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="1" id="filterColors1">
+                                       <label for="filterColors1" style="background-color: black;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="2" id="filterColors2">
+                                       <label for="filterColors2" style="background-color: white;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="3" id="filterColors3">
+                                       <label for="filterColors3" style="background-color: #C5C5C2;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="4" id="filterColors4">
+                                       <label for="filterColors4" style="background-color: #C5C5C2;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="5" id="filterColors5">
+                                       <label for="filterColors5" style="background-color: #C5C5C2;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="6" id="filterColors6">
+                                       <label for="filterColors6" style="background-color: #8F8D96;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="7" id="filterColors7">
+                                       <label for="filterColors7" style="background-color: #71D2F7;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="8" id="filterColors8">
+                                       <label for="filterColors8" style="background-color: #B38C68;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="9" id="filterColors9">
+                                       <label for="filterColors9" style="background-color: #B9803E;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="10" id="filterColors10">
+                                       <label for="filterColors10" style="background-color: #54413D;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="11" id="filterColors11">
+                                       <label for="filterColors11" style="background-color: #725C4F;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="12" id="filterColors12">
+                                       <label for="filterColors12" style="background-color: #866366;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="13" id="filterColors13">
+                                       <label for="filterColors13" style="background-color: #724E51;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="14" id="filterColors14">
+                                       <label for="filterColors14" style="background-color: #C51823;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="15" id="filterColors15">
+                                       <label for="filterColors15" style="background-color: #8F0421;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="16" id="filterColors16">
+                                       <label for="filterColors16" style="background-color: #774D35;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="17" id="filterColors17">
+                                       <label for="filterColors17" style="background-color: #FFD3D2;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="18" id="filterColors18">
+                                       <label for="filterColors18" style="background-color: #574B55;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="19" id="filterColors19">
+                                       <label for="filterColors19" style="background-color: #9A4B44;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="20" id="filterColors20">
+                                       <label for="filterColors20" style="background-color: #0100FF;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="black" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="21" id="filterColors21">
+                                       <label for="filterColors21" style="background-color: #4C2B3B;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="22" id="filterColors22">
+                                       <label for="filterColors22" style="background-color: #747577;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterColors" value="23" id="filterColors23">
+                                       <label for="filterColors23" style="background-color: #362727;">
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M6.66649 10.5002L12.4369 4.36486C12.6322 4.15722 12.9608 4.15336 13.161 4.35634C13.3504 4.54846 13.3543 4.85583 13.1699 5.05277L6.66649 11.9986L2.71879 8.05092C2.54988 7.882 2.53191 7.6142 2.67674 7.42423C2.84918 7.19806 3.17993 7.172 3.38565 7.36838L6.66649 10.5002Z"
+                                                fill="white" />
+                                          </svg>
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Материал отделки </div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content">
+                                 <ul class="filter-section__checkboxes app-checkbox">
+                                    <li>
+                                       <input type="checkbox" name="filterMaterial" id="filterMaterial1" value="1">
+                                       <label for="filterMaterial1">
+                                          <div></div> <span>Дерево</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterMaterial" id="filterMaterial2" value="2">
+                                       <label for="filterMaterial2">
+                                          <div></div> <span>Пластик</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterMaterial" id="filterMaterial3" value="3">
+                                       <label for="filterMaterial3">
+                                          <div></div> <span>Слоновая кость</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterMaterial" id="filterMaterial0" value="0">
+                                       <label for="filterMaterial0">
+                                          <div></div>
+                                          <span>Синтетическое дерево</span>
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Размеры, см</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content filter-section__range" id="lengthRange">
+                                 <div class="price-input-container">
+                                    <span class="price-input__subtitle">Длина, см</span>
+                                    <div class="price-input">
+                                       <div class="price-field">
+                                          <span class="body-text">от</span>
+                                          <input type="number" class="min-input" value="0">
+                                       </div>
+                                       <span>-</span>
+                                       <div class="price-field">
+                                          <span class="body-text">до</span>
+                                          <input type="number" class="max-input" value="2000">
+                                       </div>
+                                    </div>
+                                    <div class="slider-container">
+                                       <div class="price-slider">
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- Slider -->
+                                 <div class="range-input">
+                                    <input type="range" class="min-range" min="0" max="2000" value="0" step="10">
+                                    <input type="range" class="max-range" min="0" max="2000" value="2000" step="10">
+                                 </div>
+                              </div>
+                              <div class="filter-section__content filter-section__range" id="widthRange">
+                                 <div class="price-input-container">
+                                    <span class="price-input__subtitle">Ширина, см</span>
+                                    <div class="price-input">
+                                       <div class="price-field">
+                                          <span class="body-text">от</span>
+                                          <input type="number" class="min-input" value="0">
+                                       </div>
+                                       <span>-</span>
+                                       <div class="price-field">
+                                          <span class="body-text">до</span>
+                                          <input type="number" class="max-input" value="200">
+                                       </div>
+                                    </div>
+                                    <div class="slider-container">
+                                       <div class="price-slider">
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- Slider -->
+                                 <div class="range-input">
+                                    <input type="range" class="min-range" min="0" max="200" value="0" step="10">
+                                    <input type="range" class="max-range" min="0" max="200" value="200" step="10">
+                                 </div>
+                              </div>
+                              <div class="filter-section__content filter-section__range" id="heightRange">
+                                 <div class="price-input-container">
+                                    <span class="price-input__subtitle">Высота, см</span>
+                                    <div class="price-input">
+                                       <div class="price-field">
+                                          <span class="body-text">от</span>
+                                          <input type="number" class="min-input" value="0">
+                                       </div>
+                                       <span>-</span>
+                                       <div class="price-field">
+                                          <span class="body-text">до</span>
+                                          <input type="number" class="max-input" value="500">
+                                       </div>
+                                    </div>
+                                    <div class="slider-container">
+                                       <div class="price-slider">
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- Slider -->
+                                 <div class="range-input">
+                                    <input type="range" class="min-range" min="0" max="500" value="0" step="10">
+                                    <input type="range" class="max-range" min="0" max="500" value="500" step="10">
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Вес, кг</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content filter-section__range" id="weigthRange">
+                                 <div class="price-input-container">
+                                    <div class="price-input">
+                                       <div class="price-field">
+                                          <span class="body-text">от</span>
+                                          <input type="number" class="min-input" value="0">
+                                       </div>
+                                       <span>-</span>
+                                       <div class="price-field">
+                                          <span class="body-text">до</span>
+                                          <input type="number" class="max-input" value="200">
+                                       </div>
+                                    </div>
+                                    <div class="slider-container">
+                                       <div class="price-slider">
+                                       </div>
+                                    </div>
+                                 </div>
+
+                                 <!-- Slider -->
+                                 <div class="range-input">
+                                    <input type="range" class="min-range" min="0" max="200" value="0" step="5">
+                                    <input type="range" class="max-range" min="0" max="200" value="200" step="5">
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Клавишная механика</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content">
+                                 <ul class="filter-section__checkboxes app-checkbox">
+                                    <li>
+                                       <input type="checkbox" name="filterKlavisha" id="filterKlavisha0" value="0">
+                                       <label for="filterKlavisha0">
+                                          <div></div>
+                                          <span>Взвешенная</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterKlavisha" id="filterKlavisha1" value="1">
+                                       <label for="filterKlavisha1">
+                                          <div></div> <span>Невзвешенная</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterKlavisha" id="filterKlavisha2" value="2">
+                                       <label for="filterKlavisha2">
+                                          <div></div> <span>Полувзвешенная</span>
+                                       </label>
+                                    </li>
+
+                                 </ul>
+                              </div>
+                           </div>
+                        </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Количество клавиш</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content">
+                                 <ul class="filter-section__checkboxes app-checkbox c2">
+                                    <li>
+                                       <input type="checkbox" name="filterKlavisha" id="filterKlavishaKolvo0" value="0">
+                                       <label for="filterKlavishaKolvo0">
+                                          <div></div>
+                                          <span>49</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterKlavisha" id="filterKlavishaKolvo1" value="1">
+                                       <label for="filterKlavishaKolvo1">
+                                          <div></div> <span>61</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterKlavisha" id="filterKlavishaKolvo2" value="2">
+                                       <label for="filterKlavishaKolvo2">
+                                          <div></div> <span>76</span>
+                                       </label>
+                                    </li>
+                                    <li>
+                                       <input type="checkbox" name="filterKlavisha" id="filterKlavishaKolvo3" value="3">
+                                       <label for="filterKlavishaKolvo3">
+                                          <div></div> <span>88</span>
+                                       </label>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </section>
+                     </main>
+                  </aside>
                   <div class="catalog-content__main catalog-main">
                      <div class="catalog-main__header">
                         <ul class="catalog-main__tags">
@@ -326,6 +991,7 @@
                         <div class="catalog-main__select"></div>
                      </div>
                      <div class="catalog-main__result">
+
                         <ul class="catalog-main__products">
                            <li>
                               <a href="#" class="product-card">

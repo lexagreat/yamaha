@@ -65,6 +65,10 @@
          @include text-body;
          color: black;
          border-radius: 30px;
+         transition: 0.4s;
+         &:hover {
+            border-color: black;
+         }
       }
    }
 

@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
    );
    homeAboutParallax();
    productCardWork();
+   makeCatalogFilters();
 });
 
 function headerWork() {
@@ -309,6 +310,33 @@ function homeAboutParallax() {
       }
    });
 }
+function makeCatalogFilters() {
+   if (!document.querySelector(".catalog-filter")) return;
+   makeRange("#priceRange", 4000000, 100000);
+   makeRange("#lengthRange", 2000, 10);
+   makeRange("#widthRange", 200, 10);
+   makeRange("#heightRange", 500, 10);
+   makeRange("#weigthRange", 200, 5);
+
+   const spoilers = () => {
+      const headers = document.querySelectorAll(".filter-spoiler");
+      headers.forEach((item) => {
+         item.addEventListener("click", (e) => {
+            const spoiler = item.nextElementSibling;
+            if (spoiler.classList.contains("collapsing")) return;
+            if (spoiler.classList.contains("collapse_show")) {
+               slideHide(spoiler);
+               item.classList.remove("active");
+            } else {
+               slideShow(spoiler);
+               item.classList.add("active");
+            }
+         });
+      });
+   };
+
+   spoilers();
+}
 
 function accordion(linkSelector, contentSelector) {
    // получаем линки
@@ -419,4 +447,121 @@ function slideHide(el, duration = 500) {
       el.style["transition"] = "";
       el.style["overflow"] = "";
    }, duration);
+}
+
+function makeRange(blockSelector, max = 10000, gap = 500) {
+   //  Script.js
+   const rangevalue = document.querySelector(
+      blockSelector + " " + ".slider-container .price-slider"
+   );
+   if (
+      !document.querySelector(
+         blockSelector + " " + ".slider-container .price-slider"
+      )
+   )
+      return;
+   const rangeInputvalue = document.querySelectorAll(
+      blockSelector + " " + ".range-input input"
+   );
+
+   // Set the price gap
+   let priceGap = gap;
+
+   // Adding event listners to price input elements
+   const priceInputvalue = document.querySelectorAll(
+      blockSelector + " " + ".price-input input"
+   );
+   for (let i = 0; i < priceInputvalue.length; i++) {
+      priceInputvalue[i].addEventListener("input", (e) => {
+         // Parse min and max values of the range input
+         let minp = parseInt(priceInputvalue[0].value);
+         let maxp = parseInt(priceInputvalue[1].value);
+         let diff = maxp - minp;
+
+         if (minp < 0) {
+            alert("minimum price cannot be less than 0");
+            priceInputvalue[0].value = 0;
+            minp = 0;
+         }
+
+         // Validate the input values
+         if (maxp > max) {
+            alert("maximum price cannot be greater than " + max);
+            priceInputvalue[1].value = max;
+            maxp = max;
+         }
+
+         if (minp > maxp - priceGap) {
+            priceInputvalue[0].value = maxp - priceGap;
+            minp = maxp - priceGap;
+
+            if (minp < 0) {
+               priceInputvalue[0].value = 0;
+               minp = 0;
+            }
+         }
+
+         // Check if the price gap is met
+         // and max price is within the range
+         if (diff >= priceGap && maxp <= rangeInputvalue[1].max) {
+            if (e.target.className === "min-input") {
+               rangeInputvalue[0].value = minp;
+               let value1 = rangeInputvalue[0].max;
+               rangevalue.style.left = `${(minp / value1) * 100}%`;
+            } else {
+               rangeInputvalue[1].value = maxp;
+               let value2 = rangeInputvalue[1].max;
+               rangevalue.style.right = `${100 - (maxp / value2) * 100}%`;
+            }
+         }
+      });
+
+      // Add event listeners to range input elements
+      for (let i = 0; i < rangeInputvalue.length; i++) {
+         rangeInputvalue[i].addEventListener("input", (e) => {
+            let minVal = parseInt(rangeInputvalue[0].value);
+            let maxVal = parseInt(rangeInputvalue[1].value);
+
+            let diff = maxVal - minVal;
+
+            // Check if the price gap is exceeded
+            if (diff < priceGap) {
+               // Check if the input is the min range input
+               if (e.target.className === "min-range") {
+                  rangeInputvalue[0].value = maxVal - priceGap;
+               } else {
+                  rangeInputvalue[1].value = minVal + priceGap;
+               }
+            } else {
+               // Update price inputs and range progress
+               priceInputvalue[0].value = minVal;
+               priceInputvalue[1].value = maxVal;
+               rangevalue.style.left = `${
+                  (minVal / rangeInputvalue[0].max) * 100
+               }%`;
+               rangevalue.style.right = `${
+                  100 - (maxVal / rangeInputvalue[1].max) * 100
+               }%`;
+            }
+         });
+      }
+   }
+}
+
+function devideNumber(start) {
+   let int = String(start);
+   if (int.length <= 3) return int;
+   let space = 0;
+   let number = "";
+
+   for (let i = int.length - 1; i >= 0; i--) {
+      if (space == 3) {
+         number = " " + number;
+         space = 0;
+      }
+      number = int.charAt(i) + number;
+      space++;
+   }
+
+   return number;
 }

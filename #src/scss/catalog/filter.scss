@@ -1,0 +1,149 @@
+.catalog-filter {
+   width: 100%;
+   position: sticky;
+   top: 120px;
+   height: fit-content;
+   &__header {
+      padding-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #00000026;
+   }
+
+   // .catalog-filter__title
+
+   &__title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      span {
+         width: 16px;
+         height: 16px;
+         flex: 0 0 16px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background-color: $colorPurple;
+         color: white;
+         font-family: $fontHelvetica;
+         font-size: 9.6px;
+         font-weight: 400;
+      }
+   }
+
+   // .catalog-filter__clear
+
+   &__reset {
+      font-family: $fontHelvetica;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      color: #00000066;
+      border-bottom: 1px solid #00000066;
+      svg {
+         width: 16px;
+         height: 16px;
+         flex: 0 0 16px;
+         rotate: 45deg;
+         path {
+            transition: 0;
+         }
+      }
+   }
+   &__main {
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      height: calc(100vh - 170px);
+   }
+
+   // .catalog-aside__section
+
+   &__section {
+      &:last-child {
+         border: none;
+      }
+   }
+}
+.filter-section {
+   padding-bottom: 15px;
+   border-bottom: 1px solid #00000026;
+   &__header {
+      cursor: pointer;
+      padding-top: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: black;
+      transition: 0.3s;
+      svg {
+         transition: 0.3s;
+         rotate: -90deg;
+      }
+      &.active {
+         padding-bottom: 15px;
+         svg {
+            rotate: 90deg;
+         }
+      }
+   }
+   &__subtitle {
+      font-weight: 500;
+   }
+   &__spoiler {
+   }
+   &__content {
+   }
+   &__checkboxes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 5px 0;
+      width: 100%;
+      &.c2 {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         row-gap: 15px;
+         column-gap: 30px;
+         width: fit-content;
+      }
+   }
+   &__colors {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      row-gap: 15px;
+      padding: 5px 0;
+      input {
+         display: none;
+      }
+      label {
+         cursor: pointer;
+         width: 36px;
+         height: 36px;
+         flex: 0 0 36px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 50%;
+         svg {
+            opacity: 0;
+            transition: 0.4s;
+         }
+      }
+      input:checked + label {
+         svg {
+            opacity: 1;
+         }
+      }
+   }
+   &__range {
+      padding-bottom: 5px;
+      & + & {
+         margin-top: 40px;
+      }
+   }
+}
