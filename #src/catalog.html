@@ -107,13 +107,25 @@
          <section class="catalog-content">
             <div class="container">
                <div class="catalog-content__wrapper">
+                  <button class="catalog-filter__open">
+                     <img src="img/icons/filter.svg" alt="">
+                     Фильтр
+                  </button>
                   <aside class="catalog-content__aside catalog-filter">
                      <div class="catalog-filter__header">
+                        <button class="catalog-filter__close slider-btn">
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                 fill="white" />
+                           </svg>
+                        </button>
                         <div class="catalog-filter__title body-text">
                            Фильтр
                            <span>9</span>
                         </div>
-                        <button class="catalog-filter__reset">
+                        <button class="catalog-filter__reset body-text">
                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path d="M8 3C8 11 8 9.66667 8 8M8 8H3M8 8H13M8 8V13" stroke="currentColor"
@@ -123,6 +135,7 @@
                         </button>
                      </div>
                      <main class="catalog-filter__main scrollbar-none">
+
                         <section class="catalog-filter__section filter-section">
                            <div class="filter-spoiler filter-section__header">
                               <div class="filter-section__subtitle body-text">Цена, ₽</div>
@@ -771,7 +784,124 @@
                               </div>
                            </div>
                         </section>
+                        <section class="catalog-filter__section filter-section">
+                           <div class="filter-spoiler filter-section__header">
+                              <div class="filter-section__subtitle body-text">Звук</div>
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="currentColor" />
+                              </svg>
+                           </div>
+                           <div class="filter-section__spoiler filter-spoiler__collapse collapse">
+                              <div class="filter-section__content">
+                                 <ul class="filters-section__spoilers">
+                                    <li class="filter-subitem">
+                                       <div class="filter-spoiler filter-subitem__header">
+                                          <div class="filter-section__subtitle body-text">Полифония</div>
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                                fill="currentColor" />
+                                          </svg>
+                                       </div>
+                                       <div class="collapse filter-spoiler__collapse filter-subitem__content">
+                                          <ul class="filter-section__checkboxes app-checkbox">
+                                             <li>
+                                                <input type="checkbox" name="subfilterSeria" id="subfilterSeria0"
+                                                   value="0">
+                                                <label for="subfilterSeria0">
+                                                   <div></div> <span>Silent Piano</span>
+                                                </label>
+                                             </li>
+
+                                             <li>
+                                                <input type="checkbox" name="subfilterSeria" id="subfilterSeria1"
+                                                   value="1">
+                                                <label for="subfilterSeria1">
+                                                   <div></div> <span>AvantGrand</span>
+                                                </label>
+                                             </li>
+                                             <li>
+                                                <input type="checkbox" name="subfilterSeria" id="subfilterSeria2"
+                                                   value="2">
+                                                <label for="subfilterSeria2">
+                                                   <div></div> <span>Clavinova</span>
+                                                </label>
+                                             </li>
+                                             <li>
+                                                <input type="checkbox" name="subfilterSeria" id="subfilterSeria3"
+                                                   value="3">
+                                                <label for="subfilterSeria3">
+                                                   <div></div> <span>Arius</span>
+                                                </label>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </li>
+                                    <li class="filter-subitem">
+                                       <div class="filter-spoiler filter-subitem__header">
+                                          <div class="filter-section__subtitle body-text">Полифония</div>
+                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                                fill="currentColor" />
+                                          </svg>
+                                       </div>
+                                       <div class="collapse filter-spoiler__collapse filter-subitem__content">
+                                          <ul class="filter-section__checkboxes app-checkbox">
+                                             <li>
+                                                <input type="checkbox" name="subfilterSeria1" id="subfilterSeria10"
+                                                   value="0">
+                                                <label for="subfilterSeria10">
+                                                   <div></div> <span>Silent Piano</span>
+                                                </label>
+                                             </li>
+
+                                             <li>
+                                                <input type="checkbox" name="subfilterSeria1" id="subfilterSeria11"
+                                                   value="1">
+                                                <label for="subfilterSeria11">
+                                                   <div></div> <span>AvantGrand</span>
+                                                </label>
+                                             </li>
+                                             <li>
+                                                <input type="checkbox" name="subfilterSeria1" id="subfilterSeria12"
+                                                   value="2">
+                                                <label for="subfilterSeria12">
+                                                   <div></div> <span>Clavinova</span>
+                                                </label>
+                                             </li>
+                                             <li>
+                                                <input type="checkbox" name="subfilterSeria1" id="subfilterSeria13"
+                                                   value="3">
+                                                <label for="subfilterSeria13">
+                                                   <div></div> <span>Arius</span>
+                                                </label>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </section>
                      </main>
+                     <a href="#" class="catalog-filter__result btn">
+                        <span>Показать 133 товара</span>
+                        <div>
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                 fill="white" />
+                           </svg>
+
+                        </div>
+                     </a>
                   </aside>
                   <div class="catalog-content__main catalog-main">
                      <div class="catalog-main__header">
@@ -2029,7 +2159,22 @@
                            </ul>
                         </div>
                      </div>
-                     <div class="catalog-main__text"></div>
+                     <div class="catalog-main__text body-text">
+                        <div>
+                           <h2 class="h2">Клавишные инструменты</h2>
+                           <p>Клавишные инструменты бренда Yamaha обладают уникальными характеристиками. С момента
+                              основания компании, технологии достигли высочайшего уровня. Корпорация Yamaha этим
+                              воспользовались и применили эти технологии во всей красоте! На данный момент клавишные
+                              инструменты Yamaha занимают лидирующие позиции во всем мире. </p>
+                           <p>
+                              Уровень доверия к этому бренду с годами становится только крепче! Инструменты бренда
+                              Yamaha практически никогда не ломаются, поэтому вам не придется беспокоиться о сервисе!
+                              Магазин Yamaha-Store является официальным дистрибьютором бренда Yamaha на территории
+                              Санкт-Петербурга! В нашем магазине вы можете с уверенностью купить клавишный инструмент и
+                              быть уверенными в том, что он имеет официальную гарантию и сервисную поддержку.
+                           </p>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>

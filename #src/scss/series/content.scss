@@ -1,0 +1,123 @@
+.series-content {
+   // .series-content__wrapper
+   background-color: #f1f1f1;
+   padding-top: 60px;
+   padding-bottom: 135px;
+   &__wrapper {
+   }
+
+   // .series-content__list
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 135px;
+   }
+
+   // .series-content__block
+
+   &__block {
+   }
+   @media (max-width: $tablet) {
+      padding-bottom: 90px;
+      &__list {
+         gap: 90px;
+      }
+   }
+   @media (max-width: $mobile) {
+      padding-top: 52px;
+      padding-bottom: 60px;
+      &__list {
+         gap: 60px;
+      }
+   }
+}
+.series-block {
+   // .series-block__preview
+
+   &__preview {
+      margin-bottom: 30px;
+      height: 400px;
+      position: relative;
+      &_bg {
+         position: absolute;
+         inset: 0;
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+      color: white;
+   }
+   &__content {
+      position: relative;
+      z-index: 1;
+      max-width: 332px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 auto;
+   }
+   // .series-block__title
+
+   &__title {
+   }
+
+   // .series-block__description
+
+   &__description {
+      margin-top: 30px;
+      margin-bottom: 40px;
+   }
+
+   // .series-block__btn
+
+   &__btn {
+      color: white;
+      display: flex;
+      background-color: transparent;
+      @include medium-14;
+      color: white;
+      height: 52px;
+      padding-left: 10px;
+      padding-right: 10px;
+      border: 1px solid #ffffff4d;
+      gap: 10px;
+      // pointer-events: none;
+      // opacity: 0;
+      transition: 0.4s;
+      div {
+         border: 1px solid #ffffff4d;
+      }
+      svg {
+         rotate: 180deg;
+      }
+   }
+
+   // .series-block__products
+
+   &__products {
+   }
+   @media (max-width: $tablet) {
+      &__description {
+         margin-top: 20px;
+         margin-bottom: 30px;
+      }
+   }
+   @media (max-width: $mobile) {
+      &__preview {
+         height: 529px;
+      }
+      &__btn {
+         font-size: 0;
+         gap: 0;
+         padding: 0;
+         height: unset;
+         border: none;
+      }
+   }
+}

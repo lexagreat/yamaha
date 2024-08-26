@@ -99,6 +99,12 @@
    // .catalog-main__text
 
    &__text {
+      div {
+         margin-top: 45px;
+         display: flex;
+         flex-direction: column;
+         gap: 30px;
+      }
    }
    @media (max-width: $tablet) {
       &__result {

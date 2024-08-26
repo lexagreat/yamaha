@@ -311,13 +311,15 @@ function homeAboutParallax() {
    });
 }
 function makeCatalogFilters() {
-   if (!document.querySelector(".catalog-filter")) return;
+   const filter = document.querySelector(".catalog-filter");
+   if (!filter) return;
    makeRange("#priceRange", 4000000, 100000);
    makeRange("#lengthRange", 2000, 10);
    makeRange("#widthRange", 200, 10);
    makeRange("#heightRange", 500, 10);
    makeRange("#weigthRange", 200, 5);
-
+   const openBtn = document.querySelector(".catalog-filter__open");
+   const closeBtn = document.querySelector(".catalog-filter__close");
    const spoilers = () => {
       const headers = document.querySelectorAll(".filter-spoiler");
       headers.forEach((item) => {
@@ -334,8 +336,18 @@ function makeCatalogFilters() {
          });
       });
    };
+   const open = () => {
+      filter.classList.add("open");
+      body.classList.add("lock");
+   };
+   const close = () => {
+      filter.classList.remove("open");
+      body.classList.remove("lock");
+   };
 
    spoilers();
+   openBtn.addEventListener("click", open);
+   closeBtn.addEventListener("click", close);
 }
 
 function accordion(linkSelector, contentSelector) {

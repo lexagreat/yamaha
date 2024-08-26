@@ -2,12 +2,17 @@
 .price-input-container {
    width: 100%;
 }
-
+.price-input {
+   gap: 30px;
+}
 .price-input .price-field {
    display: flex;
 
    gap: 10px;
    align-items: center;
+   @media (max-width: $tablet) {
+      flex: 1 1;
+   }
 }
 
 .price-field input {
@@ -15,9 +20,12 @@
    height: 35px;
    font-size: 14px;
    border-radius: 31px;
-   max-width: 87px;
+   max-width: 74px;
    padding-left: 10px;
    border: 1px solid #00000026;
+   @media (max-width: $tablet) {
+      max-width: calc(82px + 338 * ((100vw - 320px) / (1024 - 320)));
+   }
 }
 
 .price-input {
