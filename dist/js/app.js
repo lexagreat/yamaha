@@ -43,9 +43,14 @@ function headerWork() {
    };
    const animateHeaderColor = () => {
       if (window.scrollY > hero.clientHeight) {
-         header.classList.contains("dark") ? "" : header.classList.add("dark");
-      } else {
-         header.classList.remove("dark");
+         header.classList.remove("blur");
+         header.classList.contains("fill") ? "" : header.classList.add("fill");
+      } else if (window.scrollY < hero.clientHeight && window.scrollY > 0) {
+         header.classList.remove("fill");
+         header.classList.add("blur");
+      } else if (window.scrollY <= 0) {
+         header.classList.remove("fill");
+         header.classList.remove("blur");
       }
    };
    const animateHeaderDown = () => {

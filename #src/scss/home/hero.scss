@@ -94,6 +94,7 @@
    }
 
    .swiper {
+      overflow: hidden;
       .swiper-slide {
          max-height: 867px;
          height: 100vh;
@@ -111,7 +112,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 100%;
+            width: calc(100% + 5px);
             height: 100%;
             object-fit: cover;
             pointer-events: none;
