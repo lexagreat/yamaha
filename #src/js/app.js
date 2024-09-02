@@ -135,15 +135,18 @@ function initHomeHeroSlider() {
       },
    });
    const soundBtn = document.querySelector(".home-hero__sound .btn");
+   const soundWave = document.querySelector(".home-hero .sound-wave");
    soundBtn.addEventListener("click", () => {
       let isMuted = videos[0].muted ? true : false;
       videos.forEach((video) => {
          if (isMuted) {
             video.muted = false;
             soundBtn.innerHTML = "Выключить звук";
+            soundWave.classList.add("play");
          } else {
             video.muted = true;
             soundBtn.innerHTML = "Включить звук";
+            soundWave.classList.remove("play");
          }
       });
    });

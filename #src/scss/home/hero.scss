@@ -66,6 +66,9 @@
       top: 50%;
       left: 50%;
       translate: -50% -50%;
+      display: flex;
+      align-items: center;
+      gap: 15px;
       @media (max-width: $tablet) {
          position: relative;
          top: unset;
