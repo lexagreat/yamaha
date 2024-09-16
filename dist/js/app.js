@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
    homeAboutParallax();
    productCardWork();
    makeCatalogFilters();
+   initProductPageSlider();
 });
 
 function headerWork() {
@@ -42,12 +43,13 @@ function headerWork() {
       animateHeaderDown();
    };
    const animateHeaderColor = () => {
+      if (!hero) return;
       if (window.scrollY > hero.clientHeight) {
          header.classList.remove("blur");
          header.classList.contains("fill") ? "" : header.classList.add("fill");
       } else if (window.scrollY < hero.clientHeight && window.scrollY > 0) {
          header.classList.remove("fill");
-         header.classList.add("blur");
+         header.classList.contains("blur") ? "" : header.classList.add("blur");
       } else if (window.scrollY <= 0) {
          header.classList.remove("fill");
          header.classList.remove("blur");
@@ -61,7 +63,9 @@ function headerWork() {
          }
          let scrollDown = oldScrollTopPosition < scrollTopPosition;
          if (scrollDown) {
-            header.classList.add("hidden-down");
+            header.classList.contains("hidden-down")
+               ? ""
+               : header.classList.add("hidden-down");
          } else {
             header.classList.remove("hidden-down");
          }
@@ -101,9 +105,15 @@ function headerWork() {
       };
    };
 
+   const initColorTheme = () => {
+      if (!hero) {
+         header.classList.add("fill");
+      }
+   };
    window.addEventListener("scroll", animateHeaderOnScroll);
    animateHeaderOnScroll();
    burgerHover();
+   initColorTheme();
 }
 
 function initHomeHeroSlider() {
@@ -584,4 +594,16 @@ function devideNumber(start) {
    }
 
    return number;
+}
+
+function initProductPageSlider() {
+   if (!document.querySelector(".product-hero__gallery .swiper")) return;
+   const swiper = new Swiper(".product-hero__gallery .swiper", {
+      slidesPerView: 1,
+      speed: 700,
+      loop: true,
+      pagination: {
+         el: ".product-hero__gallery .swiper .swiper-pagination",
+      },
+   });
 }

@@ -65,6 +65,9 @@
       }
       .header__upper {
          border-color: transparent !important;
+         @media (max-width: $tablet) {
+            border-color: #0000004d !important;
+         }
          &::after {
             height: 66px;
             @media (max-width: $mobile) {
