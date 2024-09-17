@@ -538,6 +538,38 @@ function productPage() {
          },
       });
    }
+   const hoverOnDocuments = () => {
+      const items = document.querySelectorAll(".product-document");
+      if (!items.length) return;
+      items.forEach((item) => {
+         const bg = item.querySelector(".product-document__bg");
+         item.onmouseenter = (e) => {
+            let h = item.offsetHeight;
+
+            if (e.layerY > h / 2) {
+               // bg.style.color = "100% 0%;";
+               bg.style.transformOrigin = "100% 0%";
+            } else {
+               bg.style.transformOrigin = "0 100%";
+            }
+            bg.style.translate = "0 0 ";
+         };
+         item.onmouseleave = (e) => {
+            let h = item.offsetHeight;
+
+            if (e.layerY > h / 2) {
+               // bg.style.color = "100% 0%;";
+               bg.style.transformOrigin = "100% 0%";
+               bg.style.translate = "0 100%";
+            } else {
+               bg.style.translate = "0 -100%";
+               bg.style.transformOrigin = "0 100%";
+            }
+         };
+         item.onmousemove = (e) => {};
+      });
+   };
+   hoverOnDocuments();
    initProductPageSlider();
    initProductPageFeaturesSlider();
    tabs(".product-page__tabs input", ".product-page__tab");
