@@ -15,6 +15,7 @@
       }
    });
 })();
+gsap.registerPlugin(ScrollTrigger);
 const body = document.body;
 document.addEventListener("DOMContentLoaded", () => {
    headerWork();
@@ -30,7 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
    homeAboutParallax();
    productCardWork();
    makeCatalogFilters();
-   initProductPageSlider();
+   productPage();
+
+   animations();
 });
 
 function headerWork() {
@@ -310,6 +313,7 @@ function homeCardsSectionHover() {
 }
 function homeAboutParallax() {
    const section = document.querySelector(".home-about");
+   let ratio = 0.3;
    if (!section) return;
    const image = section.querySelector(".home-about__image img");
    let headerHeight = document.querySelector(".header").clientHeight;
@@ -323,7 +327,7 @@ function homeAboutParallax() {
          image.style.transform = `translate(0, 0px)`;
       }
       if (start < 0 && end > 0) {
-         let value = -1 * start * 0.3;
+         let value = -1 * start * ratio;
          image.style.transform = `translate(0, ${value}px)`;
       }
    });
@@ -366,117 +370,6 @@ function makeCatalogFilters() {
    spoilers();
    openBtn.addEventListener("click", open);
    closeBtn.addEventListener("click", close);
-}
-
-function accordion(linkSelector, contentSelector) {
-   // получаем линки
-   const openLinks = document.querySelectorAll(`${linkSelector}`);
-   // контенты
-   const contents = document.querySelectorAll(`${contentSelector}`);
-   if (openLinks.length > 0) {
-      for (let i = 0; i < openLinks.length; i++) {
-         let openLink = openLinks[i];
-         openLink.addEventListener("click", () => {
-            // все прячем
-            for (let j = 0; j < contents.length; j++) {
-               // если хоть один открывается - return
-               if (contents[j].classList.contains("collapsing")) {
-                  return;
-               } // Иначе
-               // все прячем
-               slideHide(contents[j]);
-            }
-            for (let j = 0; j < openLinks.length; j++) {
-               openLinks[j].classList.remove("active");
-            }
-            // записываем в переменную нужный таб
-            let content = openLink.nextElementSibling;
-            // работаем с классами линка
-            if (content.classList.contains("collapsing")) {
-               return;
-            } else if (content.classList.contains("collapse_show")) {
-               openLink.classList.remove("active");
-            } else {
-               openLink.classList.add("active");
-            }
-            // показываем нужный
-            slideShow(content);
-         });
-      }
-   }
-}
-
-function slideShow(el, duration = 500) {
-   // завершаем работу метода, если элемент содержит класс collapsing или collapse_show
-   if (
-      el.classList.contains("collapsing") ||
-      el.classList.contains("collapse_show")
-   ) {
-      return;
-   }
-   // удаляем класс collapse
-   el.classList.remove("collapse");
-   // сохраняем текущую высоту элемента в константу height (это значение понадобится ниже)
-   const height = el.offsetHeight;
-   // устанавливаем высоте значение 0
-   el.style["height"] = 0;
-   // не отображаем содержимое элемента, выходящее за его пределы
-   el.style["overflow"] = "hidden";
-   // создание анимации скольжения с помощью CSS свойства transition
-   el.style["transition"] = `height ${duration}ms ease`;
-   // добавляем класс collapsing
-   el.classList.add("collapsing");
-   // получим значение высоты (нам этого необходимо для того, чтобы просто заставить браузер выполнить перерасчет макета, т.к. он не сможет нам вернуть правильное значение высоты, если не сделает это)
-   el.offsetHeight;
-   // установим в качестве значения высоты значение, которое мы сохранили в константу height
-   el.style["height"] = `${height}px`;
-   // по истечении времени анимации this._duration
-   window.setTimeout(() => {
-      // удалим класс collapsing
-      el.classList.remove("collapsing");
-      // добавим классы collapse и collapse_show
-      el.classList.add("collapse");
-      el.classList.add("collapse_show");
-      // удалим свойства height, transition и overflow
-      el.style["height"] = "";
-      el.style["transition"] = "";
-      el.style["overflow"] = "";
-   }, duration);
-}
-function slideHide(el, duration = 500) {
-   // завершаем работу метода, если элемент содержит класс collapsing или collapse_show
-   if (
-      el.classList.contains("collapsing") ||
-      !el.classList.contains("collapse_show")
-   ) {
-      return;
-   }
-   // установим свойству height текущее значение высоты элемента
-   el.style["height"] = `${el.offsetHeight}px`;
-   // получим значение высоты
-   el.offsetHeight;
-   // установим CSS свойству height значение 0
-   el.style["height"] = 0;
-   // обрежем содержимое, выходящее за границы элемента
-   el.style["overflow"] = "hidden";
-   // добавим CSS свойство transition для осуществления перехода длительностью this._duration
-   el.style["transition"] = `height ${duration}ms ease`;
-   // удалим классы collapse и collapse_show
-   el.classList.remove("collapse");
-   el.classList.remove("collapse_show");
-   // добавим класс collapsing
-   el.classList.add("collapsing");
-   // после завершения времени анимации
-   window.setTimeout(() => {
-      // удалим класс collapsing
-      el.classList.remove("collapsing");
-      // добавим класс collapsing
-      el.classList.add("collapse");
-      // удалим свойства height, transition и overflow
-      el.style["height"] = "";
-      el.style["transition"] = "";
-      el.style["overflow"] = "";
-   }, duration);
 }
 
 function makeRange(blockSelector, max = 10000, gap = 500) {
@@ -595,15 +488,248 @@ function devideNumber(start) {
 
    return number;
 }
+function productPage() {
+   function initProductPageSlider() {
+      if (!document.querySelector(".product-hero__gallery .swiper")) return;
+      const swiper = new Swiper(".product-hero__gallery .swiper", {
+         slidesPerView: 1,
+         speed: 700,
+         loop: true,
+         pagination: {
+            el: ".product-hero__gallery .swiper .swiper-pagination",
+         },
+      });
+   }
 
-function initProductPageSlider() {
-   if (!document.querySelector(".product-hero__gallery .swiper")) return;
-   const swiper = new Swiper(".product-hero__gallery .swiper", {
-      slidesPerView: 1,
-      speed: 700,
-      loop: true,
-      pagination: {
-         el: ".product-hero__gallery .swiper .swiper-pagination",
-      },
-   });
+   function initProductPageFeaturesSlider() {
+      if (!document.querySelector(".product-features__textslider")) return;
+      let imageSlider = new Swiper(".product-features__imageslider", {
+         watchSlidesProgress: true,
+         speed: 700,
+         effect: "creative",
+         creativeEffect: {
+            prev: {
+               shadow: true,
+               translate: ["-20%", 0, -1],
+            },
+            next: {
+               translate: ["100%", 0, 0],
+            },
+         },
+      });
+      let textSlider = new Swiper(".product-features__textslider", {
+         parallax: true,
+         slidesPerView: 1,
+         speed: 700,
+         mousewheel: {
+            enabled: true,
+            forceToAxis: true,
+         },
+         effect: "fade",
+         thumbs: {
+            swiper: imageSlider,
+         },
+         pagination: {
+            el: ".product-features__pagination",
+         },
+         navigation: {
+            nextEl: ".product-features__footer .swiper-button-next",
+            prevEl: ".product-features__footer .swiper-button-prev",
+         },
+      });
+   }
+   initProductPageSlider();
+   initProductPageFeaturesSlider();
+   tabs(".product-page__tabs input", ".product-page__tab");
+
+   const shutter = document.querySelector(".product-actions__main");
+   const mobileShutter = () => {
+      const footer = document.querySelector(".footer");
+      if (window.innerWidth >= 1024) {
+         shutter.classList.remove("hidden");
+         return;
+      }
+      if (window.innerHeight - footer.getBoundingClientRect().top > 0) {
+         shutter.classList.contains("hidden")
+            ? ""
+            : shutter.classList.add("hidden");
+      } else {
+         shutter.classList.remove("hidden");
+      }
+   };
+   if (shutter) {
+      mobileShutter();
+      window.addEventListener("scroll", mobileShutter);
+      window.addEventListener("resize", mobileShutter);
+   }
+}
+
+function accordion(linkSelector, contentSelector) {
+   // получаем линки
+   const openLinks = document.querySelectorAll(`${linkSelector}`);
+   // контенты
+   const contents = document.querySelectorAll(`${contentSelector}`);
+   if (openLinks.length > 0) {
+      for (let i = 0; i < openLinks.length; i++) {
+         let openLink = openLinks[i];
+         openLink.addEventListener("click", () => {
+            // все прячем
+            for (let j = 0; j < contents.length; j++) {
+               // если хоть один открывается - return
+               if (contents[j].classList.contains("collapsing")) {
+                  return;
+               } // Иначе
+               // все прячем
+               slideHide(contents[j]);
+            }
+            for (let j = 0; j < openLinks.length; j++) {
+               openLinks[j].classList.remove("active");
+            }
+            // записываем в переменную нужный таб
+            let content = openLink.nextElementSibling;
+            // работаем с классами линка
+            if (content.classList.contains("collapsing")) {
+               return;
+            } else if (content.classList.contains("collapse_show")) {
+               openLink.classList.remove("active");
+            } else {
+               openLink.classList.add("active");
+            }
+            // показываем нужный
+            slideShow(content);
+         });
+      }
+   }
+}
+
+function slideShow(el, duration = 500) {
+   // завершаем работу метода, если элемент содержит класс collapsing или collapse_show
+   if (
+      el.classList.contains("collapsing") ||
+      el.classList.contains("collapse_show")
+   ) {
+      return;
+   }
+   // удаляем класс collapse
+   el.classList.remove("collapse");
+   // сохраняем текущую высоту элемента в константу height (это значение понадобится ниже)
+   const height = el.offsetHeight;
+   // устанавливаем высоте значение 0
+   el.style["height"] = 0;
+   // не отображаем содержимое элемента, выходящее за его пределы
+   el.style["overflow"] = "hidden";
+   // создание анимации скольжения с помощью CSS свойства transition
+   el.style["transition"] = `height ${duration}ms ease`;
+   // добавляем класс collapsing
+   el.classList.add("collapsing");
+   // получим значение высоты (нам этого необходимо для того, чтобы просто заставить браузер выполнить перерасчет макета, т.к. он не сможет нам вернуть правильное значение высоты, если не сделает это)
+   el.offsetHeight;
+   // установим в качестве значения высоты значение, которое мы сохранили в константу height
+   el.style["height"] = `${height}px`;
+   // по истечении времени анимации this._duration
+   window.setTimeout(() => {
+      // удалим класс collapsing
+      el.classList.remove("collapsing");
+      // добавим классы collapse и collapse_show
+      el.classList.add("collapse");
+      el.classList.add("collapse_show");
+      // удалим свойства height, transition и overflow
+      el.style["height"] = "";
+      el.style["transition"] = "";
+      el.style["overflow"] = "";
+   }, duration);
+}
+function slideHide(el, duration = 500) {
+   // завершаем работу метода, если элемент содержит класс collapsing или collapse_show
+   if (
+      el.classList.contains("collapsing") ||
+      !el.classList.contains("collapse_show")
+   ) {
+      return;
+   }
+   // установим свойству height текущее значение высоты элемента
+   el.style["height"] = `${el.offsetHeight}px`;
+   // получим значение высоты
+   el.offsetHeight;
+   // установим CSS свойству height значение 0
+   el.style["height"] = 0;
+   // обрежем содержимое, выходящее за границы элемента
+   el.style["overflow"] = "hidden";
+   // добавим CSS свойство transition для осуществления перехода длительностью this._duration
+   el.style["transition"] = `height ${duration}ms ease`;
+   // удалим классы collapse и collapse_show
+   el.classList.remove("collapse");
+   el.classList.remove("collapse_show");
+   // добавим класс collapsing
+   el.classList.add("collapsing");
+   // после завершения времени анимации
+   window.setTimeout(() => {
+      // удалим класс collapsing
+      el.classList.remove("collapsing");
+      // добавим класс collapsing
+      el.classList.add("collapse");
+      // удалим свойства height, transition и overflow
+      el.style["height"] = "";
+      el.style["transition"] = "";
+      el.style["overflow"] = "";
+   }, duration);
+}
+
+function tabs(linkSelector, contentSelector) {
+   const inputs = document.querySelectorAll(linkSelector);
+   const contents = document.querySelectorAll(contentSelector);
+   let value;
+   if (inputs.length) {
+      inputs.forEach((item) => {
+         item.addEventListener("change", () => {
+            if (item.checked) {
+               value = item.value;
+            }
+            contents.forEach((item) => {
+               item.classList.remove("active");
+               if (item.getAttribute("data-tab") == value) {
+                  item.classList.add("active");
+               }
+            });
+         });
+      });
+   }
+}
+
+function animations() {
+   const animateProductPleasure = () => {
+      const items = document.querySelectorAll(".product-pleasure__list li");
+      if (!items.length) return;
+      const borders = document.querySelectorAll(
+         ".product-pleasure__list li .b"
+      );
+      items.forEach((item) => {
+         gsap.from(item, {
+            scrollTrigger: {
+               trigger: item, // элемент, который должен запускать анимацию
+               start: "top 90%", // когда верх элемента достигает 80% высоты экрана
+               end: "top 80%", // когда низ элемента достигает 20% высоты экрана
+               // markers: true, // включить маркеры для визуальной отладки
+               scrub: 1.5,
+            },
+            x: -30,
+            color: "#fff",
+            duration: 1,
+         });
+      });
+      borders.forEach((item) => {
+         gsap.from(item, {
+            scrollTrigger: {
+               trigger: item, // элемент, который должен запускать анимацию
+               start: "top 90%", // когда верх элемента достигает 80% высоты экрана
+               end: "top 80%", // когда низ элемента достигает 20% высоты экрана
+               // markers: true, // включить маркеры для визуальной отладки
+               scrub: 1.5,
+            },
+            scaleX: 0,
+            duration: 1,
+         });
+      });
+   };
+   animateProductPleasure();
 }

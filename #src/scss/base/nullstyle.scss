@@ -111,3 +111,10 @@ svg path {
       display: none;
    }
 }
+
+[data-tab] {
+   display: none;
+   &.active {
+      display: block;
+   }
+}

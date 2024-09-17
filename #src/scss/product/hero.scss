@@ -1,4 +1,6 @@
 .product-hero {
+   position: relative;
+   z-index: 8;
    margin-bottom: 135px;
    margin-top: 10px;
    // .product-hero__wrapper
@@ -504,6 +506,10 @@
          background-color: #f1f1f1;
          z-index: 3;
          gap: 35px;
+         transition: 0.5s;
+         &.hidden {
+            translate: 0 100%;
+         }
       }
       &__cart {
          flex: 1;
