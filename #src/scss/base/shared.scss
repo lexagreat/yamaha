@@ -180,6 +180,9 @@
    display: none;
 }
 .app-checkbox {
+   span {
+      translate: 0 2px;
+   }
    input {
       display: none;
    }
@@ -221,7 +224,19 @@
       }
    }
 }
-
+.app-input {
+   height: 45px;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+   @include text-body;
+   color: black;
+   width: 100%;
+   &::placeholder {
+      color: rgba(0, 0, 0, 0.4);
+   }
+   @media (max-width: $mobile) {
+      font-size: 16px;
+   }
+}
 .circle {
    transition: 0.4s;
    border-radius: 50%;

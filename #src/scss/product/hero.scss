@@ -328,6 +328,7 @@
    // .product-price__parts
 
    &__parts {
+      color: black;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -366,6 +367,7 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      color: black;
       @include regular-12;
       line-height: 1;
       &:hover {
@@ -380,6 +382,10 @@
          display: flex;
          gap: 5px;
          align-items: center;
+         translate: 0 1px;
+         img {
+            translate: 0 -1px;
+         }
       }
    }
    @media (max-width: $mobile) {

@@ -1,0 +1,479 @@
+.product-modal {
+   // .product-modal__content
+   &__content {
+      max-height: 100dvh;
+      overflow-y: auto;
+   }
+   // .product-modal__wrapper
+
+   &__wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   // .product-modal__header
+
+   &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   // .product-modal__title
+
+   &__title {
+      text-transform: uppercase;
+   }
+
+   // .product-modal__close
+
+   &__close {
+   }
+   @media (max-width: $tablet) {
+      &__wrapper {
+         gap: 20px;
+      }
+   }
+   @media (max-width: $mobile) {
+      &__title {
+         @include h3-tablet;
+      }
+   }
+}
+.bonus-modal {
+   // .bonus-modal__content
+
+   &__content {
+      max-width: 485px;
+      background-color: white;
+      top: 0;
+      bottom: 0;
+      translate: 100%;
+      transition: 0.6s;
+   }
+
+   // .bonus-modal__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+   // .bonus-modal__item
+   &__equal {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      @include regular-12;
+      .circle {
+         border-color: rgba(0, 0, 0, 0.3);
+      }
+      div {
+         display: flex;
+         gap: 5px;
+         align-items: center;
+      }
+      span {
+         translate: 0 2px;
+      }
+   }
+   &__item {
+      & > * + * {
+         margin-top: 30px;
+      }
+   }
+
+   // .bonus-modal__block
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      h5 {
+         @include h5;
+         text-transform: uppercase;
+      }
+      div {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+      }
+   }
+   @media (max-width: $tablet) {
+      .product-page__tabs {
+         margin-left: -20px;
+      }
+      &__block {
+         h5 {
+            @include h5-tablet;
+         }
+      }
+   }
+   @media (max-width: $mobile) {
+      .product-page__tabs {
+         margin-left: -12px;
+         margin-right: -12px;
+         padding-left: 12px;
+         padding-right: 12px;
+      }
+   }
+}
+
+.application-modal {
+   // .application-modal__content
+
+   &__content {
+      max-width: 485px;
+   }
+
+   // .application-modal__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 55px;
+      @media (max-width: $tablet) {
+         gap: 60px;
+      }
+   }
+
+   // .application-modal__product
+
+   &__product {
+   }
+
+   // .application-modal__form
+
+   &__form {
+   }
+
+   // .application-modal__footer
+
+   &__footer {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .product-actions__cart {
+         width: 100%;
+         svg {
+            rotate: 180deg;
+         }
+      }
+   }
+
+   // .application-modal__check
+
+   &__check {
+      label {
+         gap: 12px;
+         color: rgba(0, 0, 0, 0.4);
+         @include regular-12;
+         a {
+            color: rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+         }
+      }
+      span {
+         translate: 0 2px;
+      }
+   }
+   @media (max-width: $tablet) {
+      &__footer {
+         .product-actions__cart {
+            flex: 0 0 52px;
+         }
+      }
+      &__check {
+         label {
+            gap: 7px;
+         }
+      }
+   }
+}
+.application-product {
+   // .application-product__image
+   display: flex;
+   gap: 15px;
+   padding: 15px 0;
+   border-top: 1px solid rgba(0, 0, 0, 0.15);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+   &__image {
+      flex: 0 0 124px;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
+
+   // .application-product__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+   }
+
+   // .application-product__title
+
+   &__title {
+      text-transform: uppercase;
+      flex: 1;
+      @include h5;
+   }
+
+   // .application-product__price
+
+   &__price {
+      @include medium-14;
+   }
+   @media (max-width: $tablet) {
+      &__image {
+         flex: 0 0 100px;
+      }
+      &__title {
+         @include h5-tablet;
+      }
+   }
+}
+.application-form {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   // .application-form__title
+
+   &__title {
+      text-transform: uppercase;
+      @include h5;
+   }
+
+   // .application-form__list
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+   }
+   @media (max-width: $tablet) {
+      gap: 15px;
+      &__title {
+         @include h5-tablet;
+      }
+      &__list {
+         gap: 10px;
+      }
+   }
+}
+.city-modal {
+   &__content {
+      max-width: 715px;
+   }
+}
+.delivery-modal {
+   // .delivery-modal__main
+
+   &__main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+   }
+
+   // .delivery-modal__search
+
+   &__search {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      flex: 1;
+   }
+
+   // .delivery-modal__input
+
+   &__input {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      input {
+         border: none;
+      }
+      svg {
+         path {
+            stroke: rgba(0, 0, 0, 0.4);
+         }
+      }
+   }
+
+   // .delivery-modal__map
+
+   &__map {
+   }
+
+   // .delivery-modal__price
+
+   &__price {
+      padding-top: 15px;
+      border-top: 1px solid rgba(0, 0, 0, 0.15);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+}
+.installment-modal {
+   // .installment-modal__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+   }
+
+   // .installment-modal__list
+
+   &__list {
+   }
+
+   // .installment-modal__items
+
+   &__items {
+      padding-top: 30px;
+      flex: 1;
+      padding-right: 36px;
+   }
+
+   // .installment-modal__item
+
+   &__item {
+   }
+   .product-actions__cart {
+      width: 100%;
+   }
+   .product-payment__items {
+      & > li {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         h4 {
+            text-transform: uppercase;
+            @include h5;
+            color: rgba(0, 0, 0, 0.85);
+         }
+         li {
+            @include text-body;
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      .product-actions__cart {
+         flex: unset;
+      }
+   }
+}
+
+.ukassa-vidget {
+   margin-bottom: 50px;
+   display: flex;
+   flex-direction: column;
+   gap: 19px;
+   padding: 15px;
+   border: 1px solid rgba(0, 0, 0, 0.15);
+   // .ukassa-vidget__header
+
+   &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+   }
+
+   // .ukassa-vidget__logo
+
+   &__logo {
+   }
+
+   // .ukassa-vidget__list
+
+   &__list {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      width: fit-content;
+      background-color: rgba(241, 241, 241, 1);
+      border-radius: 37px;
+      padding: 4px;
+      li {
+         input {
+            display: none;
+         }
+         label {
+            border-radius: 48px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 8px;
+            @include text-body;
+            color: black;
+            transition: 0.4s;
+         }
+         input:checked + label {
+            background-color: black;
+            color: white;
+         }
+      }
+   }
+
+   // .ukassa-vidget__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+   }
+
+   // .ukassa-vidget__upper
+
+   &__upper {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      span {
+         color: rgba(0, 0, 0, 0.85);
+         @include h4;
+      }
+   }
+
+   // .ukassa-vidget__pagination
+
+   &__pagination {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      li {
+         height: 4px;
+         flex: 0 0 39px;
+         transition: 0.4s;
+         border-radius: 28px;
+         background-color: rgba(0, 0, 0, 0.15);
+      }
+      li.active {
+         flex: 0 0 96px;
+         background-color: black;
+      }
+   }
+
+   // .ukassa-vidget__down
+
+   &__down {
+      display: flex;
+      align-items: center;
+      gap: 59px;
+      @include text-body;
+      color: rgba(0, 0, 0, 0.4);
+   }
+}

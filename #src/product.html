@@ -100,7 +100,7 @@
                                  </div>
                               </div>
                               <div class="product-price__footer">
-                                 <button class="product-price__parts">
+                                 <a href="#installmentModal" class="product-price__parts modal__link">
                                     <p>Частями 6 платежей <img src="img/icons/multiply.svg" alt=""> <span>103 300
                                           ₽</span></p>
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -109,8 +109,8 @@
                                           d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
                                           fill="white" />
                                     </svg>
-                                 </button>
-                                 <button href="#" class="product-price__bonus">
+                                 </a>
+                                 <a href="#bonusModal" class="product-price__bonus modal__link">
                                     <div class="circle circle24">
                                        <img src="img/icons/bonus.svg" alt="">
                                     </div>
@@ -118,7 +118,7 @@
                                        + 300 бонусов
                                        <img src="img/icons/hint.svg" alt="">
                                     </p>
-                                 </button>
+                                 </a>
                               </div>
                            </div>
                            <div class="product-info__color product-color">
@@ -159,7 +159,7 @@
                         </div>
                         <div class="product-info__actions product-actions">
                            <div class="product-actions__main">
-                              <a href="#" class="product-actions__cart home-garanty__link">
+                              <a href="#applicationModal" class="product-actions__cart home-garanty__link modal__link">
                                  <span class="desktop">Добавить в корзину</span>
                                  <span class="mobile">В корзину 919 990 ₽</span>
                                  <div>
@@ -197,8 +197,8 @@
                                  <img src="img/icons/product-page-delivery1.svg" alt="">
                               </div>
                               <div class="product-delivery__main">
-                                 <div class="product-delivery__title body-text">Доставка курьером, <a
-                                       href="#">Санкт-Петербург</a>
+                                 <div class="product-delivery__title body-text">Доставка курьером, <a href="#cityModal"
+                                       class="modal__link">Санкт-Петербург</a>
                                  </div>
                                  <p class="product-delivery__text">
                                     Сегодня
@@ -211,8 +211,8 @@
                                  <img src="img/icons/product-page-delivery2.svg" alt="">
                               </div>
                               <div class="product-delivery__main">
-                                 <div class="product-delivery__title body-text">Доставка DPD, <a
-                                       href="#">Санкт-Петербург</a>
+                                 <div class="product-delivery__title body-text">Доставка DPD, <a href="#deliveryModal"
+                                       class="modal__link">Санкт-Петербург</a>
                                  </div>
                                  <p class="product-delivery__text">
                                     2-3 дня
@@ -2280,6 +2280,7 @@
                   </div>
                </div>
             </div>
+
          </section>
          <section class="home-popular product-section section">
             <div class="container">
@@ -2985,7 +2986,367 @@
             </div>
          </section>
       </main>
-      @@include('html/footer.html', {})
+      <div class="modal product-modal bonus-modal" id="bonusModal">
+         <div class="product-modal__content modal__content bonus-modal__content scrollbar-none">
+
+
+            <div class="product-modal__wrapper">
+               <div class="product-modal__header">
+                  <h3 class="product-modal__title h3">бонусная программа</h3>
+                  <button class="modal__close product-modal__close circle">
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
+                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
+                     </svg>
+                  </button>
+               </div>
+               <div class="bonus-modal__main">
+                  <ul class="bonus-modal__list product-page__tabs body-text scrollbar-none">
+                     <li>
+                        <input checked type="radio" name="bonusModalTabs" id="bonusModalTabs0" value="bonusModalTabs0">
+                        <label for="bonusModalTabs0" class="header__link">Условия</label>
+                     </li>
+                     <li>
+                        <input type="radio" name="bonusModalTabs" id="bonusModalTabs1" value="bonusModalTabs1">
+                        <label for="bonusModalTabs1" class="header__link">Начисление</label>
+                     </li>
+                     <li>
+                        <input type="radio" name="bonusModalTabs" id="bonusModalTabs2" value="bonusModalTabs2">
+                        <label for="bonusModalTabs2" class="header__link">Порядок использовния </label>
+                     </li>
+                  </ul>
+                  <div class="bonus-modal__items">
+                     <div class="bonus-modal__item active" data-tab="bonusModalTabs0">
+                        <div>
+                           <p class="body-text">
+                              Бонусная программа — программа лояльности Yamaha.ru, в которой клиентам за каждую
+                              покупку начисляют бонусы, 1 бонус равен 1 рублю. Вы можете использовать бонусы
+                              при следующей покупке.a
+                           </p>
+                        </div>
+                        <div class="bonus-modal__equal">
+                           <div>
+                              <div class="circle circle24">
+                                 <img src="img/icons/bonus.svg" alt="">
+                              </div>
+                              <span>1 бонус</span>
+                           </div>
+                           <span>=</span>
+                           <div>
+                              <div class="circle circle24">
+                                 <img src="img/icons/rub.svg" alt="">
+                              </div>
+                              <span>1 рубль</span>
+                           </div>
+                        </div>
+                        <div class="bonus-modal__block">
+                           <h5>УСЛОВИЯ УЧАСТИЯ В бонусной программе</h5>
+                           <div class="body-text">
+                              <p>
+                                 Начисление Бонусов возможно только для физического лица, которое является
+                                 клиентом Yamaha.ru. Это должен быть потребитель, который покупает товары для
+                                 личного, домашнего или семейного использования, и которому на момент
+                                 регистрации исполнилось 18 лет.
+                              </p>
+                              <p>
+                                 Для участия в Программе лояльности и накопления бонусов необходимо
+                                 зарегистрироваться на сайте и совершить покупку. После регистрации на сайте
+                                 клиент автоматически становится участником программы лояльности и получает
+                                 Бонусы при совершении покупок. Количество начисленных Бонусов можно посмотреть
+                                 в личном кабинете.
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="bonus-modal__item" data-tab="bonusModalTabs1">
+                        <div>
+                           <p class="body-text">
+                              начисления
+                           </p>
+
+                        </div>
+                     </div>
+                     <div class="bonus-modal__item" data-tab="bonusModalTabs2">
+                        <div>
+                           <p class="body-text">
+                              порядок
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal product-modal application-modal" id="applicationModal">
+         <div class="product-modal__content modal__content application-modal__content scrollbar-none">
+
+
+            <div class="product-modal__wrapper">
+               <div class="product-modal__header">
+                  <h3 class="product-modal__title h3">оставить заявку</h3>
+                  <button class="modal__close product-modal__close circle">
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
+                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
+                     </svg>
+                  </button>
+               </div>
+               <div class="application-modal__main">
+                  <div class="application-modal__product application-product">
+                     <div class="application-product__image">
+                        <img src="img/product-page/1.jpg" alt="">
+                     </div>
+                     <div class="application-product__main">
+                        <div class="application-product__title">Цифровое пианино CLP-795GP </div>
+                        <div class="application-product__price">949 990 ₽</div>
+                     </div>
+                  </div>
+                  <div class="application-modal__form application-form">
+                     <div class="application-form__title">Контактные данные</div>
+                     <ul class="application-form__list">
+                        <li>
+                           <input type="text" placeholder="Имя" class="app-input">
+                        </li>
+                        <li><input type="text" placeholder="Фамилия" class="app-input"></li>
+                        <li><input type="text" data-phone placeholder="+7 (999) 999-99-99" class="app-input"></li>
+                     </ul>
+                  </div>
+                  <div class="application-modal__footer">
+                     <button type="button" class="product-actions__cart home-garanty__link">
+                        <span>Отправить</span>
+                        <div>
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                 fill="white" />
+                           </svg>
+
+                        </div>
+                     </button>
+                     <div class="application-modal__check app-checkbox">
+                        <input type="checkbox" name="applicationModalCheckbox" id="applicationModalCheckbox0" value="1">
+                        <label for="applicationModalCheckbox0">
+                           <div></div> <span>Нажимая на кнопку, вы соглашаетесь с <a href="#" target="_blank">политикой
+                                 конфиденциальности</a></span>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal product-modal city-modal" id="cityModal">
+         <div class="product-modal__content modal__content city-modal__content scrollbar-none">
+            <div class="product-modal__wrapper">
+               <div class="product-modal__header">
+                  <h3 class="product-modal__title h3">выберите город</h3>
+                  <button class="modal__close product-modal__close circle">
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
+                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
+                     </svg>
+                  </button>
+               </div>
+               <div class="city-modal__main">
+                  <div class="city-modal__input"></div>
+                  <ul class="city-modal__cities">
+                     <li>Санкт-Петербург</li>
+                     <li>Москва</li>
+                     <li>Самара</li>
+                     <li>Казань</li>
+                     <li>Екатеринбург</li>
+                     <li>Новосибирск</li>
+                     <li>Уфа</li>
+                     <li>Воронеж</li>
+                     <li>Ростов-на-Дону</li>
+                     <li>Волгоград</li>
+                     <li>Челябинск</li>
+                     <li>Пенза</li>
+                     <li>Нижний Новгород</li>
+                     <li>Саратов</li>
+                  </ul>
+                  <ul class="city-modal__list">
+                     <li class="city-modal__choose">
+                        <span class="city-modal__subtitle"></span>
+                        <ul class="city-modal__items">
+                           <li class="city-modal__item"></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal product-modal delivery-modal" id="deliveryModal">
+         <div class="product-modal__content modal__content city-modal__content scrollbar-none">
+
+
+            <div class="product-modal__wrapper">
+               <div class="product-modal__header">
+                  <h3 class="product-modal__title h3">доставка</h3>
+                  <button class="modal__close product-modal__close circle">
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
+                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
+                     </svg>
+                  </button>
+               </div>
+               <div class="delivery-modal__main">
+                  <div class="delivery-modal__search">
+                     <div class="delivery-modal__input">
+                        <button>
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                 d="M10.7749 5.25038C10.0442 5.24186 9.31912 5.37842 8.64162 5.65214C7.96411 5.92585 7.34766 6.33129 6.82797 6.84496C6.30828 7.35863 5.89569 7.97032 5.61409 8.64458C5.3325 9.31885 5.1875 10.0423 5.1875 10.773C5.1875 11.5037 5.3325 12.2271 5.61409 12.9014C5.89569 13.5757 6.30828 14.1874 6.82797 14.701C7.34766 15.2147 7.96411 15.6201 8.64162 15.8939C9.31912 16.1676 10.0442 16.3041 10.7749 16.2956C12.2284 16.2787 13.6167 15.6894 14.6385 14.6555C15.6604 13.6217 16.2335 12.2266 16.2335 10.773C16.2335 9.31936 15.6604 7.92432 14.6385 6.89047C13.6167 5.85662 12.2284 5.26731 10.7749 5.25038Z"
+                                 stroke="white" stroke-linecap="round" />
+                              <path d="M14.8945 14.8945L18.7518 18.7503" stroke="white" stroke-linecap="round" />
+                           </svg>
+                        </button>
+                        <input type="text" placeholder="Введите адрес или станцию метро" class="app-input">
+                     </div>
+                     <div class="delivery-modal__map">
+                        тут ифрайм
+                     </div>
+                  </div>
+                  <div class="delivery-modal__price h3">
+                     <span>стоимость доставки</span>
+                     <span>1 500 ₽</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal product-modal installment-modal" id="installmentModal">
+         <div class="product-modal__content modal__content bonus-modal__content scrollbar-none">
+
+
+            <div class="product-modal__wrapper">
+               <div class="product-modal__header">
+                  <h3 class="product-modal__title h3">Получи Цифровое пианино <br> CLP-795GP сейчас, а плати – потом
+                  </h3>
+                  <button class="modal__close product-modal__close circle">
+                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
+                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
+                     </svg>
+                  </button>
+               </div>
+               <div class="installment-modal__main">
+                  <ul class="installment-modal__list bonus-modal__list product-page__tabs body-text scrollbar-none">
+                     <li>
+                        <input checked type="radio" name="installmentModalTabs" id="installmentModalTabs0"
+                           value="installmentModalTabs0">
+                        <label for="installmentModalTabs0" class="header__link">ЮKassa</label>
+                     </li>
+                     <li>
+                        <input type="radio" name="installmentModalTabs" id="installmentModalTabs1"
+                           value="installmentModalTabs1">
+                        <label for="installmentModalTabs1" class="header__link">Долями</label>
+                     </li>
+                     <li>
+                        <input type="radio" name="installmentModalTabs" id="installmentModalTabs2"
+                           value="installmentModalTabs2">
+                        <label for="installmentModalTabs2" class="header__link">Посткредит</label>
+                     </li>
+                  </ul>
+                  <div class="installment-modal__items">
+                     <div class="installment-modal__item active" data-tab="installmentModalTabs0">
+                        <div class="ukassa-vidget">
+                           <div class="ukassa-vidget__header">
+                              <a href="#" class="ukassa-vidget__logo" target="_blank">
+                                 <img src="img/icons/ukassa.svg" alt="">
+                              </a>
+                              <ul class="ukassa-vidget__list">
+                                 <li>
+                                    <input checked type="radio" name="ukassaVidgetTimes" value="0"
+                                       id="ukassaVidgetTimes0">
+                                    <label for="ukassaVidgetTimes0">2 месяца</label>
+                                 </li>
+                                 <li>
+                                    <input type="radio" name="ukassaVidgetTimes" value="1" id="ukassaVidgetTimes1">
+                                    <label for="ukassaVidgetTimes1">4 месяца</label>
+                                 </li>
+                                 <li>
+                                    <input type="radio" name="ukassaVidgetTimes" value="2" id="ukassaVidgetTimes2">
+                                    <label for="ukassaVidgetTimes2">6 месяцев</label>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="ukassa-vidget__main">
+                              <div class="ukassa-vidget__upper">
+                                 <span>0 ₽ сейчас </span>
+                                 <ul class="ukassa-vidget__pagination">
+                                    <li class="active"></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                 </ul>
+                              </div>
+                              <div class="ukassa-vidget__down">
+                                 <p>26 авг <br>0 ₽</p>
+                                 <p>
+                                    ещё 6 платежей каждое 26 число <br>
+                                    по 10 082 ₽
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                        <ul class="product-payment__items">
+                           <li>
+                              <h4>Рассрочка от ЮKassa
+                              </h4>
+                              <ul>
+                                 <li>
+                                    Первый платеж вносится сразу, остальные частями
+                                    От 10 ₽ до 1500 000 ₽
+                                 </li>
+                                 <li>Оплата частями на 2, 4 или 6 месяцев</li>
+                                 <li>Оформление не требует анкет и документов</li>
+
+                              </ul>
+                           </li>
+
+                        </ul>
+                     </div>
+                     <div class="installment-modal__item" data-tab="installmentModalTabs1">Долями</div>
+                     <div class="installment-modal__item" data-tab="installmentModalTabs2">Посткредит</div>
+                  </div>
+                  <button type="button" class="product-actions__cart home-garanty__link">
+                     <span>Купить в рассрочку</span>
+                     <div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M8.72642 18.9999C8.86107 18.9999 8.99019 18.9468 9.0854 18.8521C9.18061 18.7574 9.2341 18.629 9.2341 18.4951C9.2341 18.3612 9.18061 18.2328 9.0854 18.1381C8.99019 18.0434 8.86107 17.9902 8.72642 17.9902C8.59178 17.9902 8.46265 18.0434 8.36744 18.1381C8.27224 18.2328 8.21875 18.3612 8.21875 18.4951C8.21875 18.629 8.27224 18.7574 8.36744 18.8521C8.46265 18.9468 8.59178 18.9999 8.72642 18.9999Z"
+                              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                           <path
+                              d="M17.1678 18.9999C17.3025 18.9999 17.4316 18.9468 17.5268 18.8521C17.622 18.7574 17.6755 18.629 17.6755 18.4951C17.6755 18.3612 17.622 18.2328 17.5268 18.1381C17.4316 18.0434 17.3025 17.9902 17.1678 17.9902C17.0332 17.9902 16.9041 18.0434 16.8088 18.1381C16.7136 18.2328 16.6602 18.3612 16.6602 18.4951C16.6602 18.629 16.7136 18.7574 16.8088 18.8521C16.9041 18.9468 17.0332 18.9999 17.1678 18.9999Z"
+                              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M4 6H6.41145L8.22003 16.1917H17.8658" stroke="white" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                           <path
+                              d="M8.21875 13.7937H17.617C17.6868 13.794 17.7545 13.7701 17.8086 13.7262C17.8627 13.6824 17.8998 13.6212 17.9136 13.5531L18.9987 8.15747H15.3896"
+                              stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </div>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </div>
+   @@include('html/footer.html', {})
    </div>
    @@include('html/scripts.html', {})
 </body>
