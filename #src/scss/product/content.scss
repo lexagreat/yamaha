@@ -547,6 +547,9 @@
          p {
             flex: 1;
             color: black;
+            a {
+               color: black;
+            }
          }
       }
    }
@@ -676,7 +679,7 @@
    overflow: hidden;
    @media (hover: hover) {
       &:hover {
-         border-color: transparent;
+         border-color: transparent !important;
       }
    }
    .circle {
@@ -738,6 +741,88 @@
       }
       &__main {
          width: calc(100% - 50px);
+      }
+   }
+}
+
+.product-payment {
+   // .product-payment__wrapper
+
+   &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 125px;
+   }
+
+   // .product-payment__item
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+   }
+
+   // .product-payment__title
+
+   &__title {
+   }
+
+   // .product-payment__list
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+   }
+
+   // .product-payment__subitem
+
+   &__subitem {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   // .product-payment__subtitle
+
+   &__subtitle {
+      text-transform: uppercase;
+   }
+
+   // .product-payment__content
+
+   &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      h4 {
+         @include medium-14;
+      }
+   }
+   &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      ul {
+         li {
+            display: flex;
+            gap: 6px;
+            padding-left: 4px;
+            &::before {
+               content: "•";
+            }
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      &__wrapper {
+         grid-template-columns: 1fr;
+         gap: 90px;
+      }
+   }
+   @media (max-width: $mobile) {
+      &__wrapper {
+         gap: 60px;
       }
    }
 }

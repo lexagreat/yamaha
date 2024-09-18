@@ -541,9 +541,12 @@ function productPage() {
    const hoverOnDocuments = () => {
       const items = document.querySelectorAll(".product-document");
       if (!items.length) return;
-      items.forEach((item) => {
+      items.forEach((item, i) => {
          const bg = item.querySelector(".product-document__bg");
          item.onmouseenter = (e) => {
+            if (i > 0) {
+               items[i - 1].style.borderBottomColor = "transparent";
+            }
             let h = item.offsetHeight;
 
             if (e.layerY > h / 2) {
@@ -555,6 +558,9 @@ function productPage() {
             bg.style.translate = "0 0 ";
          };
          item.onmouseleave = (e) => {
+            if (i > 0) {
+               items[i - 1].style.borderBottomColor = "";
+            }
             let h = item.offsetHeight;
 
             if (e.layerY > h / 2) {

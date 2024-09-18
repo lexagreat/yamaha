@@ -309,6 +309,7 @@
    // .product-price__hint
 
    &__hint {
+      cursor: pointer;
       display: flex;
       gap: 5px;
       align-items: center;
@@ -478,6 +479,13 @@
       @include medium-14;
       color: black;
       border-bottom: 1px solid black;
+      transition: 0.3s;
+      @media (hover: hover) {
+         &:hover {
+            color: rgba(0, 0, 0, 0.6);
+            border-color: rgba(0, 0, 0, 0.6);
+         }
+      }
    }
 
    // .product-actions__more
@@ -488,11 +496,21 @@
       gap: 5px;
       @include medium-14;
       line-height: 1;
+      transition: 0.3s;
       svg {
          translate: 0 -1px;
          rotate: 180deg;
          path {
             stroke: black;
+            transition: 0.3s;
+         }
+      }
+      @media (hover: hover) {
+         &:hover {
+            color: rgba(0, 0, 0, 0.6);
+            svg path {
+               stroke: rgba(0, 0, 0, 0.6);
+            }
          }
       }
    }
@@ -563,6 +581,13 @@
       a {
          color: black;
          border-bottom: 1px solid black;
+         transition: 0.3s;
+         @media (hover: hover) {
+            &:hover {
+               color: rgba(0, 0, 0, 0.6);
+               border-color: rgba(0, 0, 0, 0.6);
+            }
+         }
       }
    }
 

@@ -140,11 +140,15 @@
          font-size: 14px;
          line-height: calc(20 / 14);
          transition: 0.5s;
+         svg path {
+            transition: 0.5s;
+            fill: #ffffff66;
+         }
          &:hover {
             color: white;
             svg {
                path {
-                  stroke: white;
+                  fill: white;
                }
             }
          }
@@ -166,13 +170,13 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      span {
+         translate: 0 2px;
+      }
       svg {
          width: 20px;
          height: 20px;
          rotate: 180deg;
-         path {
-            transition: 0.5s;
-         }
       }
    }
 
