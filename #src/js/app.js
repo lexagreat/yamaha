@@ -32,8 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
    productCardWork();
    makeCatalogFilters();
    productPage();
-
    animations();
+   authModals();
+   orderPage();
 });
 
 function headerWork() {
@@ -774,6 +775,92 @@ function animations() {
    animateProductPleasure();
 }
 
+function authModals() {
+   const modal = document.querySelector("#authModal");
+   if (!modal) return;
+   tabs("[name='authModalTabs']", ".auth-modal__tab");
+
+   const validateTel = () => {
+      const input = document.querySelector("#authPhone");
+      const btn = document.querySelector("#regBtn");
+      input.addEventListener("input", (e) => {
+         if (e.target.value.length == 16) {
+            btn.classList.remove("disabled");
+         } else {
+            btn.classList.add("disabled");
+         }
+      });
+   };
+
+   const validateConfirmTel = () => {
+      const input = document.querySelector("#confirmNumberInput");
+      const btn = document.querySelector("#confirmNumberBtn");
+      const span = document.querySelector("#confirmTelOneMore");
+      const send = document.querySelector("#confirmTelOneMoreSend");
+      const spanTimer = span.querySelector("span");
+      let isSend = false;
+
+      const sendMessage = () => {
+         let timer = setInterval(() => {
+            spanTimer.innerHTML = spanTimer.innerHTML - 1;
+            if (spanTimer.innerHTML == 0) {
+               clearInterval(timer);
+               isSend = false;
+               spanTimer.innerHTML = 30;
+               send.style.display = "block";
+               span.style.display = "none";
+            }
+         }, 1000);
+      };
+
+      input.addEventListener("input", (e) => {
+         if (e.target.value) {
+            btn.classList.remove("disabled");
+         } else {
+            btn.classList.add("disabled");
+         }
+      });
+      btn.addEventListener("click", () => {
+         if (isSend) return;
+         isSend = true;
+
+         sendMessage();
+      });
+      send.addEventListener("click", (e) => {
+         send.style.display = "none";
+         span.style.display = "block";
+         sendMessage();
+      });
+   };
+
+   validateTel();
+   validateConfirmTel();
+}
+function orderPage() {
+   if (!document.querySelector("#orderAddressSelect")) return;
+   const orderAddressSelect = new Select("#orderAddressSelect", {
+      placeholder: "Город",
+      // selectedId: "volg",
+      data: [
+         {
+            id: "Москва",
+            value: "Москва",
+         },
+         {
+            id: "Волгоград",
+            value: "Волгоград",
+         },
+         {
+            id: "Батуми",
+            value: "Батуми",
+         },
+      ],
+      onSelect(item, select) {
+         select.classList.add("filled");
+      },
+   });
+   tabs("[name='orderTabs']", ".order-tab");
+}
 // Popup
 const popupLinks = document.querySelectorAll(".modal__link");
 const lockPadding = document.querySelectorAll(".lock-padding");
@@ -883,4 +970,102 @@ if (document.querySelectorAll("[data-phone]").length) {
    document.querySelectorAll("[data-phone]").forEach((item) => {
       const mask = IMask(item, maskOptions);
    });
+}
+class Select {
+   constructor(selector, options) {
+      this.$el = document.querySelector(selector);
+      this.options = options;
+      this.selectedId = options.selectedId;
+
+      this.#render();
+      this.#setup();
+   }
+   #render() {
+      this.$el.classList.add("select");
+      const { placeholder, data, selectedId } = this.options;
+      this.$el.innerHTML = this.getTemplate(data, placeholder, selectedId);
+      if (placeholder) {
+         this.$el
+            .querySelector(`[data-type="input"]`)
+            .classList.add("placeholder");
+      }
+   }
+   #setup() {
+      this.clickHandler = this.clickHandler.bind(this);
+      this.$el.addEventListener("click", this.clickHandler);
+      this.$value = this.$el.querySelector(`[data-type="input"] span`);
+   }
+   clickHandler(event) {
+      const { type } = event.target.dataset;
+      if (type === "input") {
+         this.toggle();
+      } else if (type === "item") {
+         const { id } = event.target.dataset;
+         this.select(id);
+      } else if (type === "back") {
+         this.toggle();
+      } else if (type === "header") {
+         this.toggle();
+      } else if (event.target.closest(".select__header")) [this.toggle()];
+   }
+   get current() {
+      return this.options.data.find((item) => item.id === this.selectedId);
+   }
+   select(id) {
+      this.$el
+         .querySelector(`[data-type="input"]`)
+         .classList.remove("placeholder");
+      this.selectedId = id;
+      this.$value.innerHTML = this.current.value;
+      this.$el.querySelectorAll(`[data-type="item"]`).forEach((item) => {
+         item.classList.remove("selected");
+      });
+      this.$el
+         .querySelector(`[data-id =${this.current.id}]`)
+         .classList.add("selected");
+      this.close();
+
+      if (this.options.onSelect) {
+         this.options.onSelect(this.current, this.$el);
+      }
+   }
+   open() {
+      this.$el.classList.add("open");
+   }
+   close() {
+      this.$el.classList.remove("open");
+   }
+   toggle() {
+      if (this.$el.classList.contains("open")) {
+         this.close();
+      } else {
+         this.open();
+      }
+   }
+   getTemplate(data, placeholder = `<span></span>`, selectedId) {
+      const items = data.map((item) => {
+         let cls = "";
+         if (item.id === selectedId) {
+            placeholder = item.value;
+            cls = "selected";
+         }
+         return `<li class="select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>`;
+      });
+      return `
+      <div class="select__header" data-type="header">
+      <div class="select__back" data-type="back"></div>
+      <div class="select__title" data-type="input">
+         <span>${placeholder}</span>
+         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6L8 10L12 6" stroke="#0E0E0E" stroke-linecap="round"/>
+         </svg>
+    </div>
+      </div>
+      <div class="select__content">
+         <ul class="select__list">
+            ${items.join("")}
+         </ul>
+      </div>
+      `;
+   }
 }

@@ -1,0 +1,82 @@
+.select {
+   cursor: pointer;
+   width: 100%;
+   position: relative;
+   &.open {
+      z-index: 2;
+      .select {
+         &__title {
+            svg {
+               rotate: 180deg;
+            }
+         }
+         &__content {
+            opacity: 1;
+            pointer-events: all;
+         }
+         &__back {
+            pointer-events: all;
+         }
+      }
+   }
+   &__back {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+   }
+   &__header {
+   }
+   &__content {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: 0.4s;
+      pointer-events: none;
+   }
+   &__title {
+      height: 64px;
+      padding-left: 16px;
+      padding-right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      svg {
+         transition: 0.3s;
+      }
+   }
+   &__list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .select__item:last-child {
+         border: 0;
+      }
+   }
+   &__item {
+   }
+}
+
+.app-select {
+   @include text-body;
+   .select {
+      &__content {
+         background-color: #f1f1f1;
+      }
+      &__list {
+         display: flex;
+         flex-direction: column;
+         gap: 12px;
+      }
+      &__title {
+         height: 45px;
+         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+         padding-right: 10px;
+         padding-left: 0;
+         &.placeholder {
+            color: rgba(0, 0, 0, 0.4);
+         }
+      }
+   }
+}

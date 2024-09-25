@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title": "Главная",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="main default-main">
+         <section class="breadcrumbs dark">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a href="index.html">Главная</a>
+                  </li>
+                  <li>
+                     <a href="catalog.html">Оформление заказа</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="order-page">
+            <div class="container">
+               <div class="order-page__wrapper order-success__wrapper">
+                  <h1 class="order-page__title h2">Заказ оформлен. спасибо!</h1>
+                  <div class="order-page__main">
+
+                     <div class="order-page__content">
+                        <div class="order-main">
+                           <div class="order-main__success">
+                              <p class="body-text">Менеджер магазина обработает ваш заказ и перезвонит вам для уточнения
+                                 деталей. Статус и
+                                 детали заказа вы можете отслеживать в личном кабинете.</p>
+                              <ul>
+                                 <li>
+                                    <a href="#" class="home-garanty__link">
+                                       <span>В личный кабинет</span>
+                                       <div>
+                                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                             <path
+                                                d="M19 19V17.6667C19 16.9594 18.6312 16.2811 17.9749 15.781C17.3185 15.281 16.4283 15 15.5 15H8.5C7.57174 15 6.6815 15.281 6.02513 15.781C5.36875 16.2811 5 16.9594 5 17.6667V19"
+                                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                             <path
+                                                d="M12 11C13.6569 11 15 9.65685 15 8C15 6.34315 13.6569 5 12 5C10.3431 5 9 6.34315 9 8C9 9.65685 10.3431 11 12 11Z"
+                                                stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                          </svg>
+
+                                       </div>
+                                    </a>
+                                 </li>
+                                 <li>
+                                    <a href="#" class="btn cart-aside__installment">
+                                       В каталог </span>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="order-news">
+                              <div class="order-news__header">
+                                 <h3 class="order-news__title h3">Новинки</h3>
+                                 <a href="catalog.html" class="product-section__link body-text">
+                                    <span>Смотреть все</span>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                       xmlns="http://www.w3.org/2000/svg">
+                                       <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                          fill="black" />
+                                    </svg>
+
+                                 </a>
+                              </div>
+                              <ul class="order-news__main">
+                                 <li>
+                                    <img src="img/cart/product1.png" alt="">
+                                 </li>
+                                 <li>
+                                    <img src="img/cart/product1.png" alt="">
+                                 </li>
+                                 <li>
+                                    <img src="img/cart/product1.png" alt="">
+                                 </li>
+                                 <li>
+                                    <img src="img/cart/product1.png" alt="">
+                                 </li>
+                                 <li>
+                                    <img src="img/cart/product1.png" alt="">
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <aside class="cart-aside order-aside order-page__aside">
+                           <div class="order-aside__header">
+                              <h2 class="cart-aside__title h3">заказ № 12664</h2>
+                              <ul class="product-card__tags">
+                                 <li class="black">
+                                    оплачен
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="cart-aside__main">
+                              <div class="product-delivery__item">
+
+                                 <div class="product-delivery__main">
+                                    <div class="product-delivery__title body-text">Доставка курьером, <a
+                                          href="#cityModal" class="modal__link">Санкт-Петербург</a>
+                                    </div>
+                                    <p class="product-delivery__text">
+                                       Сегодня
+                                       <span>от 500 ₽ </span>
+                                    </p>
+                                 </div>
+                              </div>
+                              <ul class="order-aside__products">
+                                 <li>
+                                    <img src="img/cart/product1.png" alt="">
+                                 </li>
+                                 <li>
+                                    <img src="img/cart/product1.png" alt="">
+                                 </li>
+                              </ul>
+
+                              <ul class="cart-aside__list body-text">
+                                 <li>
+                                    <span>Сумма заказа</span>
+                                    <span>1 839 980 ₽</span>
+                                 </li>
+                              </ul>
+                              <div class="order-aside__footer">
+                                 <span>По вопросам, связанным с заказом, свяжитесь с менеджером</span>
+                                 <a href="tel:8 800 777 8320"
+                                    class="footer__phone header__parent header__phone header__link">
+                                    <div class="header__circle">
+                                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                                          xmlns="http://www.w3.org/2000/svg">
+                                          <path
+                                             d="M8.7478 6.84142V8.31476C8.74785 8.42025 8.70788 8.52183 8.63597 8.599C8.56405 8.67618 8.46553 8.72321 8.3603 8.73059C8.17822 8.74309 8.02947 8.74976 7.91447 8.74976C4.23239 8.74976 1.2478 5.76517 1.2478 2.08309C1.2478 1.96809 1.25405 1.81934 1.26697 1.63726C1.27435 1.53202 1.32138 1.43351 1.39855 1.36159C1.47573 1.28968 1.57731 1.24971 1.6828 1.24976H3.15614C3.20782 1.2497 3.25768 1.26886 3.29602 1.30351C3.33437 1.33816 3.35847 1.38583 3.36364 1.43726C3.37322 1.53309 3.38197 1.60934 3.3903 1.66726C3.4731 2.24514 3.6428 2.80719 3.89364 3.33434C3.93322 3.41767 3.90739 3.51726 3.83239 3.57059L2.93322 4.21309C3.48299 5.49411 4.50386 6.51498 5.78489 7.06476L6.42655 6.16726C6.45278 6.13059 6.49104 6.10429 6.53468 6.09294C6.57831 6.0816 6.62454 6.08593 6.6653 6.10517C7.19239 6.35554 7.75429 6.52481 8.33197 6.60726C8.38989 6.61559 8.46614 6.62476 8.56114 6.63392C8.61248 6.63919 8.66005 6.66333 8.69462 6.70166C8.72918 6.74 8.74787 6.7898 8.7478 6.84142Z"
+                                             fill="white" />
+                                       </svg>
+                                    </div>
+                                    8 800 777 8320
+                                 </a>
+                              </div>
+                           </div>
+                        </aside>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+   </div>
+   </div>
+   @@include('html/footer.html', {})
+   </div>
+   @@include('html/scripts.html', {})
+</body>
+
+</html>

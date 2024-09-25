@@ -1,0 +1,130 @@
+.auth-modal {
+   // .auth-modal__content
+
+   &__content {
+   }
+
+   // .auth-modal__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+   }
+
+   // .auth-modal__header
+
+   &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   // .auth-modal__tabs
+
+   &__tabs {
+   }
+
+   // .auth-modal__close
+
+   &__close {
+   }
+
+   // .auth-modal__tab
+
+   &__tab {
+   }
+
+   // .auth-modal__main
+
+   &__main {
+   }
+   &__back {
+      color: rgba(0, 0, 0, 0.4);
+   }
+   @media (max-width: $tablet) {
+      &__tabs {
+         padding: 0;
+      }
+   }
+}
+.auth-main {
+   // .auth-main__header
+
+   &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   // .auth-main__title
+
+   &__title {
+   }
+
+   // .auth-main__subtitle
+
+   &__subtitle {
+   }
+
+   // .auth-main__form
+
+   &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      margin-top: 20px;
+      margin-bottom: 30px;
+      a {
+         width: fit-content;
+         align-self: flex-end;
+         @include regular-12;
+         color: black;
+         border-bottom: 1px solid black;
+         transition: 0.3s;
+         @media (hover: hover) {
+            &:hover {
+               opacity: 0.4;
+            }
+         }
+      }
+   }
+
+   // .auth-main__inputs
+
+   &__inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+   }
+
+   // .auth-main__footer
+
+   &__footer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      p {
+         color: rgba(0, 0, 0, 0.4);
+         @include regular-12;
+      }
+      .send {
+         display: none;
+         color: black;
+         cursor: pointer;
+      }
+   }
+   .home-garanty__link {
+      width: 100%;
+   }
+   @media (max-width: $tablet) {
+      &__header {
+         gap: 15px;
+      }
+      &__form {
+         margin-top: 15px;
+         margin-bottom: 35px;
+      }
+   }
+}
