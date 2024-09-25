@@ -371,6 +371,12 @@
       .product-actions__cart {
          flex: unset;
       }
+      &__list {
+         padding-left: 0;
+      }
+      &__items {
+         padding-right: 0;
+      }
    }
 }
 
@@ -420,6 +426,7 @@
             @include text-body;
             color: black;
             transition: 0.4s;
+            cursor: pointer;
          }
          input:checked + label {
             background-color: black;
@@ -465,6 +472,11 @@
          flex: 0 0 96px;
          background-color: black;
       }
+      @media (max-width: $tablet) {
+         li {
+            flex: 0 1 36px;
+         }
+      }
    }
 
    // .ukassa-vidget__down
@@ -475,5 +487,8 @@
       gap: 59px;
       @include text-body;
       color: rgba(0, 0, 0, 0.4);
+   }
+   @media (max-width: $tablet) {
+      margin-bottom: 30px;
    }
 }
