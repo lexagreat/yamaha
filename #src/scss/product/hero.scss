@@ -90,8 +90,15 @@
       border-radius: 50%;
       border: 1px solid rgba(0, 0, 0, 1);
       transition: 0.4s;
+      position: relative;
+      .sound-wave {
+         scale: 0.7;
+         span {
+            background-color: black;
+         }
+      }
       svg {
-         translate: 2px;
+         // translate: 2px;
          path {
             transition: 0.4s;
          }
@@ -100,6 +107,36 @@
          border-color: rgba(0, 0, 0, 0.6);
          svg path {
             fill: rgba(0, 0, 0, 0.6);
+         }
+      }
+      & > * {
+         transition: 0.3s;
+         opacity: 0;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         translate: -50% -50%;
+      }
+      svg.play {
+         opacity: 1;
+      }
+
+      &.playing {
+         svg.play {
+            opacity: 0;
+         }
+         .sound-wave {
+            opacity: 1;
+         }
+         @media (hover: hover) {
+            &:hover {
+               svg.pause {
+                  opacity: 1;
+               }
+               .sound-wave {
+                  opacity: 0;
+               }
+            }
          }
       }
    }

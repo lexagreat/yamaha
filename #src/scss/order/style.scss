@@ -97,7 +97,15 @@
       label {
          align-items: flex-start;
          div {
+            width: 15px;
+            height: 15px;
+            flex: 0 0 15px;
             translate: 0 2px;
+            &::after {
+               width: 15px;
+               height: 15px;
+               flex: 0 0 15px;
+            }
          }
       }
       p {

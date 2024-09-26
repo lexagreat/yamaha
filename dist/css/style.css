@@ -1536,6 +1536,285 @@ input[type=range]::-webkit-slider-thumb {
   color: rgba(0, 0, 0, 0.4);
 }
 
+.my-player {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 10;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  translate: 0 100%;
+}
+
+.my-player.show {
+  translate: 0 0;
+}
+
+.my-player__wrapper {
+  padding: 20px 0;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.my-player__item {
+  display: none;
+}
+
+.my-player__item.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.my-player__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70px;
+          flex: 0 0 70px;
+  height: 60px;
+}
+
+.my-player__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.my-player__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "NeueHelveticaPro", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.my-player__title {
+  color: white;
+}
+
+.my-player__subtitle {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.my-player__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.my-player__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+}
+
+.my-player__progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+.my-player__progress span {
+  translate: 0 3px;
+}
+
+.my-player__time {
+  font-family: "NeueHelveticaPro", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.my-player__close {
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 36px;
+          flex: 0 0 36px;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.my-player__close svg path {
+  stroke: white;
+}
+
+.player {
+  /* Для стилизации пройденной части в Webkit-браузерах */
+  /* Для синхронизации значения ползунка */
+}
+
+.player .play {
+  translate: 1px 0;
+}
+
+.player .pause {
+  display: none;
+}
+
+.player.playing .play {
+  display: none;
+}
+
+.player.playing .pause {
+  display: block;
+}
+
+.player__congs {
+  display: none;
+}
+
+.player__switch {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 32px;
+          flex: 0 0 32px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.player input[type=range] {
+  translate: 0 8px;
+  -webkit-appearance: none;
+  /* Убираем стандартное оформление */
+  width: 354px;
+  height: 2px;
+  background: transparent;
+}
+
+.player input[type=range]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.7);
+  /* Остаток — красный */
+  border-radius: 5px;
+}
+
+.player input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0px;
+  height: 0px;
+  background: #862a6f;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+  -webkit-transition: width 0.3s, height 0.3s;
+  transition: width 0.3s, height 0.3s;
+  margin-top: -10px;
+  /* Чтобы ползунок был в центре трека */
+}
+
+.player input[type=range]::-moz-range-track {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.7);
+  /* Остаток — красный */
+  border-radius: 5px;
+}
+
+.player input[type=range]::-moz-range-thumb {
+  width: 0px;
+  height: 0px;
+  background: #862a6f;
+  cursor: pointer;
+  border-radius: 50%;
+  -moz-transition: width 0.3s, height 0.3s;
+  transition: width 0.3s, height 0.3s;
+}
+
+.player input[type=range]:focus::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.player input[type=range]:focus::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.player input[type=range]::-ms-track {
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.player input[type=range]::-ms-fill-lower {
+  background: #862a6f;
+  /* Пройденная часть — черный */
+}
+
+.player input[type=range]::-ms-fill-upper {
+  background: rgba(255, 255, 255, 0.7);
+  /* Остаток — красный */
+}
+
+.player input[type=range]::-webkit-slider-runnable-track {
+  background: -webkit-gradient(linear, left top, right top, from(#862a6f), color-stop(#862a6f), color-stop(rgba(255, 255, 255, 0.7)), to(rgba(255, 255, 255, 0.7)));
+  background: linear-gradient(to right, #862a6f 0%, #862a6f var(--value, 0%), rgba(255, 255, 255, 0.7) var(--value, 0%), rgba(255, 255, 255, 0.7) 100%);
+}
+
+.player input[type=range] {
+  --value: 0%;
+}
+
+.player input[type=range]:focus {
+  outline: none;
+}
+
+.player input[type=range]::before {
+  content: "";
+}
+
 .product-section {
   background-color: #f1f1f1;
 }
@@ -3662,10 +3941,15 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s;
+  position: relative;
 }
 
-.product-hero__play svg {
-  translate: 2px;
+.product-hero__play .sound-wave {
+  scale: 0.7;
+}
+
+.product-hero__play .sound-wave span {
+  background-color: black;
 }
 
 .product-hero__play svg path {
@@ -3680,6 +3964,29 @@ input[type=range]::-webkit-slider-thumb {
 
 .product-hero__play:hover svg path {
   fill: rgba(0, 0, 0, 0.6);
+}
+
+.product-hero__play > * {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.product-hero__play svg.play {
+  opacity: 1;
+}
+
+.product-hero__play.playing svg.play {
+  opacity: 0;
+}
+
+.product-hero__play.playing .sound-wave {
+  opacity: 1;
 }
 
 .product-hero__prefs {
@@ -5947,7 +6254,20 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .order-main__radios label div {
+  width: 15px;
+  height: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 15px;
+          flex: 0 0 15px;
   translate: 0 2px;
+}
+
+.order-main__radios label div::after {
+  width: 15px;
+  height: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 15px;
+          flex: 0 0 15px;
 }
 
 .order-main__radios p {
@@ -8152,6 +8472,14 @@ input[type=range]::-webkit-slider-thumb {
   .product-card:hover .product-card__cart {
     opacity: 1;
     pointer-events: all;
+  }
+
+  .product-hero__play.playing:hover svg.pause {
+    opacity: 1;
+  }
+
+  .product-hero__play.playing:hover .sound-wave {
+    opacity: 0;
   }
 
   .product-actions__buy:hover {

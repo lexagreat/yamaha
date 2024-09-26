@@ -603,6 +603,43 @@ function productPage() {
       window.addEventListener("scroll", mobileShutter);
       window.addEventListener("resize", mobileShutter);
    }
+   function initPlayer() {
+      if (!document.querySelector("#productPagePlayer")) return;
+      let player = new Player("#productPagePlayer", {
+         data: [
+            {
+               src: "files/1.mp3",
+            },
+            {
+               src: "files/2.mp3",
+            },
+         ],
+         onNext(player) {
+            console.log(player);
+         },
+         onPause() {
+            btn.classList.remove("playing");
+         },
+         onPlay() {
+            btn.classList.add("playing");
+         },
+      });
+      const btn = document.querySelector(".product-hero__play");
+      const close = document.querySelector(".my-player__close");
+      btn.addEventListener("click", () => {
+         if (player.isPausedCurrent()) {
+            player.play();
+         } else {
+            player.pauseCurrent();
+         }
+         player.$el.classList.add("show");
+      });
+      close.addEventListener("click", () => {
+         player.$el.classList.remove("show");
+         player.stop();
+      });
+   }
+   initPlayer();
 }
 
 function accordion(linkSelector, contentSelector) {
@@ -1067,5 +1104,168 @@ class Select {
          </ul>
       </div>
       `;
+   }
+}
+class Player {
+   constructor(selector, options) {
+      this.$el = document.querySelector(selector);
+      this.$selector = selector;
+      this.options = options;
+      this.currentSongIndex = options?.current || 0;
+      this.#render();
+      this.items = this.$el.querySelectorAll(".player__songs li audio");
+      this.contents = this.$el.querySelectorAll(".player__item");
+      this.initProgressBar();
+      this.progressBar = this.$el.querySelector(".player__progress");
+      this.#setup();
+      this.setTime();
+   }
+   #render() {
+      this.$el.classList.add("player");
+      const { data } = this.options;
+      this.$el.insertAdjacentHTML("beforeend", this.getTemplate(data));
+   }
+   #setup() {
+      this.clickHandler = this.clickHandler.bind(this);
+      this.$el.addEventListener("click", this.clickHandler);
+   }
+
+   initProgressBar() {
+      const range = this.$el.querySelector('input[type="range"]');
+
+      range.addEventListener("input", (e) => {
+         clearInterval(this.timer);
+         this.setTime();
+         this.pauseCurrent();
+         range.style.setProperty("--value", `${e.target.value}%`);
+         this.items[this.currentSongIndex].currentTime =
+            (e.target.value / 100) * this.duration;
+      });
+   }
+   getTemplate(data) {
+      const items = data.map((item) => {
+         return `<li><audio src="${item.src}"></audio></li>`;
+      });
+      return `
+         <ul class="player__songs">
+            ${items.join("")}
+         </ul>
+      `;
+   }
+   playCurrent() {
+      this.items[this.currentSongIndex].play();
+      this.$el.classList.add("playing");
+      clearInterval(this.timer);
+      this.setTime();
+      if (this.options.onPlay) {
+         this.options.onPlay(this);
+      }
+   }
+   play(index) {
+      if (index) {
+         this.currentSongIndex = index;
+      }
+      this.playCurrent();
+   }
+   pauseCurrent() {
+      this.items[this.currentSongIndex].pause();
+      this.$el.classList.remove("playing");
+      if (this.options.onPause) {
+         this.options.onPause(this);
+      }
+      clearInterval(this.timer);
+      this.setTime();
+   }
+   isPausedCurrent() {
+      return this.items[this.currentSongIndex].paused;
+   }
+   toggleSwitch() {
+      if (this.isPausedCurrent()) {
+         this.playCurrent();
+      } else {
+         this.pauseCurrent();
+      }
+   }
+   onNextSong() {
+      if (this.currentSongIndex == this.options.data.length - 1) return;
+      this.pauseCurrent();
+      this.items[this.currentSongIndex].currentTime = 0.0;
+      this.currentSongIndex++;
+      this.playCurrent();
+      this.setTime();
+      this.makeActiveContent();
+      if (this.options.onNext) {
+         this.options.onNext(this);
+      }
+   }
+   onPrevSong() {
+      if (this.currentSongIndex <= 0) return;
+      this.pauseCurrent();
+      this.items[this.currentSongIndex].currentTime = 0.0;
+      this.currentSongIndex--;
+      this.playCurrent();
+      this.setTime();
+      this.makeActiveContent();
+      if (this.options.onPrev) {
+         this.options.onPrev(this);
+      }
+   }
+   makeActiveContent() {
+      this.contents.forEach((item) => {
+         item.classList.remove("active");
+      });
+      this.contents[this.currentSongIndex].classList.add("active");
+   }
+   clickHandler(event) {
+      let target = event.target;
+      if (target.closest(".player__switch")) {
+         this.toggleSwitch();
+      } else if (target.closest(".player__prev")) {
+         this.onPrevSong();
+      } else if (target.closest(".player__next")) {
+         this.onNextSong();
+      }
+   }
+   formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = Math.floor(seconds % 60);
+      // Добавляем 0 перед числом секунд, если оно меньше 10
+      return `${minutes}:${
+         remainingSeconds < 10 ? "0" : ""
+      }${remainingSeconds}`;
+   }
+   setTime() {
+      this.duration = this.items[this.currentSongIndex].duration;
+      const all = this.$el.querySelector(".player__time_all");
+      const current = this.$el.querySelector(".player__time_current");
+      all.innerHTML = this.formatTime(this.duration);
+      if (this.isPausedCurrent()) return;
+      this.timer = setInterval(() => {
+         this.setProgress();
+         current.innerHTML = this.formatTime(
+            this.items[this.currentSongIndex].currentTime
+         );
+         if (
+            this.duration - this.items[this.currentSongIndex].currentTime <
+            1
+         ) {
+            this.onNextSong();
+            clearInterval(this.timer);
+         }
+      }, 1000);
+   }
+   getProgress() {
+      return (
+         (this.items[this.currentSongIndex].currentTime / this.duration) * 100
+      );
+   }
+   setProgress() {
+      // let progressBar = this.$el.querySelector(".player__progress");
+      this.progressBar.value = this.getProgress();
+      this.progressBar.style.setProperty("--value", `${this.getProgress()}%`);
+   }
+   stop() {
+      this.pauseCurrent();
+      this.items[this.currentSongIndex].currentTime = 0.0;
    }
 }

@@ -1,0 +1,274 @@
+.my-player {
+   position: fixed;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: black;
+   z-index: 10;
+   transition: 0.3s;
+   translate: 0 100%;
+
+   &.show {
+      translate: 0 0;
+   }
+   &__wrapper {
+      padding: 20px 0;
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+   }
+   // .my-player__items
+
+   &__items {
+   }
+
+   // .my-player__item
+
+   &__item {
+      display: none;
+      &.active {
+         display: flex;
+         gap: 12px;
+         align-items: center;
+      }
+   }
+
+   // .my-player__image
+
+   &__image {
+      flex: 0 0 70px;
+      height: 60px;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   // .my-player__info
+
+   &__info {
+      display: flex;
+      flex-direction: column;
+      @include regular-12;
+   }
+
+   // .my-player__title
+
+   &__title {
+      color: white;
+   }
+
+   // .my-player__subtitle
+
+   &__subtitle {
+      color: rgba(255, 255, 255, 0.6);
+   }
+
+   // .my-player__controls
+
+   &__controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+   }
+
+   // .my-player__actions
+
+   &__actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+   }
+
+   // .my-player__prev
+
+   &__prev {
+   }
+
+   // .my-player__pause
+
+   &__pause {
+   }
+
+   // .my-player__next
+
+   &__next {
+   }
+
+   // .my-player__progress
+
+   &__progress {
+      display: flex;
+      gap: 15px;
+      span {
+         translate: 0 3px;
+      }
+   }
+
+   // .my-player__time
+
+   &__time {
+      @include regular-12;
+   }
+
+   // .my-player__close
+
+   &__close {
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      border-color: rgba(255, 255, 255, 0.3);
+      svg {
+         path {
+            stroke: white;
+         }
+      }
+   }
+}
+.player {
+   .play {
+      translate: 1px 0;
+   }
+   .pause {
+      display: none;
+   }
+   &.playing {
+      .play {
+         display: none;
+      }
+      .pause {
+         display: block;
+      }
+   }
+   // .player__item
+   &__congs {
+      display: none;
+   }
+   &__item {
+   }
+
+   // .player__prev
+
+   &__prev {
+   }
+
+   // .player__pause
+
+   &__switch {
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      flex: 0 0 32px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+   }
+
+   // .player__next
+
+   &__next {
+   }
+   &__time {
+      &_current {
+      }
+      &_all {
+      }
+   }
+   input[type="range"] {
+      translate: 0 8px;
+      -webkit-appearance: none; /* Убираем стандартное оформление */
+      width: 354px;
+      height: 2px;
+      background: transparent;
+   }
+
+   input[type="range"]::-webkit-slider-runnable-track {
+      height: 2px;
+      background: rgba(255, 255, 255, 0.7); /* Остаток — красный */
+      border-radius: 5px;
+   }
+
+   input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 0px;
+      height: 0px;
+      background: rgba(134, 42, 111, 1);
+      cursor: pointer;
+      border-radius: 50%;
+      position: relative;
+      transition: width 0.3s, height 0.3s;
+      margin-top: -10px; /* Чтобы ползунок был в центре трека */
+   }
+
+   input[type="range"]::-moz-range-track {
+      height: 2px;
+      background: rgba(255, 255, 255, 0.7); /* Остаток — красный */
+      border-radius: 5px;
+   }
+
+   input[type="range"]::-moz-range-thumb {
+      width: 0px;
+      height: 0px;
+      background: rgba(134, 42, 111, 1);
+      cursor: pointer;
+      border-radius: 50%;
+      transition: width 0.3s, height 0.3s;
+   }
+   input[type="range"]:focus::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+   }
+   input[type="range"]:focus::-webkit-slider-thumb {
+      width: 20px;
+      height: 20px;
+   }
+   input[type="range"]::-ms-track {
+      width: 100%;
+      height: 2px;
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+   }
+
+   input[type="range"]::-ms-fill-lower {
+      background: rgba(134, 42, 111, 1); /* Пройденная часть — черный */
+   }
+
+   input[type="range"]::-ms-fill-upper {
+      background: rgba(255, 255, 255, 0.7); /* Остаток — красный */
+   }
+
+   /* Для стилизации пройденной части в Webkit-браузерах */
+   input[type="range"]::-webkit-slider-runnable-track {
+      background: linear-gradient(
+         to right,
+         rgba(134, 42, 111, 1) 0%,
+         rgba(134, 42, 111, 1) var(--value, 0%),
+         rgba(255, 255, 255, 0.7) var(--value, 0%),
+         rgba(255, 255, 255, 0.7) 100%
+      );
+   }
+
+   /* Для синхронизации значения ползунка */
+   input[type="range"] {
+      --value: 0%;
+   }
+   input[type="range"]:focus {
+      outline: none;
+   }
+
+   input[type="range"]::before {
+      content: "";
+   }
+}
