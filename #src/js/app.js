@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
    animations();
    authModals();
    orderPage();
+   initSeriaSwiper();
 });
 
 function headerWork() {
@@ -57,6 +58,9 @@ function headerWork() {
       } else if (window.scrollY <= 0) {
          header.classList.remove("fill");
          header.classList.remove("blur");
+      }
+      if (document.querySelector(".about-hero")) {
+         header.classList.remove("fill");
       }
    };
    const animateHeaderDown = () => {
@@ -614,9 +618,6 @@ function productPage() {
                src: "files/2.mp3",
             },
          ],
-         onNext(player) {
-            console.log(player);
-         },
          onPause() {
             btn.classList.remove("playing");
          },
@@ -641,7 +642,275 @@ function productPage() {
    }
    initPlayer();
 }
+function initSeriaSwiper() {
+   if (!document.querySelector(".seria-more .swiper")) return;
+   let slider = new Swiper(".seria-more .swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 8,
+      speed: 800,
+      breakpoints: {
+         569: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+         },
+      },
+   });
+}
+function animations() {
+   const animateProductPleasure = () => {
+      const items = document.querySelectorAll(".product-pleasure__list li");
+      if (!items.length) return;
+      const borders = document.querySelectorAll(
+         ".product-pleasure__list li .b"
+      );
+      items.forEach((item) => {
+         gsap.from(item, {
+            scrollTrigger: {
+               trigger: item, // элемент, который должен запускать анимацию
+               start: "top 90%", // когда верх элемента достигает 80% высоты экрана
+               end: "top 80%", // когда низ элемента достигает 20% высоты экрана
+               // markers: true, // включить маркеры для визуальной отладки
+               scrub: 1.5,
+            },
+            x: -30,
+            color: "#fff",
+            duration: 1,
+         });
+      });
+      borders.forEach((item) => {
+         gsap.from(item, {
+            scrollTrigger: {
+               trigger: item, // элемент, который должен запускать анимацию
+               start: "top 90%", // когда верх элемента достигает 80% высоты экрана
+               end: "top 80%", // когда низ элемента достигает 20% высоты экрана
+               // markers: true, // включить маркеры для визуальной отладки
+               scrub: 1.5,
+            },
+            scaleX: 0,
+            duration: 1,
+         });
+      });
+   };
+   const animateAboutPage = () => {
+      const hero = document.querySelector(".about-hero");
+      const panel = document.querySelector(".about-hero__row");
+      const years = document.querySelectorAll(".about-year");
+      const yearsLists = document.querySelectorAll(".about-hero__list li");
+      // const main = document.querySelector(".about-main");
+      if (!panel) return;
+      gsap.to(panel, {
+         scrollTrigger: {
+            trigger: hero, // элемент, который должен запускать анимацию
+            start: "top -5%", // когда верх элемента достигает 80% высоты экрана
+            end: "bottom -1000%", // когда низ элемента достигает 20% высоты экрана
+            // markers: true, // включить маркеры для визуальной отладки
+            scrub: 1.5,
+            onEnter: () => {
+               panel.classList.add("sticky");
+               hero.classList.add("sticky");
+               // main.classList.add("sticky");
+            },
+            onLeave: () => {
+               panel.classList.remove("sticky");
+               hero.classList.remove("sticky");
+               // main.classList.remove("sticky");
+            },
+            onEnterBack: () => {
+               panel.classList.add("sticky");
+               hero.classList.add("sticky");
+               // main.classList.add("sticky");
+            },
+            onLeaveBack: () => {
+               panel.classList.remove("sticky");
+               hero.classList.remove("sticky");
+               // main.classList.remove("sticky");
+            },
+         },
+      });
+      gsap.to(hero, {
+         scrollTrigger: {
+            trigger: hero, // элемент, который должен запускать анимацию
+            start: "top top", // когда верхняя часть panel достигает верхней части экрана
+            end: "bottom -1000%", // когда нижняя часть panel достигает верхней части экрана
+            // markers: true, // включить маркеры для визуальной отладки
+            scrub: 1.5,
+            pin: true, // Фиксирует элемент
+            pinSpacing: false, // Убирает отступ после окончания анимации
+            // onEnter: () => {
+            //    console.log("onEnter");
+            // },
+            // onLeave: () => {
+            //    console.log("onLeave");
+            // },
+            // onEnterBack: () => {
+            //    console.log("onEnterBack");
+            // },
+            // onLeaveBack: () => {
+            //    console.log("onLeaveBack");
+            // },
+         },
+      });
+      years.forEach((year, index) => {
+         gsap.to(year, {
+            scrollTrigger: {
+               trigger: year, // элемент, который должен запускать анимацию
+               start: "top 300px", // когда верх элемента достигает 80% высоты экрана
+               end: "bottom +=300px", // когда низ элемента достигает 20% высоты экрана
+               // markers: true, // включить маркеры для визуальной отладки
+               scrub: 1.5,
+               onEnter: () => {
+                  // console.log("onEnter", index);
+                  yearsLists.forEach((item) => {
+                     item.classList.remove("active");
+                     item.style.translate = `0 ${-130 * index}px`;
+                  });
+                  yearsLists[index].classList.add("active");
+               },
+               onLeave: () => {
+                  // console.log("onLeave", index);
+               },
+               onEnterBack: () => {
+                  // console.log("onEnterBack", index);
+                  yearsLists.forEach((item) => {
+                     item.classList.remove("active");
+                     item.style.translate = `0 ${-130 * index}px`;
+                  });
+                  yearsLists[index].classList.add("active");
+               },
+               onLeaveBack: () => {
+                  // console.log("onLeaveBack", index);
+               },
+            },
+         });
+      });
+      gsap.utils.toArray(years).forEach((section, index) => {
+         // Скроллим каждую секцию
+         gsap.fromTo(
+            section,
+            { y: 0, zIndex: index }, // Исходная позиция
+            {
+               ease: "none",
+               scrollTrigger: {
+                  trigger: section,
+                  start: "top top", // Когда верх секции достигает верха окна
+                  end: "bottom top", // Когда низ секции достигает верха окна
+                  scrub: true, // Анимация связана со скроллом
+                  pin: true, // Можно выключить pin для плавности
+                  onEnter: () => {
+                     console.log("onEnter");
+                  },
+                  onLeave: () => {
+                     console.log("onLeave");
+                  },
+                  onEnterBack: () => {
+                     console.log("onEnterBack");
+                  },
+                  onLeaveBack: () => {
+                     console.log("onLeaveBack");
+                  },
+                  onUpdate: (self) => {
+                     if (
+                        section.offsetHeight * (1 - self.progress) <=
+                        window.innerHeight - 30
+                     )
+                        return;
+                     section.style.translate = `0px ${self.progress * -100}%`;
+                  },
+               },
+            }
+         );
+      });
+   };
+   animateProductPleasure();
+   animateAboutPage();
+}
 
+function authModals() {
+   const modal = document.querySelector("#authModal");
+   if (!modal) return;
+   tabs("[name='authModalTabs']", ".auth-modal__tab");
+
+   const validateTel = () => {
+      const input = document.querySelector("#authPhone");
+      const btn = document.querySelector("#regBtn");
+      input.addEventListener("input", (e) => {
+         if (e.target.value.length == 16) {
+            btn.classList.remove("disabled");
+         } else {
+            btn.classList.add("disabled");
+         }
+      });
+   };
+
+   const validateConfirmTel = () => {
+      const input = document.querySelector("#confirmNumberInput");
+      const btn = document.querySelector("#confirmNumberBtn");
+      const span = document.querySelector("#confirmTelOneMore");
+      const send = document.querySelector("#confirmTelOneMoreSend");
+      const spanTimer = span.querySelector("span");
+      let isSend = false;
+
+      const sendMessage = () => {
+         let timer = setInterval(() => {
+            spanTimer.innerHTML = spanTimer.innerHTML - 1;
+            if (spanTimer.innerHTML == 0) {
+               clearInterval(timer);
+               isSend = false;
+               spanTimer.innerHTML = 30;
+               send.style.display = "block";
+               span.style.display = "none";
+            }
+         }, 1000);
+      };
+
+      input.addEventListener("input", (e) => {
+         if (e.target.value) {
+            btn.classList.remove("disabled");
+         } else {
+            btn.classList.add("disabled");
+         }
+      });
+      btn.addEventListener("click", () => {
+         if (isSend) return;
+         isSend = true;
+
+         sendMessage();
+      });
+      send.addEventListener("click", (e) => {
+         send.style.display = "none";
+         span.style.display = "block";
+         sendMessage();
+      });
+   };
+
+   validateTel();
+   validateConfirmTel();
+}
+function orderPage() {
+   if (!document.querySelector("#orderAddressSelect")) return;
+   const orderAddressSelect = new Select("#orderAddressSelect", {
+      placeholder: "Город",
+      // selectedId: "volg",
+      data: [
+         {
+            id: "Москва",
+            value: "Москва",
+         },
+         {
+            id: "Волгоград",
+            value: "Волгоград",
+         },
+         {
+            id: "Батуми",
+            value: "Батуми",
+         },
+      ],
+      onSelect(item, select) {
+         select.classList.add("filled");
+      },
+   });
+   tabs("[name='orderTabs']", ".order-tab");
+}
 function accordion(linkSelector, contentSelector) {
    // получаем линки
    const openLinks = document.querySelectorAll(`${linkSelector}`);
@@ -774,130 +1043,6 @@ function tabs(linkSelector, contentSelector) {
    }
 }
 
-function animations() {
-   const animateProductPleasure = () => {
-      const items = document.querySelectorAll(".product-pleasure__list li");
-      if (!items.length) return;
-      const borders = document.querySelectorAll(
-         ".product-pleasure__list li .b"
-      );
-      items.forEach((item) => {
-         gsap.from(item, {
-            scrollTrigger: {
-               trigger: item, // элемент, который должен запускать анимацию
-               start: "top 90%", // когда верх элемента достигает 80% высоты экрана
-               end: "top 80%", // когда низ элемента достигает 20% высоты экрана
-               // markers: true, // включить маркеры для визуальной отладки
-               scrub: 1.5,
-            },
-            x: -30,
-            color: "#fff",
-            duration: 1,
-         });
-      });
-      borders.forEach((item) => {
-         gsap.from(item, {
-            scrollTrigger: {
-               trigger: item, // элемент, который должен запускать анимацию
-               start: "top 90%", // когда верх элемента достигает 80% высоты экрана
-               end: "top 80%", // когда низ элемента достигает 20% высоты экрана
-               // markers: true, // включить маркеры для визуальной отладки
-               scrub: 1.5,
-            },
-            scaleX: 0,
-            duration: 1,
-         });
-      });
-   };
-   animateProductPleasure();
-}
-
-function authModals() {
-   const modal = document.querySelector("#authModal");
-   if (!modal) return;
-   tabs("[name='authModalTabs']", ".auth-modal__tab");
-
-   const validateTel = () => {
-      const input = document.querySelector("#authPhone");
-      const btn = document.querySelector("#regBtn");
-      input.addEventListener("input", (e) => {
-         if (e.target.value.length == 16) {
-            btn.classList.remove("disabled");
-         } else {
-            btn.classList.add("disabled");
-         }
-      });
-   };
-
-   const validateConfirmTel = () => {
-      const input = document.querySelector("#confirmNumberInput");
-      const btn = document.querySelector("#confirmNumberBtn");
-      const span = document.querySelector("#confirmTelOneMore");
-      const send = document.querySelector("#confirmTelOneMoreSend");
-      const spanTimer = span.querySelector("span");
-      let isSend = false;
-
-      const sendMessage = () => {
-         let timer = setInterval(() => {
-            spanTimer.innerHTML = spanTimer.innerHTML - 1;
-            if (spanTimer.innerHTML == 0) {
-               clearInterval(timer);
-               isSend = false;
-               spanTimer.innerHTML = 30;
-               send.style.display = "block";
-               span.style.display = "none";
-            }
-         }, 1000);
-      };
-
-      input.addEventListener("input", (e) => {
-         if (e.target.value) {
-            btn.classList.remove("disabled");
-         } else {
-            btn.classList.add("disabled");
-         }
-      });
-      btn.addEventListener("click", () => {
-         if (isSend) return;
-         isSend = true;
-
-         sendMessage();
-      });
-      send.addEventListener("click", (e) => {
-         send.style.display = "none";
-         span.style.display = "block";
-         sendMessage();
-      });
-   };
-
-   validateTel();
-   validateConfirmTel();
-}
-function orderPage() {
-   if (!document.querySelector("#orderAddressSelect")) return;
-   const orderAddressSelect = new Select("#orderAddressSelect", {
-      placeholder: "Город",
-      // selectedId: "volg",
-      data: [
-         {
-            id: "Москва",
-            value: "Москва",
-         },
-         {
-            id: "Волгоград",
-            value: "Волгоград",
-         },
-         {
-            id: "Батуми",
-            value: "Батуми",
-         },
-      ],
-      onSelect(item, select) {
-         select.classList.add("filled");
-      },
-   });
-   tabs("[name='orderTabs']", ".order-tab");
-}
 // Popup
 const popupLinks = document.querySelectorAll(".modal__link");
 const lockPadding = document.querySelectorAll(".lock-padding");
@@ -1107,6 +1252,15 @@ class Select {
    }
 }
 class Player {
+   $el;
+   $selector;
+   options;
+   currentSongIndex;
+   items;
+   contents;
+   progressBar;
+   duration;
+   timer;
    constructor(selector, options) {
       this.$el = document.querySelector(selector);
       this.$selector = selector;
@@ -1140,6 +1294,9 @@ class Player {
          range.style.setProperty("--value", `${e.target.value}%`);
          this.items[this.currentSongIndex].currentTime =
             (e.target.value / 100) * this.duration;
+      });
+      range.addEventListener("change", (e) => {
+         this.playCurrent();
       });
    }
    getTemplate(data) {
@@ -1260,7 +1417,6 @@ class Player {
       );
    }
    setProgress() {
-      // let progressBar = this.$el.querySelector(".player__progress");
       this.progressBar.value = this.getProgress();
       this.progressBar.style.setProperty("--value", `${this.getProgress()}%`);
    }
@@ -1269,3 +1425,23 @@ class Player {
       this.items[this.currentSongIndex].currentTime = 0.0;
    }
 }
+
+const lenis = new Lenis({
+   duration: 2,
+   smooth: true,
+   direction: "vertical",
+   // lerp: 0.05,
+});
+window.lenis = lenis;
+
+//get scroll value
+lenis.on("scroll", (e) => {
+   // console.log(e);
+});
+
+function raf(time) {
+   lenis.raf(time);
+   requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);

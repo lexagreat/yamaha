@@ -10,11 +10,11 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="css/style.min.css">
-   <title>Оформление заказа</title>
+   <title>О компании</title>
 </head>
 
 <body>
-   <div class="wrapper">
+   <div class="wrapper about-page">
       <header class="header lock-padding">
    <div class="container">
       <div class="header__wrapper">
@@ -212,212 +212,178 @@
       </div>
    </div>
 </header>
-      <main class="main default-main">
-         <section class="breadcrumbs dark">
+      <main class="main">
+         <section class="about-hero hero">
             <div class="container">
-               <ul class="breadcrumbs__list scrollbar-none">
-                  <li>
-                     <a href="index.html">Главная</a>
-                  </li>
-                  <li>
-                     <a href="catalog.html">Оформление заказа</a>
-                  </li>
-               </ul>
-            </div>
-         </section>
-         <section class="order-page">
-            <div class="container">
-               <div class="order-page__wrapper">
-                  <h1 class="order-page__title h2">Оформление заказа</h1>
-                  <div class="order-page__main">
-                     <ul class="bonus-modal__list product-page__tabs body-text scrollbar-none">
+               <div class="about-hero__wrapper">
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs__list scrollbar-none">
                         <li>
-                           <input checked type="radio" name="orderTabs" id="orderTabs0" value="orderTabs0">
-                           <label for="orderTabs0" class="header__link">Физическое лицо</label>
+                           <a href="index.html">Главная</a>
                         </li>
                         <li>
-                           <input type="radio" name="orderTabs" id="orderTabs1" value="orderTabs1">
-                           <label for="orderTabs1" class="header__link">Юридическое лицо</label>
+                           <a href="catalog.html">Клавишные</a>
                         </li>
                      </ul>
-                     <div class="order-page__content">
-                        <div class="order-main">
-                           <div class="order-main__block">
-                              <h2 class="order-main__title h3">контактные данные</h2>
-                              <ul class="order-main__inputs">
-                                 <li>
-                                    <input type="text" class="app-input" placeholder="Имя*">
-                                 </li>
-                                 <li>
-                                    <input type="text" class="app-input" placeholder="Фамилия*">
-                                 </li>
-                                 <li>
-                                    <input type="text" class="app-input" data-phone placeholder="+7 (999) 999-99-99">
-                                 </li>
-                                 <li>
-                                    <input type="text" class="app-input" placeholder="E-mail*">
-                                 </li>
-                              </ul>
-                           </div>
-                           <div class="order-main__block">
-                              <h2 class="order-main__title h3">Адрес</h2>
-                              <ul class="order-main__inputs">
-                                 <li>
-                                    <div id="orderAddressSelect" class="app-select"></div>
-                                 </li>
-                                 <li>
-                                    <input type="text" class="app-input" placeholder="Улица, дом, квартира, офис*">
-                                 </li>
-                                 <li class="fw">
-                                    <input type="text" class="app-input" placeholder="Комментарий для курьера">
-                                 </li>
-                              </ul>
-                           </div>
-                           <div class="order-main__block">
-                              <h2 class="order-main__title h3">Способ доставки</h2>
-                              <ul class="order-main__radios app-checkbox">
-                                 <li>
-                                    <input type="radio" name="orderDeliveryWay" id="orderDeliveryWay0" value="0">
-                                    <label for="orderDeliveryWay0">
-                                       <div></div>
-                                       <p>
-                                          <span class="body-text">Доставка курьером, <a
-                                                href="#">Санкт-Петербург</a></span>
-                                          <span class="second">
-                                             Сегодня
-                                             от <c>250 ₽</c>
-                                          </span>
-                                       </p>
-                                    </label>
-                                 </li>
+                  </div>
+                  <div class="about-hero__row">
+                     <h1 class="about-hero__title h1">История бренда</h1>
+                     <ul class="about-hero__list">
+                        <li class="active">1887</li>
+                        <li>1898</li>
+                        <li>1896</li>
+                        <li>1900</li>
+                        <li>1945</li>
+                     </ul>
 
-                                 <li>
-                                    <input type="radio" name="orderDeliveryWay" id="orderDeliveryWay1" value="1">
-                                    <label for="orderDeliveryWay1">
-                                       <div></div>
-                                       <p>
-                                          <span class="body-text">Доставка DPD, <a href="#">Санкт-Петербург</a></span>
-                                          <span class="second">
-                                             2-3 дня
-                                             от <c>300 ₽</c>
-                                          </span>
-                                       </p>
-                                    </label>
-                                 </li>
-                              </ul>
-                           </div>
-                           <div data-tab="orderTabs0" class="order-tab active">
-                              <div class="order-main__block">
-                                 <h2 class="order-main__title h3">Способ оплаты</h2>
-                                 <ul class="order-main__radios app-checkbox">
-                                    <li>
-                                       <input type="radio" name="orderPaymentWay" id="orderPaymentWay0" value="0">
-                                       <label for="orderPaymentWay0">
-                                          <div></div>
-                                          <span>Банковской картой онлайн</span>
-                                       </label>
-                                    </li>
-
-                                    <li>
-                                       <input type="radio" name="orderPaymentWay" id="orderPaymentWay1" value="1">
-                                       <label for="orderPaymentWay1">
-                                          <div></div>
-                                          <span>Оплата при получении</span>
-                                       </label>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div data-tab="orderTabs1" class="order-tab">
-                              <div class="order-main__block">
-                                 <h2 class="order-main__title h3">Способ оплаты</h2>
-                                 <ul class="order-main__inputs">
-                                    <li>
-                                       <input type="text" class="app-input" placeholder="ИНН">
-                                    </li>
-                                    <li>
-                                       <input type="text" class="app-input" placeholder="Название компании*">
-                                    </li>
-                                    <li>
-                                       <input type="text" class="app-input" placeholder="Расчетный счет">
-                                    </li>
-                                    <li>
-                                       <input type="text" class="app-input" placeholder="Корреспондентский счет">
-                                    </li>
-                                    <li class="fw">
-                                       <input type="text" class="app-input" placeholder="Юридический адрес компании">
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                        <aside class="cart-aside order-aside order-page__aside">
-                           <h2 class="cart-aside__title h3">детали заказа</h2>
-                           <div class="cart-aside__main">
-                              <ul class="order-aside__products">
-                                 <li>
-                                    <img src="img/cart/product1.png" alt="">
-                                 </li>
-                                 <li>
-                                    <img src="img/cart/product1.png" alt="">
-                                 </li>
-                                 <li>
-                                    <a href="#" class="order-aside__show h3">+2</a>
-                                 </li>
-                              </ul>
-                              <div class="cart-aside__promo">
-                                 <input type="text" class="app-input" placeholder="Введите промокод ">
-                                 <button class="garanty-item__circle home-cards__link">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                       xmlns="http://www.w3.org/2000/svg">
-                                       <path fill-rule="evenodd" clip-rule="evenodd"
-                                          d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
-                                          fill="white"></path>
-                                    </svg>
-
-                                 </button>
-                              </div>
-
-                              <ul class="cart-aside__list body-text">
-                                 <li>
-                                    <span>2 товара</span><span>1 839 980 ₽</span>
-                                 </li>
-                                 <li>
-                                    <span>Скидка</span><span>0 ₽</span>
-                                 </li>
-                                 <li>
-                                    <span>Итого</span>
-                                    <span>1 839 980 ₽</span>
-                                 </li>
-                              </ul>
-                              <ul class="cart-aside__footer body-text">
-                                 <li>
-                                    <a href="#" class="home-garanty__link">
-                                       <span>Оформить заказ</span>
-                                       <div>
-                                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
-                                                fill="white" />
-                                          </svg>
-
-                                       </div>
-                                    </a>
-                                 </li>
-
-                              </ul>
-                           </div>
-                        </aside>
-                     </div>
                   </div>
                </div>
             </div>
          </section>
+         <section class="about-main">
+            <div class="container">
+               <div class="about-main__wrapper">
+                  <ul class="about-main__list">
+                     <li class="about-main__item about-year">
+                        <div class="about-year__upper">
+                           <span class="about-year__year body-text">1887 год</span>
+                           <div class="about-year__content">
+                              <h2 class="about-year__title h2">Основание компании</h2>
+                              <div class="about-year__text">Корпорация Yamaha была основана в Японии в 1887 году
+                                 и начала свою деятельность с производства язычковых органов (фисгармоний). Тогда она
+                                 называлась Nippon Gakki Co., Ltd. С тех пор корпорация Yamaha выросла в крупнейшего в
+                                 мире производителя всех видов музыкальных инструментов и стала ведущим производителем
+                                 аудио/видео продукции, полупроводников и прочих товаров, имеющих отношение к
+                                 компьютерам, спортивных товаров, бытовой техники, специальных сплавов, инструментов и
+                                 промышленных роботов.</div>
+                              <div class="about-year__text">Корпорация Yamaha была основана в Японии в 1887 году
+                                 и начала свою деятельность с производства язычковых органов (фисгармоний). Тогда она
+                                 называлась Nippon Gakki Co., Ltd. С тех пор корпорация Yamaha выросла в крупнейшего в
+                                 мире производителя всех видов музыкальных инструментов и стала ведущим производителем
+                                 аудио/видео продукции, полупроводников и прочих товаров, имеющих отношение к
+                                 компьютерам, спортивных товаров, бытовой техники, специальных сплавов, инструментов и
+                                 промышленных роботов.</div>
+                              <div class="about-year__text">Корпорация Yamaha была основана в Японии в 1887 году
+                                 и начала свою деятельность с производства язычковых органов (фисгармоний). Тогда она
+                                 называлась Nippon Gakki Co., Ltd. С тех пор корпорация Yamaha выросла в крупнейшего в
+                                 мире производителя всех видов музыкальных инструментов и стала ведущим производителем
+                                 аудио/видео продукции, полупроводников и прочих товаров, имеющих отношение к
+                                 компьютерам, спортивных товаров, бытовой техники, специальных сплавов, инструментов и
+                                 промышленных роботов.</div>
+                              <div class="about-year__text">Корпорация Yamaha была основана в Японии в 1887 году
+                                 и начала свою деятельность с производства язычковых органов (фисгармоний). Тогда она
+                                 называлась Nippon Gakki Co., Ltd. С тех пор корпорация Yamaha выросла в крупнейшего в
+                                 мире производителя всех видов музыкальных инструментов и стала ведущим производителем
+                                 аудио/видео продукции, полупроводников и прочих товаров, имеющих отношение к
+                                 компьютерам, спортивных товаров, бытовой техники, специальных сплавов, инструментов и
+                                 промышленных роботов.</div>
+                           </div>
+                        </div>
+                        <div class="about-year__down">
+                           <ul class="about-year__gallery">
+                              <li>
+                                 <img src="img/about/year1-1.png" alt="">
+                              </li>
+                              <li>
+                                 <img src="img/about/year1-2.png" alt="">
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="about-main__item about-year">
+                        <div class="about-year__upper">
+                           <span class="about-year__year body-text">1898 год</span>
+                           <div class="about-year__content">
+                              <h2 class="about-year__title h2">логотип компании</h2>
+                              <div class="about-year__text">В 1898 году камертон, инструмент, используемый для настройки
+                                 и других целей, был учрежден в качестве фирменного знака. С тех пор использовались
+                                 различные "знаки камертона", а логотип Yamaha, представляющий собой комбинацию знака
+                                 камертона и логотипа Yamaha, использовался в качестве символа Yamaha. "Дизайн реверса"
+                                 1967 года был принят в качестве стандартной версии знака.</div>
+                           </div>
+                        </div>
+                        <div class="about-year__down">
+                           <ul class="about-year__gallery">
+                              <li style="grid-column: span 2;">
+                                 <img src="img/about/year3-1.png" alt="">
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="about-main__item about-year">
+                        <div class="about-year__upper">
+                           <span class="about-year__year body-text">1887 год</span>
+                           <div class="about-year__content">
+                              <h2 class="about-year__title h2">Основание компании</h2>
+                              <div class="about-year__text">Корпорация Yamaha была основана в Японии в 1887 году
+                                 и начала свою деятельность с производства язычковых органов (фисгармоний). Тогда она
+                                 называлась Nippon Gakki Co., Ltd. С тех пор корпорация Yamaha выросла в крупнейшего в
+                                 мире производителя всех видов музыкальных инструментов и стала ведущим производителем
+                                 аудио/видео продукции, полупроводников и прочих товаров, имеющих отношение к
+                                 компьютерам, спортивных товаров, бытовой техники, специальных сплавов, инструментов и
+                                 промышленных роботов.</div>
+                           </div>
+                        </div>
+                        <div class="about-year__down">
+                           <ul class="about-year__gallery">
+                              <li>
+                                 <img src="img/about/year1-1.png" alt="">
+                              </li>
+                              <li>
+                                 <img src="img/about/year1-2.png" alt="">
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="about-main__item about-year">
+                        <div class="about-year__upper">
+                           <span class="about-year__year body-text">1898 год</span>
+                           <div class="about-year__content">
+                              <h2 class="about-year__title h2">логотип компании</h2>
+                              <div class="about-year__text">В 1898 году камертон, инструмент, используемый для настройки
+                                 и других целей, был учрежден в качестве фирменного знака. С тех пор использовались
+                                 различные "знаки камертона", а логотип Yamaha, представляющий собой комбинацию знака
+                                 камертона и логотипа Yamaha, использовался в качестве символа Yamaha. "Дизайн реверса"
+                                 1967 года был принят в качестве стандартной версии знака.</div>
+                           </div>
+                        </div>
+                        <div class="about-year__down">
+                           <ul class="about-year__gallery">
+                              <li style="grid-column: span 2;">
+                                 <img src="img/about/year3-1.png" alt="">
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                     <li class="about-main__item about-year">
+                        <div class="about-year__upper">
+                           <span class="about-year__year body-text">1898 год</span>
+                           <div class="about-year__content">
+                              <h2 class="about-year__title h2">логотип компании</h2>
+                              <div class="about-year__text">В 1898 году камертон, инструмент, используемый для настройки
+                                 и других целей, был учрежден в качестве фирменного знака. С тех пор использовались
+                                 различные "знаки камертона", а логотип Yamaha, представляющий собой комбинацию знака
+                                 камертона и логотипа Yamaha, использовался в качестве символа Yamaha. "Дизайн реверса"
+                                 1967 года был принят в качестве стандартной версии знака.</div>
+                           </div>
+                        </div>
+                        <div class="about-year__down">
+                           <ul class="about-year__gallery">
+                              <li style="grid-column: span 2;">
+                                 <img src="img/about/year3-1.png" alt="">
+                              </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+         <section class="about-last">
+            <img src="img/about/about-lats.png" alt="">
+         </section>
       </main>
-   </div>
-   </div>
-   <footer class="footer">
+      <footer class="footer">
    <div class="container">
       <div class="footer__wrapper">
          <div class="footer__upper">
@@ -629,6 +595,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/app.js"></script>
+
 </body>
 
 </html>

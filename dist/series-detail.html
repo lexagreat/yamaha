@@ -10,7 +10,7 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="css/style.min.css">
-   <title>Корзина</title>
+   <title>Серия детальная</title>
 </head>
 
 <body>
@@ -212,235 +212,254 @@
       </div>
    </div>
 </header>
-      <main class="main default-main">
-         <section class="breadcrumbs dark">
+      <main class="main">
+         <section class="home-about seria-hero hero">
+            <div class="home-about__image">
+               <img src="img/series/detail-hero.png" alt="">
+            </div>
             <div class="container">
-               <ul class="breadcrumbs__list scrollbar-none">
-                  <li>
-                     <a href="index.html">Главная</a>
-                  </li>
-                  <li>
-                     <a href="catalog.html">Корзина</a>
-                  </li>
-               </ul>
+               <div class="home-about__wrapper">
+                  <div class="breadcrumbs">
+                     <ul class="breadcrumbs__list scrollbar-none">
+                        <li>
+                           <a href="index.html">Главная</a>
+                        </li>
+                        <li>
+                           <a href="catalog.html">Клавишные</a>
+                        </li>
+                     </ul>
+                  </div>
+                  <h2 class="home-about__title">Silent Piano</h2>
+                  <p class="home-about__text body-text">Цифровые фортепиано с характером концертного рояля</p>
+                  <a href="#" class="home-about__link btn">
+                     <span>Товары из серии</span>
+                     <div>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                              fill="white" />
+                        </svg>
+
+                     </div>
+                  </a>
+
+               </div>
+            </div>
+
+         </section>
+         <section class="seria-about">
+            <div class="container">
+               <div class="seria-about__wrapper">
+                  <span class="seria-about__span body-text">О серии</span>
+                  <div class="seria-about__main">
+                     <h2 class="seria-about__title h2">Днем это всемирно известное акустическое пианино. Ночью соседи
+                        ничего не услышат</h2>
+                     <p class="body-text seria-about__description">Благодаря технологии SILENT Piano™ в ваших наушниках
+                        звучит музыка лучших
+                        мировых исполнителей. Просто переключите акустическое пианино Yamaha в бесшумный режим, и наша
+                        цифровая технология настолько точно воспроизведет акустические тона, оттенки цветов и резонанс,
+                        что вы почти забудете, что на вас надеты наушники.</p>
+                  </div>
+                  <div class="seria-about__image">
+                     <img src="img/series/detail-about.png" alt="">
+                  </div>
+               </div>
             </div>
          </section>
-         <section class="cart-page">
+         <section class="product-features">
             <div class="container">
-               <div class="cart-page__wrapper">
-                  <h1 class="cart-page__title h2">корзина
-                     <span>(2)</span>
-                  </h1>
-                  <div class="cart-page__main">
-                     <div class="cart-page__content">
-                        <ul class="cart-page__actions body-text">
-                           <li>
-                              <button class="cart-page__like">
-                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                       d="M18.7663 6.2377C18.3753 5.84531 17.9111 5.53404 17.4002 5.32168C16.8893 5.10931 16.3417 5 15.7887 5C15.2357 5 14.6881 5.10931 14.1772 5.32168C13.6663 5.53404 13.2021 5.84531 12.8112 6.2377L11.9998 7.05166L11.1884 6.2377C10.3987 5.44548 9.32768 5.00041 8.21089 5.00041C7.09409 5.00041 6.02303 5.44548 5.23334 6.2377C4.44365 7.02993 4 8.10441 4 9.22479C4 10.3452 4.44365 11.4196 5.23334 12.2119L6.0447 13.0258L11.9998 19L17.9549 13.0258L18.7663 12.2119C19.1574 11.8197 19.4677 11.354 19.6794 10.8415C19.891 10.3289 20 9.77958 20 9.22479C20 8.67 19.891 8.12064 19.6794 7.60811C19.4677 7.09558 19.1574 6.6299 18.7663 6.2377V6.2377Z"
-                                       stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                 </svg>
-                                 Добавить всë в избранное
-                              </button>
-                           </li>
-                           <li>
-                              <button class="cart-page__remove">
-                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                       d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
-                                       stroke="black" stroke-width="0.85" stroke-linecap="round" />
-                                 </svg>
-                                 Удалить все
-                              </button>
-                           </li>
-                        </ul>
-                        <ul class="cart-page__products">
-                           <li>
-                              <div class="cart-product">
-                                 <div class="cart-product__image">
-                                    <img src="img/cart/product1.png" alt="">
-                                 </div>
-                                 <div class="cart-product__main">
-                                    <div class="cart-product__info">
-                                       <div class="cart-product__header">
-                                          <h5 class="cart-product__title">Цифровое пианино CLP-795GP </h5>
-                                          <span class="cart-product__price">919 990 ₽</span>
-                                       </div>
-                                       <div class="cart-product__color">
-                                          <span>Цвет:</span><span>Черный</span>
-                                       </div>
-                                       <div class="cart-product__count">
-                                          <button class="disabled">
-                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 8H8H13" stroke="black" stroke-opacity="0.4"
-                                                   stroke-width="0.85" stroke-linecap="round" />
-                                             </svg>
+               <div class="product-features__wrapper">
+                  <div class="product-features__card">
+                     <h3 class="product-features__title body-text">Особенности</h3>
+                     <div class="swiper product-features__textslider">
+                        <div class="swiper-wrapper">
+                           <div class="swiper-slide product-feature">
+                              <h6 class="product-feature__title h2" data-swiper-parallax="-100">прослушивание без
+                                 посторонних звуков</h6>
+                              <p class="product-feature__subtitle body-text" data-swiper-parallax="-50">В бесшумном
+                                 режиме вы можете погрузиться в роскошное, естественное звучание бинаурального
+                                 сэмплирования и моделирования грандиозной экспрессии, полностью забыв
+                                 о том, что на вас надеты наушники.</p>
+                           </div>
+                           <div class="swiper-slide product-feature">
+                              <h6 class="product-feature__title h2" data-swiper-parallax="-100">Записывайте и
+                                 просматривайте
+                              </h6>
+                              <p class="product-feature__subtitle body-text" data-swiper-parallax="-50">
+                                 Запишите свое выступление одним нажатием кнопки и сразу же прослушайте его. Или
+                                 воспользуйтесь функцией записи через USB, чтобы сохранить свои выступления в формате
+                                 WAV на флэш-память USB, чтобы вы могли сохранять их на своем компьютере в качестве
+                                 отчета о проделанной работе.</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="product-features__footer">
+                        <div class="product-features__pagination swiper-pagination home-hero__pagination">
+                        </div>
+                        <div class="product-features__navigation swiper-navigation home-hero__navigation">
+                           <button class="swiper-button-prev slider-btn">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="black" />
+                              </svg>
+                           </button>
+                           <button class="swiper-button-next slider-btn">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="black" />
+                              </svg>
+                           </button>
+                        </div>
 
-                                          </button>
-                                          <input type="number" value="1">
-                                          <button>
-                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M8 3C8 11 8 9.66667 8 8M8 8H3M8 8H13M8 8V13" stroke="black"
-                                                   stroke-width="0.85" stroke-linecap="round" />
-                                             </svg>
-                                          </button>
-                                       </div>
-                                    </div>
-                                    <ul class="cart-product__actions">
-                                       <li>
-                                          <button>
-                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                   d="M18.7663 6.2377C18.3753 5.84531 17.9111 5.53404 17.4002 5.32168C16.8893 5.10931 16.3417 5 15.7887 5C15.2357 5 14.6881 5.10931 14.1772 5.32168C13.6663 5.53404 13.2021 5.84531 12.8112 6.2377L11.9998 7.05166L11.1884 6.2377C10.3987 5.44548 9.32768 5.00041 8.21089 5.00041C7.09409 5.00041 6.02303 5.44548 5.23334 6.2377C4.44365 7.02993 4 8.10441 4 9.22479C4 10.3452 4.44365 11.4196 5.23334 12.2119L6.0447 13.0258L11.9998 19L17.9549 13.0258L18.7663 12.2119C19.1574 11.8197 19.4677 11.354 19.6794 10.8415C19.891 10.3289 20 9.77958 20 9.22479C20 8.67 19.891 8.12064 19.6794 7.60811C19.4677 7.09558 19.1574 6.6299 18.7663 6.2377V6.2377Z"
-                                                   stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                             </svg>
-                                          </button>
-                                       </li>
-                                       <li>
-                                          <button>
-                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                   d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
-                                                   stroke="black" stroke-width="0.85" stroke-linecap="round" />
-                                             </svg>
-                                          </button>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
+                     </div>
+                  </div>
+                  <div class="swiper product-features__imageslider">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide product-features__image">
+                           <img src="img/series/detail-feature1.png" alt="">
+                        </div>
+                        <div class="swiper-slide product-features__image">
+                           <img src="img/series/detail-feature2.png" alt="">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </section>
+         <section class="product-video seria-video">
+            <div class="container">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/D4Vlchuckk4?si=Sqq13uy3haG0YcYt"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+         </section>
+         <section class="seria-models section">
+            <div class="container">
+               <div class="seria-models__wrapper">
+                  <ul class="product-page__tabs body-text scrollbar-none">
+                     <li>
+                        <input checked type="radio" name="productPageTabs" id="productPageTabs0"
+                           value="productPageTabs0">
+                        <label for="productPageTabs0" class="header__link">SH3</label>
+                     </li>
+                     <li>
+                        <input type="radio" name="productPageTabs" id="productPageTabs1" value="productPageTabs1">
+                        <label for="productPageTabs1" class="header__link">SC3</label>
+                     </li>
+                  </ul>
+                  <div class="seria-model product-page__tab active" data-tab="productPageTabs0">
+                     <div class="seria-model__image">
+                        <img src="img/series/detail-models.png" alt="">
+                     </div>
+                     <div class="seria-model__main">
+                        <h2 class="seria-model__title h1">Silent sH3</h2>
+                        <div class="seria-model__description body-text">Полностью интегрированная система бесшумного
+                           пианино. Бесконтактный датчик артикуляции + система оптических датчиков. Моторизованная
+                           система отключения звука с механизмом быстрого отключения (только для grand)</div>
+                        <ul class="product-description__sublist">
+                           <li>
+                              <span> Тип датчика клавиш</span>
+                              <p>Электромагнитно-индуктивный с непрерывным обнаружением</p>
+                           </li>
+
+                           <li>
+                              <span>Тип датчика ударника</span>
+                              <p>Оптический затвор</p>
                            </li>
                            <li>
-                              <div class="cart-product">
-                                 <div class="cart-product__image">
-                                    <img src="img/cart/product1.png" alt="">
-                                 </div>
-                                 <div class="cart-product__main">
-                                    <div class="cart-product__info">
-                                       <div class="cart-product__header">
-                                          <h5 class="cart-product__title">Цифровое пианино CLP-795GP </h5>
-                                          <span class="cart-product__price">919 990 ₽</span>
-                                       </div>
-                                       <div class="cart-product__color">
-                                          <span>Цвет:</span><span>Черный</span>
-                                       </div>
-                                       <div class="cart-product__count">
-                                          <button class="disabled">
-                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 8H8H13" stroke="black" stroke-opacity="0.4"
-                                                   stroke-width="0.85" stroke-linecap="round" />
-                                             </svg>
-
-                                          </button>
-                                          <input type="number" value="1">
-                                          <button>
-                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M8 3C8 11 8 9.66667 8 8M8 8H3M8 8H13M8 8V13" stroke="black"
-                                                   stroke-width="0.85" stroke-linecap="round" />
-                                             </svg>
-                                          </button>
-                                       </div>
-                                    </div>
-                                    <ul class="cart-product__actions">
-                                       <li>
-                                          <button>
-                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                   d="M18.7663 6.2377C18.3753 5.84531 17.9111 5.53404 17.4002 5.32168C16.8893 5.10931 16.3417 5 15.7887 5C15.2357 5 14.6881 5.10931 14.1772 5.32168C13.6663 5.53404 13.2021 5.84531 12.8112 6.2377L11.9998 7.05166L11.1884 6.2377C10.3987 5.44548 9.32768 5.00041 8.21089 5.00041C7.09409 5.00041 6.02303 5.44548 5.23334 6.2377C4.44365 7.02993 4 8.10441 4 9.22479C4 10.3452 4.44365 11.4196 5.23334 12.2119L6.0447 13.0258L11.9998 19L17.9549 13.0258L18.7663 12.2119C19.1574 11.8197 19.4677 11.354 19.6794 10.8415C19.891 10.3289 20 9.77958 20 9.22479C20 8.67 19.891 8.12064 19.6794 7.60811C19.4677 7.09558 19.1574 6.6299 18.7663 6.2377V6.2377Z"
-                                                   stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                                             </svg>
-                                          </button>
-                                       </li>
-                                       <li>
-                                          <button>
-                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                   d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
-                                                   stroke="black" stroke-width="0.85" stroke-linecap="round" />
-                                             </svg>
-                                          </button>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
+                              <span>Тембры</span>
+                              <p>25 воспроизводимых цифровых тембров</p>
+                           </li>
+                           <li>
+                              <span>Паттерны</span>
+                              <p>20 ритмических паттернов</p>
+                           </li>
+                           <li>
+                              <span>Форматы записи</span>
+                              <p>Стандартный MIDI, аудио WAV</p>
+                           </li>
+                           <li>
+                              <span>Подключение MIDI</span>
+                              <p>USB К хосту, Bluetooth</p>
+                           </li>
+                           <li>
+                              <span>Подключение наушников</span>
+                              <p>1/8”mini stereo x 2</p>
+                           </li>
+                           <li>
+                              <span> Подключение передачи данных</span>
+                              <p>USB К УСТРОЙСТВУ x 1, UD-WL01 (WiFi)</p>
+                           </li>
+                           <li>
+                              <span>Поддерживаемые форматы файлов</span>
+                              <p>Стандартный MIDI, WAV</p>
+                           </li>
+                           <li>
+                              <span>Доступные модели</span>
+                              <p>C6X, C7X, s3x на, S5X, S6X, S7X</p>
                            </li>
                         </ul>
                      </div>
-                     <aside class="cart-page__aside cart-aside">
-                        <h2 class="cart-aside__title h3">детали заказа</h2>
-                        <div class="cart-aside__main">
-                           <div class="cart-aside__promo">
-                              <input type="text" class="app-input" placeholder="Введите промокод ">
-                              <button class="garanty-item__circle home-cards__link">
-                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                       d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
-                                       fill="white"></path>
-                                 </svg>
+                  </div>
+                  <div class="seria-model product-page__tab" data-tab="productPageTabs1">
+                     <div class="seria-model__image">
+                        <img src="img/series/detail-models.png" alt="">
+                     </div>
+                     <div class="seria-model__main">
+                        <h2 class="seria-model__title h1">Silent sc3</h2>
+                        <div class="seria-model__description body-text">Полностью интегрированная система бесшумного
+                           пианино. Бесконтактный датчик артикуляции + система оптических датчиков. Моторизованная
+                           система отключения звука с механизмом быстрого отключения (только для grand)</div>
+                        <ul class="product-description__sublist">
+                           <li>
+                              <span> Тип датчика клавиш</span>
+                              <p>Электромагнитно-индуктивный с непрерывным обнаружением</p>
+                           </li>
 
-                              </button>
-                           </div>
-                           <div class="cart-aside__card cart-loyalty">
-                              <div class="cart-loyalty__main">
-                                 <img src="img/icons/cart-loyalty.svg" alt="">
-                                 <div class="cart-loyalty__info">
-                                    <div class="cart-loyalty__title">
-                                       <span>Карта лояльности</span>
-                                       <a href="#bonusModal" class="modal__link">
-                                          <img src="img/icons/hint.svg" alt="">
-                                       </a>
-                                    </div>
-                                    <span class="cart-loyalty__status">Не применена</span>
-                                 </div>
-                              </div>
-                              <a href="#authModal" class="modal__link cart-loyalty__link">Активировать</a>
-                           </div>
-                           <ul class="cart-aside__list body-text">
-                              <li>
-                                 <span>2 товара</span><span>1 839 980 ₽</span>
-                              </li>
-                              <li>
-                                 <span>Скидка</span><span>0 ₽</span>
-                              </li>
-                              <li>
-                                 <span>Итого</span>
-                                 <span>1 839 980 ₽</span>
-                              </li>
-                           </ul>
-                           <ul class="cart-aside__footer body-text">
-                              <li>
-                                 <a href="#" class="home-garanty__link">
-                                    <span>Перейти к оформлению</span>
-                                    <div>
-                                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                          xmlns="http://www.w3.org/2000/svg">
-                                          <path fill-rule="evenodd" clip-rule="evenodd"
-                                             d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
-                                             fill="white" />
-                                       </svg>
-
-                                    </div>
-                                 </a>
-                              </li>
-                              <li>
-                                 <a href="#" class="btn cart-aside__installment">
-                                    В рассрочку <span>60 300 ₽/мес </span>
-                                 </a>
-                              </li>
-                           </ul>
-                        </div>
-                     </aside>
+                           <li>
+                              <span>Тип датчика ударника</span>
+                              <p>Оптический затвор</p>
+                           </li>
+                           <li>
+                              <span>Тембры</span>
+                              <p>25 воспроизводимых цифровых тембров</p>
+                           </li>
+                           <li>
+                              <span>Паттерны</span>
+                              <p>20 ритмических паттернов</p>
+                           </li>
+                           <li>
+                              <span>Форматы записи</span>
+                              <p>Стандартный MIDI, аудио WAV</p>
+                           </li>
+                           <li>
+                              <span>Подключение MIDI</span>
+                              <p>USB К хосту, Bluetooth</p>
+                           </li>
+                           <li>
+                              <span>Подключение наушников</span>
+                              <p>1/8”mini stereo x 2</p>
+                           </li>
+                           <li>
+                              <span> Подключение передачи данных</span>
+                              <p>USB К УСТРОЙСТВУ x 1, UD-WL01 (WiFi)</p>
+                           </li>
+                           <li>
+                              <span>Поддерживаемые форматы файлов</span>
+                              <p>Стандартный MIDI, WAV</p>
+                           </li>
+                           <li>
+                              <span>Доступные модели</span>
+                              <p>C6X, C7X, s3x на, S5X, S6X, S7X</p>
+                           </li>
+                        </ul>
+                     </div>
                   </div>
                </div>
             </div>
@@ -449,7 +468,7 @@
             <div class="container">
                <div class="product-section__wrapper section__wrapper">
                   <div class="product-section__header">
-                     <h2 class="product-section__title h2">Аксессуары</h2>
+                     <h2 class="product-section__title h2">Silent sH3</h2>
                      <a href="catalog.html" class="product-section__link body-text">
                         <span>Смотреть все</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1158,283 +1177,65 @@
                </div>
             </div>
          </section>
+         <section class="seria-more">
+            <div class="container">
+               <div class="seria-more__wrapper">
+                  <div class="seria-more__header">
+                     <h2 class="seria-more__title h2">Смотрите также</h2>
+                     <div class="seria-more__btns">
+                        <button class="swiper-button-prev slider-btn">
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                 fill="white" />
+                           </svg>
+                        </button>
+                        <button class="swiper-button-next slider-btn">
+                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                 d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                 fill="white" />
+                           </svg>
+                        </button>
+                     </div>
+                  </div>
+                  <div class="seria-more__slider">
+                     <div class="swiper">
+                        <div class="swiper-wrapper">
+                           <a href="#" class="swiper-slide seria-more__item">
+                              <img src="img/series/detail-more1.png" alt="">
+                              <h4 class="seria-more__subtitle h3">Clavinova </h4>
+                              <p class="seria-more__text body-text">Цифровые фортепиано с характером концертного рояля
+                              </p>
+                           </a>
+                           <a href="#" class="swiper-slide seria-more__item">
+                              <img src="img/series/detail-more2.png" alt="">
+                              <h4 class="seria-more__subtitle h3">ARius</h4>
+                              <p class="seria-more__text body-text">Цифровые фортепиано с характером концертного рояля
+                              </p>
+                           </a>
+                           <a href="#" class="swiper-slide seria-more__item">
+                              <img src="img/series/detail-more3.png" alt="">
+                              <h4 class="seria-more__subtitle h3">portable grand</h4>
+                              <p class="seria-more__text body-text">Цифровые фортепиано с характером концертного рояля
+                              </p>
+                           </a>
+                           <a href="#" class="swiper-slide seria-more__item">
+                              <img src="img/series/detail-more1.png" alt="">
+                              <h4 class="seria-more__subtitle h3">portable grand</h4>
+                              <p class="seria-more__text body-text">Цифровые фортепиано с характером концертного рояля
+                              </p>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
       </main>
-      <div class="modal product-modal bonus-modal" id="bonusModal">
-         <div class="product-modal__content modal__content bonus-modal__content scrollbar-none">
-
-
-            <div class="product-modal__wrapper">
-               <div class="product-modal__header">
-                  <h3 class="product-modal__title h3">бонусная программа</h3>
-                  <button class="modal__close product-modal__close circle">
-                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
-                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
-                     </svg>
-                  </button>
-               </div>
-               <div class="bonus-modal__main">
-                  <ul class="bonus-modal__list product-page__tabs body-text scrollbar-none">
-                     <li>
-                        <input checked type="radio" name="bonusModalTabs" id="bonusModalTabs0" value="bonusModalTabs0">
-                        <label for="bonusModalTabs0" class="header__link">Условия</label>
-                     </li>
-                     <li>
-                        <input type="radio" name="bonusModalTabs" id="bonusModalTabs1" value="bonusModalTabs1">
-                        <label for="bonusModalTabs1" class="header__link">Начисление</label>
-                     </li>
-                     <li>
-                        <input type="radio" name="bonusModalTabs" id="bonusModalTabs2" value="bonusModalTabs2">
-                        <label for="bonusModalTabs2" class="header__link">Порядок использовния </label>
-                     </li>
-                  </ul>
-                  <div class="bonus-modal__items">
-                     <div class="bonus-modal__item active" data-tab="bonusModalTabs0">
-                        <div>
-                           <p class="body-text">
-                              Бонусная программа — программа лояльности Yamaha.ru, в которой клиентам за каждую
-                              покупку начисляют бонусы, 1 бонус равен 1 рублю. Вы можете использовать бонусы
-                              при следующей покупке.a
-                           </p>
-                        </div>
-                        <div class="bonus-modal__equal">
-                           <div>
-                              <div class="circle circle24">
-                                 <img src="img/icons/bonus.svg" alt="">
-                              </div>
-                              <span>1 бонус</span>
-                           </div>
-                           <span>=</span>
-                           <div>
-                              <div class="circle circle24">
-                                 <img src="img/icons/rub.svg" alt="">
-                              </div>
-                              <span>1 рубль</span>
-                           </div>
-                        </div>
-                        <div class="bonus-modal__block">
-                           <h5>УСЛОВИЯ УЧАСТИЯ В бонусной программе</h5>
-                           <div class="body-text">
-                              <p>
-                                 Начисление Бонусов возможно только для физического лица, которое является
-                                 клиентом Yamaha.ru. Это должен быть потребитель, который покупает товары для
-                                 личного, домашнего или семейного использования, и которому на момент
-                                 регистрации исполнилось 18 лет.
-                              </p>
-                              <p>
-                                 Для участия в Программе лояльности и накопления бонусов необходимо
-                                 зарегистрироваться на сайте и совершить покупку. После регистрации на сайте
-                                 клиент автоматически становится участником программы лояльности и получает
-                                 Бонусы при совершении покупок. Количество начисленных Бонусов можно посмотреть
-                                 в личном кабинете.
-                              </p>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="bonus-modal__item" data-tab="bonusModalTabs1">
-                        <div>
-                           <p class="body-text">
-                              начисления
-                           </p>
-
-                        </div>
-                     </div>
-                     <div class="bonus-modal__item" data-tab="bonusModalTabs2">
-                        <div>
-                           <p class="body-text">
-                              порядок
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="modal auth-modal" id="authModal">
-         <div class="auth-modal__content bonus-modal__content modal__content">
-            <div class="auth-modal__wrapper">
-               <div class="auth-modal__header">
-                  <ul class="bonus-modal__list product-page__tabs body-text scrollbar-none auth-modal__tabs">
-                     <li>
-                        <input checked type="radio" name="authModalTabs" id="authModalTabs0" value="authModalTabs0">
-                        <label for="authModalTabs0" class="header__link">По номеру телефона</label>
-                     </li>
-                     <li>
-                        <input type="radio" name="authModalTabs" id="authModalTabs1" value="authModalTabs1">
-                        <label for="authModalTabs1" class="header__link">Через e-mail</label>
-                     </li>
-                  </ul>
-                  <button class="modal__close product-modal__close circle auth-modal__close">
-                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
-                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
-                     </svg>
-                  </button>
-               </div>
-               <div>
-                  <div class="auth-modal__tab active" data-tab="authModalTabs0">
-                     <div class="auth-modal__main auth-main">
-                        <div class="auth-main__header">
-                           <h3 class="auth-main__title h3">Вход или регистрация</h3>
-                           <p class="auth-main__subtitle body-text">Пришлём вам код в SMS-сообщении</p>
-                        </div>
-                        <div class="auth-main__form">
-                           <ul class="auth-main__inputs">
-                              <li>
-                                 <input id="authPhone" type="text" class="app-input" data-phone
-                                    placeholder="+7 (999) 999-99-99">
-                              </li>
-                           </ul>
-                        </div>
-                        <div class="auth-main__footer">
-                           <a href="#confirmNumberModal" class="home-garanty__link disabled modal__link" id="regBtn">
-                              <span>Получить код</span>
-                              <div>
-                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="rotate: 180deg;"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                       d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
-                                       fill="white" />
-                                 </svg>
-
-                              </div>
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="auth-modal__tab" data-tab="authModalTabs1">
-                     <div class="auth-modal__main auth-main">
-                        <div class="auth-main__header">
-                           <h3 class="auth-main__title h3">Вход в личный кабинет</h3>
-                        </div>
-                        <div class="auth-main__form">
-                           <ul class="auth-main__inputs">
-                              <li>
-                                 <input type="text" class="app-input" placeholder="E-mail" id="authEmail">
-                              </li>
-                              <li>
-                                 <input type="password" class="app-input" placeholder="Пароль" id="authPassword">
-                              </li>
-                           </ul>
-                           <a href="#resetPasswordModal" class="modal__link">Забыли пароль?</a>
-                        </div>
-                        <div class="auth-main__footer">
-                           <a href="#" class="home-garanty__link" id="signBtn">
-                              <span>Получить код</span>
-                              <div>
-                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="rotate: 180deg;"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                       d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
-                                       fill="white" />
-                                 </svg>
-
-                              </div>
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="modal auth-modal" id="resetPasswordModal">
-         <div class="auth-modal__content bonus-modal__content modal__content">
-            <div class="auth-modal__wrapper">
-               <div class="auth-modal__header">
-                  <a href="#authModal" class="modal__link auth-modal__back body-text">Вернуться назад</a>
-                  <button class="modal__close product-modal__close circle auth-modal__close">
-                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
-                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
-                     </svg>
-                  </button>
-               </div>
-               <div class="auth-modal__main auth-main">
-                  <div class="auth-main__header">
-                     <h3 class="auth-main__title h3">восстановить пароль</h3>
-                  </div>
-                  <div class="auth-main__form">
-                     <ul class="auth-main__inputs">
-                        <li>
-                           <input type="text" class="app-input" placeholder="E-mail">
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="auth-main__footer">
-                     <a href="#" class="home-garanty__link">
-                        <span>Отправить ссылку</span>
-                        <div>
-                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="rotate: 180deg;"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                 d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
-                                 fill="white" />
-                           </svg>
-
-                        </div>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="modal auth-modal" id="confirmNumberModal">
-         <div class="auth-modal__content bonus-modal__content modal__content">
-            <div class="auth-modal__wrapper">
-               <div class="auth-modal__header">
-                  <span class="auth-modal__back body-text">Изменить номер</span>
-                  <button class="modal__close product-modal__close circle auth-modal__close">
-                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                           d="M4.46484 11.5355L8.00038 8.00001M8.00038 8.00001L11.5359 11.5355M8.00038 8.00001L4.46484 4.46448M8.00038 8.00001L11.5359 4.46448"
-                           stroke="black" stroke-width="0.85" stroke-linecap="round" />
-                     </svg>
-                  </button>
-               </div>
-               <div class="auth-modal__main auth-main">
-                  <div class="auth-main__header">
-                     <h3 class="auth-main__title h3">подтвердите номер
-                        <span style="display: block; color: rgba(0, 0, 0, 0.4);">+7 (960) 765-12-34</span>
-                     </h3>
-                  </div>
-                  <div class="auth-main__form">
-                     <ul class="auth-main__inputs">
-                        <li>
-                           <input type="text" class="app-input" placeholder="Введите код" id="confirmNumberInput">
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="auth-main__footer">
-                     <a href="#" class="home-garanty__link disabled" id="confirmNumberBtn">
-                        <span>Отправить</span>
-                        <div>
-                           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="rotate: 180deg;"
-                              xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                 d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
-                                 fill="white" />
-                           </svg>
-                        </div>
-                     </a>
-                     <p id="confirmTelOneMore">
-                        Повторная отправка через <span>30</span> сек
-                     </p>
-                     <p style="display: none;" class="send" id="confirmTelOneMoreSend">
-                        Отправить код повторно
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   </div>
-   <footer class="footer">
+      <footer class="footer">
    <div class="container">
       <div class="footer__wrapper">
          <div class="footer__upper">
@@ -1646,6 +1447,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
 <script src="js/app.js"></script>
+
 </body>
 
 </html>
