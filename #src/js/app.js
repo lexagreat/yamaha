@@ -762,7 +762,9 @@ function animations() {
                   // console.log("onEnter", index);
                   yearsLists.forEach((item) => {
                      item.classList.remove("active");
-                     item.style.translate = `0 ${-130 * index}px`;
+                     item.style.translate = `0 -${
+                        (item.offsetHeight + 10) * index
+                     }px`;
                   });
                   yearsLists[index].classList.add("active");
                },
@@ -773,7 +775,9 @@ function animations() {
                   // console.log("onEnterBack", index);
                   yearsLists.forEach((item) => {
                      item.classList.remove("active");
-                     item.style.translate = `0 ${-130 * index}px`;
+                     item.style.translate = `0 -${
+                        (item.offsetHeight + 10) * index
+                     }px`;
                   });
                   yearsLists[index].classList.add("active");
                },
