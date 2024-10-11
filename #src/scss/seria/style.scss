@@ -115,6 +115,7 @@
 }
 
 .seria-models {
+   padding-top: 135px;
    // .seria-models__wrapper
 
    &__wrapper {
@@ -140,6 +141,12 @@
             padding-top: 30px;
          }
       }
+   }
+   @media (max-width: $tablet) {
+      padding-top: 90px;
+   }
+   @media (max-width: $mobile) {
+      padding-top: 60px;
    }
 }
 .seria-model {
@@ -314,5 +321,10 @@
       &__btns {
          display: none;
       }
+   }
+}
+@media (max-width: $mobile) {
+   .seria-features {
+      padding-top: 0 !important;
    }
 }
