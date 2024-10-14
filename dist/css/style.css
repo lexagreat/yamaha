@@ -536,6 +536,17 @@ svg path {
   top: 116px;
 }
 
+.product-card-actions li svg,
+.product-card__actions li svg path,
+.cart-product_actions svg,
+.cart-product__actions svg path,
+.add-all-favourites svg,
+.add-all-favourites svg path,
+.cart-page__Like svg,
+.cart-page__like svg path {
+  pointer-events: none;
+}
+
 body.lock {
   overflow: hidden;
 }
@@ -6017,6 +6028,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .cart-product__image {
+  max-height: 118px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 168px;
           flex: 0 0 168px;
@@ -6677,6 +6689,13 @@ input[type=range]::-webkit-slider-thumb {
   gap: 70px;
 }
 
+.order-success__products {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .order-news {
   margin-top: 33px;
   display: -webkit-box;
@@ -6714,6 +6733,53 @@ input[type=range]::-webkit-slider-thumb {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.order-product {
+  -webkit-box-flex: unset !important;
+      -ms-flex: unset !important;
+          flex: unset !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  padding: 15px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.order-product img {
+  width: 124px !important;
+  height: 86px !important;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 124px;
+          flex: 0 0 124px;
+}
+
+.order-product__info {
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.order-product__name {
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  line-height: 1.1111111111;
+}
+
+.order-product__price {
+  font-family: "NeueHelveticaPro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19.6px;
 }
 
 .auth-modal__wrapper {
@@ -8159,6 +8225,30 @@ html.lenis body {
 
   .order-news {
     display: none;
+  }
+
+  .order-product__name {
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 17.6px;
+    letter-spacing: 0.01em;
+    text-align: left;
+  }
+
+  .order-product__price {
+    font-family: "NeueHelveticaPro", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16.8px;
+  }
+
+  .order-product img {
+    width: 70px !important;
+    height: 42px !important;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70px;
+            flex: 0 0 70px;
   }
 
   .auth-modal__tabs {

@@ -291,3 +291,13 @@
       }
    }
 }
+.product-card-actions li svg,
+.product-card__actions li svg path,
+.cart-product_actions svg,
+.cart-product__actions svg path,
+.add-all-favourites svg,
+.add-all-favourites svg path,
+.cart-page__Like svg,
+.cart-page__like svg path {
+   pointer-events: none;
+}
