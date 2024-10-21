@@ -305,13 +305,15 @@
    // .cart-aside__list
 
    &__list {
+      padding-top: 16px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 4px;
       li:last-child {
          font-weight: 500;
          padding-top: 20px;
          border-top: 1px solid rgba(0, 0, 0, 0.15);
+         margin-top: 16px;
       }
       li {
          display: flex;
