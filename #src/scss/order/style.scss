@@ -194,14 +194,33 @@
       a {
          @include h4;
          color: black;
+         // .header__circle {
+         //    width: 36px;
+         //    height: 36px;
+         //    flex: 0 0 36px;
+         //    border-color: black;
+         //    svg {
+         //       width: 16px;
+         //       height: 16px;
+         //       path {
+         //          fill: black;
+         //       }
+         //    }
+         // }
+      }
+      & > div {
+         display: flex;
+         align-items: center;
+         gap: 10px;
          .header__circle {
             width: 36px;
             height: 36px;
             flex: 0 0 36px;
-            border-color: black;
+            border-color: black !important;
             svg {
                width: 16px;
                height: 16px;
+               flex: 0 0 16px;
                path {
                   fill: black;
                }
@@ -231,11 +250,27 @@
          & > li:nth-child(2) {
             flex: 0 0 200px;
          }
+         @media (max-width: $tablet) {
+            flex-direction: column;
+            & > li:nth-child(1) {
+               flex: unset;
+            }
+            & > li:nth-child(2) {
+               flex: unset;
+            }
+         }
          @media (max-width: $mobile) {
             flex-direction: column;
             li {
                flex: unset !important;
             }
+         }
+      }
+      @media (max-width: $tablet) {
+         max-width: 100%;
+         gap: 30px;
+         p {
+            text-align: center;
          }
       }
    }
@@ -250,7 +285,24 @@
 }
 
 .order-news {
-   margin-top: 33px;
+   .product-section__header {
+      margin: 0;
+   }
+   .product-section {
+      padding: 0;
+   }
+   .swiper {
+      max-width: 830px;
+      .product-card__image {
+         height: 300px;
+         flex: 0 0 300px;
+      }
+      @media (max-width: 1440px) {
+         max-width: calc(415px + 515 * ((100vw - 1024px) / (1440 - 1024)));
+         // max-width: 430px;
+      }
+   }
+   // margin-top: 33px;
    // .order-news__header
    display: flex;
    flex-direction: column;
@@ -278,8 +330,32 @@
          object-fit: cover;
       }
    }
+   &__products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      .product-card__image {
+         height: 300px;
+         flex: 0 0 300px;
+      }
+      @media (max-width: 1440px) {
+         max-width: calc(415px + 515 * ((100vw - 1024px) / (1440 - 1024)));
+         // max-width: 430px;
+      }
+      @media (max-width: $mobile) {
+         grid-template-columns: repeat(2, 1fr);
+         column-gap: 8px;
+         row-gap: 30px;
+         .product-card {
+            height: fit-content;
+         }
+      }
+   }
    @media (max-width: $tablet) {
-      display: none;
+      &__products {
+         width: 100%;
+         max-width: unset;
+      }
    }
 }
 
@@ -317,6 +393,88 @@
          width: 70px !important;
          height: 42px !important;
          flex: 0 0 70px;
+      }
+   }
+}
+.order-success__wrapper {
+   .order-page {
+      &__content {
+         @media (max-width: $tablet) {
+            flex-direction: column-reverse;
+         }
+      }
+   }
+   .order-main {
+      gap: 90px;
+      @media (max-width: $tablet) {
+         gap: 60px;
+      }
+   }
+}
+.order-steps {
+   padding-top: 80px;
+   padding-bottom: 135px;
+   // .order-steps__wrapper
+
+   &__wrapper {
+   }
+
+   // .order-steps__title
+
+   &__title {
+   }
+
+   // .order-steps__list
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+   }
+
+   // .order-steps__item
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      background-color: #0000000d;
+      padding: 30px;
+   }
+
+   // .order-steps__index
+
+   &__index {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1px solid #0000004d;
+      @include h4;
+      span {
+         translate: 0 2px;
+      }
+   }
+   @media (max-width: $tablet) {
+      padding-bottom: 90px;
+      &__list {
+         grid-template-columns: repeat(2, 1fr);
+      }
+      &__item {
+         padding: 20px;
+      }
+   }
+   @media (max-width: $mobile) {
+      padding: 60px 0;
+      &__list {
+         grid-template-columns: 1fr;
+      }
+      &__item {
+         gap: 20px;
+         padding: 16px;
       }
    }
 }

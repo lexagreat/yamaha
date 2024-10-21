@@ -350,6 +350,10 @@
    .app-input {
       background-color: transparent;
    }
+   @media (max-width: $tablet) {
+      position: relative;
+      top: unset;
+   }
 }
 .cart-loyalty {
    // .cart-loyalty__main

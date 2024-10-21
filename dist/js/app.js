@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
    animations();
    authModals();
    orderPage();
+   orderSuccessPage();
    initSeriaSwiper();
 });
 
@@ -914,6 +915,20 @@ function orderPage() {
       },
    });
    tabs("[name='orderTabs']", ".order-tab");
+}
+function orderSuccessPage() {
+   // const swiper = new Swiper(".order-news .swiper", {
+   //    slidesPerView: 2,
+   //    spaceBetween: 10,
+   //    breakpoints: {
+   //       1440: {
+   //          slidesPerView: 4,
+   //       },
+   //       1200: {
+   //          slidesPerView: 3,
+   //       },
+   //    },
+   // });
 }
 function accordion(linkSelector, contentSelector) {
    // получаем линки
