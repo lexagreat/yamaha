@@ -410,6 +410,15 @@
          gap: 60px;
       }
    }
+   .order-steps {
+      display: none;
+      @media (max-width: $mobile) {
+         display: block;
+      }
+   }
+   @media (max-width: $mobile) {
+      padding-bottom: 60px;
+   }
 }
 .order-steps {
    padding-top: 80px;
@@ -468,7 +477,8 @@
       }
    }
    @media (max-width: $mobile) {
-      padding: 60px 0;
+      display: none;
+      padding: 0;
       &__list {
          grid-template-columns: 1fr;
       }

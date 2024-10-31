@@ -1,0 +1,215 @@
+.article-page {
+   margin-bottom: 135px;
+   // .article-page__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+   }
+
+   // .article-page__image
+
+   &__image {
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   // .article-page__main
+
+   &__main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 680px;
+      margin: 0 auto;
+   }
+
+   // .article-page__header
+
+   &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #00000026;
+   }
+
+   // .article-page__title
+
+   &__title {
+      text-align: center;
+   }
+
+   // .article-page__info
+
+   &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+   }
+
+   // .article-page__content
+
+   &__content {
+      padding-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      img {
+         margin: 10px 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+      p + p {
+         margin-top: 12px;
+      }
+   }
+
+   // .article-page__subtitle
+
+   &__subtitle {
+   }
+
+   // .article-page__card
+
+   &__card {
+      padding: 25px;
+      display: flex;
+      gap: 20px;
+      background-color: #0000000d;
+      @include h4;
+      &::before {
+         content: "";
+         display: block;
+         width: 1px;
+         flex: 0 0 1px;
+         background-color: black;
+      }
+   }
+   &__likes {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      & > span {
+         display: block;
+         width: 1px;
+         flex: 0 0 1px;
+         height: 20px;
+         background-color: #00000026;
+      }
+      div {
+         display: flex;
+         gap: 5px;
+         align-items: center;
+      }
+      svg {
+         cursor: pointer;
+      }
+   }
+   &__footer {
+      margin-top: -30px;
+      display: flex;
+      justify-content: space-between;
+      white-space: nowrap;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-top: 23px;
+      border-top: 1px solid #00000026;
+      .home-garanty__link {
+         width: 210px;
+         flex: 0 0 210px;
+      }
+   }
+   &__share {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      @include regular-12;
+      color: #00000066;
+      ul {
+         gap: 10px;
+         display: flex;
+         li:first-child a svg {
+            width: 12px;
+            height: 12px;
+         }
+         a {
+            width: 36px;
+            height: 36px;
+            flex: 0 0 36px;
+            border-color: #0000004d;
+            @media (hover: hover) {
+               &:hover {
+                  border-color: black;
+               }
+            }
+            &:active {
+               border-color: black;
+            }
+            svg {
+               width: 16px;
+               height: 16px;
+            }
+            svg path {
+               fill: black;
+            }
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      margin-bottom: 90px;
+      &__main {
+         max-width: 100%;
+      }
+   }
+   @media (max-width: $mobile) {
+      margin-bottom: 60px;
+      &__image {
+         margin-left: -12px;
+         margin-right: -12px;
+         width: 100vw;
+      }
+      &__wrapper {
+         gap: 40px;
+      }
+      &__content {
+         padding-bottom: 40px;
+         img {
+            margin: 0;
+            margin-left: -12px;
+            margin-right: -12px;
+            width: 100vw;
+         }
+      }
+      &__likes {
+         margin-top: 10px;
+      }
+      &__footer {
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         gap: 32px;
+         .home-garanty__link {
+            width: 100%;
+            flex: unset;
+         }
+      }
+      &__share {
+         gap: 20px;
+      }
+      &__card {
+         padding: 20px;
+         gap: 15px;
+         font-size: 14px;
+      }
+   }
+}
