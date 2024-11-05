@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
    orderPage();
    orderSuccessPage();
    initSeriaSwiper();
+   initSaleSwiper();
+   profilePage();
 });
 
 function headerWork() {
@@ -952,7 +954,7 @@ function accordion(linkSelector, contentSelector) {
                openLinks[j].classList.remove("active");
             }
             // записываем в переменную нужный таб
-            let content = openLink.nextElementSibling;
+            let content = contents[i];
             // работаем с классами линка
             if (content.classList.contains("collapsing")) {
                return;
@@ -1470,3 +1472,42 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       lenis.scrollTo(this.getAttribute("href"));
    });
 });
+
+function initSaleSwiper() {
+   if (!document.querySelector(".sale-products .swiper")) return;
+   const swiper = new Swiper(".sale-products .swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      breakpoints: {
+         993: {
+            slidesPerView: 2,
+         },
+      },
+   });
+}
+function profilePage() {
+   if (!document.querySelector("#accountAddressSelect")) return;
+   const orderAddressSelect = new Select("#accountAddressSelect", {
+      placeholder: "Город",
+      // selectedId: "volg",
+      data: [
+         {
+            id: "Москва",
+            value: "Москва",
+         },
+         {
+            id: "Волгоград",
+            value: "Волгоград",
+         },
+         {
+            id: "Батуми",
+            value: "Батуми",
+         },
+      ],
+      onSelect(item, select) {
+         select.classList.add("filled");
+      },
+   });
+   tabs("[name='profileTabs']", ".account-tab");
+   accordion(".account-order__header button", ".account-order__spoiler");
+}

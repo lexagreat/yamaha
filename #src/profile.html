@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title": "Аккаунт",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="main default-main">
+         <section class="breadcrumbs dark">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a href="index.html">Главная</a>
+                  </li>
+                  <li>
+                     <a href="catalog.html">Профиль</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="account-page">
+            <div class="container">
+               <div class="account-page__wrapper">
+
+                  <aside class="account-page__aside account-aside">
+                     <ul class="account-aside__list">
+                        <li>
+                           <input checked type="radio" name="profileTabs" value="profileTabs0" id="profileTabs0">
+                           <label for="profileTabs0">Мой профиль</label>
+                        </li>
+                        <li>
+                           <input type="radio" name="profileTabs" value="profileTabs1" id="profileTabs1">
+                           <label for="profileTabs1">Заказы</label>
+                        </li>
+                        <li>
+                           <input type="radio" name="profileTabs" value="profileTabs2" id="profileTabs2">
+                           <label for="profileTabs2">Избранное</label>
+                        </li>
+                        <li>
+                           <button href="#" class="exit">Выйти</button>
+                        </li>
+                     </ul>
+                  </aside>
+                  <div class="account-tab active" data-tab="profileTabs0">
+                     <div class="account-page__main">
+                        <div class="account-page__content">
+                           <div class="account-page__block">
+                              <h2 class="account-page__title h3">контактные данные</h2>
+                              <ul class="account-page__list">
+                                 <li>
+                                    <input type="text" placeholder="Имя*" class="app-input">
+                                 </li>
+                                 <li>
+                                    <input type="text" placeholder="Фамилия*" class="app-input">
+                                 </li>
+                                 <li>
+                                    <input type="text" placeholder="Дата рождения" class="app-input">
+                                 </li>
+                                 <li>
+                                    <input type="text" placeholder="+7 (999) 999-99-99" class="app-input" data-phone>
+                                 </li>
+                                 <li>
+                                    <input type="text" placeholder="E-mail*" class="app-input">
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="account-page__block">
+                              <h2 class="account-page__title h3">Адрес</h2>
+                              <ul class="account-page__list">
+                                 <li>
+                                    <div id="accountAddressSelect" class="app-select"></div>
+                                 </li>
+                                 <li>
+                                    <input type="text" placeholder="Улица, дом, квартира, офис*" class="app-input">
+                                 </li>
+
+                              </ul>
+                           </div>
+                           <button href="#" class="home-garanty__link">
+                              <span>Сохранить </span>
+                              <div>
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                       d="M6.10272 12.8649C6.25056 13.0324 6.50356 13.046 6.66782 12.8952L12 8L6.66782 3.10478C6.50356 2.95398 6.25056 2.96757 6.10272 3.13512C5.95489 3.30268 5.9682 3.56075 6.13246 3.71155L10.8037 8L6.13246 12.2884C5.9682 12.4392 5.95489 12.6973 6.10272 12.8649Z"
+                                       fill="white" />
+                                 </svg>
+
+                              </div>
+                           </button>
+                        </div>
+                        <div class="account-page__bonus">
+                           <div class="product-price__bonus">
+                              <div class="circle circle24">
+                                 <img src="img/icons/bonus.svg" alt="">
+                              </div>
+                              <p>
+                                 Вам доступно
+                              </p>
+                           </div>
+                           <h4 class="h2">1 388 <span>бонусов</span> </h4>
+                           <a href="#" class="modal__link">Программа лояльности</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="account-tab" data-tab="profileTabs1">
+                     <div class="account-page__main account-orders__main">
+                        <div class="account-page__content account-orders">
+                           <h2 class="account-orders__title h3">заказы</h2>
+                           <ul class="account-orders__list">
+                              <li class="account-orders__categories">
+                                 <span>Номер</span>
+                                 <span>Сумма</span>
+                                 <span>Дата</span>
+                                 <span>Статус</span>
+                              </li>
+                              <li class="account-orders__item account-order">
+                                 <div class="account-order__header">
+                                    <span class="number">№64859</span>
+                                    <span class="price">949 990 ₽</span>
+                                    <span class="date">20.08.24</span>
+                                    <span class="status pay">оплачен</span>
+                                    <button>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M3.13512 6.10272C2.96756 6.25056 2.95398 6.50356 3.10478 6.66782L8 12L12.8952 6.66782C13.046 6.50356 13.0324 6.25056 12.8649 6.10272C12.6973 5.95489 12.4392 5.9682 12.2884 6.13246L8 10.8037L3.71155 6.13246C3.56075 5.9682 3.30267 5.95489 3.13512 6.10272Z"
+                                             fill="black" />
+                                       </svg>
+                                    </button>
+                                 </div>
+                                 <div class="collapse account-order__spoiler">
+                                    <div class="account-order__main">
+                                       <ul class="account-order__items order-aside__products order-success__products">
+                                          <li class="order-product">
+                                             <img src="img/cart/product1.png" alt="">
+                                             <div class="order-product__info">
+                                                <span class="order-product__name">Цифровое пианино CLP-795GP </span>
+                                                <span class="order-product__price">949 990 ₽</span>
+                                             </div>
+                                          </li>
+                                          <li class="order-product">
+                                             <img src="img/cart/product1.png" alt="">
+                                             <div class="order-product__info">
+                                                <span class="order-product__name">Цифровое пианино CLP-795GP </span>
+                                                <span class="order-product__price">949 990 ₽</span>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                       <ul class="account-order__infos">
+                                          <li>
+                                             <span>2 товара</span>
+                                             <span>1 839 980 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Скидка</span>
+                                             <span>0 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Скидка по промокоду</span>
+                                             <span>0 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Доставка</span>
+                                             <span>300 ₽</span>
+                                          </li>
+                                       </ul>
+                                       <ul class="account-order__infos">
+                                          <li>
+                                             <span>Получатель</span>
+                                             <span>Александров Александр</span>
+                                          </li>
+                                          <li>
+                                             <span>Способ оплаты</span>
+                                             <span>При получении</span>
+                                          </li>
+                                          <li>
+                                             <span>Адрес доставки</span>
+                                             <span>Санкт-Петербург, Московский пр-т, 126, кв. 7</span>
+                                          </li>
+                                       </ul>
+                                       <div class="account-order__res">
+                                          <span>Сумма заказа</span>
+                                          <span>1 840 280 ₽</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="account-orders__item account-order">
+                                 <div class="account-order__header">
+                                    <span class="number">№64859</span>
+                                    <span class="price">949 990 ₽</span>
+                                    <span class="date">20.08.24</span>
+                                    <span class="status ready">получен</span>
+                                    <button>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M3.13512 6.10272C2.96756 6.25056 2.95398 6.50356 3.10478 6.66782L8 12L12.8952 6.66782C13.046 6.50356 13.0324 6.25056 12.8649 6.10272C12.6973 5.95489 12.4392 5.9682 12.2884 6.13246L8 10.8037L3.71155 6.13246C3.56075 5.9682 3.30267 5.95489 3.13512 6.10272Z"
+                                             fill="black" />
+                                       </svg>
+                                    </button>
+                                 </div>
+                                 <div class="collapse account-order__spoiler">
+                                    <div class="account-order__main">
+                                       <ul class="account-order__items order-aside__products order-success__products">
+                                          <li class="order-product">
+                                             <img src="img/cart/product1.png" alt="">
+                                             <div class="order-product__info">
+                                                <span class="order-product__name">Цифровое пианино CLP-795GP </span>
+                                                <span class="order-product__price">949 990 ₽</span>
+                                             </div>
+                                          </li>
+                                          <li class="order-product">
+                                             <img src="img/cart/product1.png" alt="">
+                                             <div class="order-product__info">
+                                                <span class="order-product__name">Цифровое пианино CLP-795GP </span>
+                                                <span class="order-product__price">949 990 ₽</span>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                       <ul class="account-order__infos">
+                                          <li>
+                                             <span>2 товара</span>
+                                             <span>1 839 980 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Скидка</span>
+                                             <span>0 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Скидка по промокоду</span>
+                                             <span>0 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Доставка</span>
+                                             <span>300 ₽</span>
+                                          </li>
+                                       </ul>
+                                       <ul class="account-order__infos">
+                                          <li>
+                                             <span>Получатель</span>
+                                             <span>Александров Александр</span>
+                                          </li>
+                                          <li>
+                                             <span>Способ оплаты</span>
+                                             <span>При получении</span>
+                                          </li>
+                                          <li>
+                                             <span>Адрес доставки</span>
+                                             <span>Санкт-Петербург, Московский пр-т, 126, кв. 7</span>
+                                          </li>
+                                       </ul>
+                                       <div class="account-order__res">
+                                          <span>Сумма заказа</span>
+                                          <span>1 840 280 ₽</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </li>
+                              <li class="account-orders__item account-order">
+                                 <div class="account-order__header">
+                                    <span class="number">№64859</span>
+                                    <span class="price">949 990 ₽</span>
+                                    <span class="date">20.08.24</span>
+                                    <span class="status ready">получен</span>
+                                    <button>
+                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          viewBox="0 0 16 16" fill="none">
+                                          <path fill-rule="evenodd" clip-rule="evenodd"
+                                             d="M3.13512 6.10272C2.96756 6.25056 2.95398 6.50356 3.10478 6.66782L8 12L12.8952 6.66782C13.046 6.50356 13.0324 6.25056 12.8649 6.10272C12.6973 5.95489 12.4392 5.9682 12.2884 6.13246L8 10.8037L3.71155 6.13246C3.56075 5.9682 3.30267 5.95489 3.13512 6.10272Z"
+                                             fill="black" />
+                                       </svg>
+                                    </button>
+                                 </div>
+                                 <div class="collapse account-order__spoiler">
+                                    <div class="account-order__main">
+                                       <ul class="account-order__items order-aside__products order-success__products">
+                                          <li class="order-product">
+                                             <img src="img/cart/product1.png" alt="">
+                                             <div class="order-product__info">
+                                                <span class="order-product__name">Цифровое пианино CLP-795GP </span>
+                                                <span class="order-product__price">949 990 ₽</span>
+                                             </div>
+                                          </li>
+                                          <li class="order-product">
+                                             <img src="img/cart/product1.png" alt="">
+                                             <div class="order-product__info">
+                                                <span class="order-product__name">Цифровое пианино CLP-795GP </span>
+                                                <span class="order-product__price">949 990 ₽</span>
+                                             </div>
+                                          </li>
+                                       </ul>
+                                       <ul class="account-order__infos">
+                                          <li>
+                                             <span>2 товара</span>
+                                             <span>1 839 980 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Скидка</span>
+                                             <span>0 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Скидка по промокоду</span>
+                                             <span>0 ₽</span>
+                                          </li>
+                                          <li>
+                                             <span>Доставка</span>
+                                             <span>300 ₽</span>
+                                          </li>
+                                       </ul>
+                                       <ul class="account-order__infos">
+                                          <li>
+                                             <span>Получатель</span>
+                                             <span>Александров Александр</span>
+                                          </li>
+                                          <li>
+                                             <span>Способ оплаты</span>
+                                             <span>При получении</span>
+                                          </li>
+                                          <li>
+                                             <span>Адрес доставки</span>
+                                             <span>Санкт-Петербург, Московский пр-т, 126, кв. 7</span>
+                                          </li>
+                                       </ul>
+                                       <div class="account-order__res">
+                                          <span>Сумма заказа</span>
+                                          <span>1 840 280 ₽</span>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </li>
+                           </ul>
+                        </div>
+                        <div class="account-page__bonus">
+                           <div class="product-price__bonus">
+                              <div class="circle circle24">
+                                 <img src="img/icons/bonus.svg" alt="">
+                              </div>
+                              <p>
+                                 Вам доступно
+                              </p>
+                           </div>
+                           <h4 class="h2">1 388 <span>бонусов</span> </h4>
+                           <a href="#" class="modal__link">Программа лояльности</a>
+                        </div>
+                     </div>
+                     <!-- <div class="account-orders__empty">
+                        <h2 class="account-orders__title h3">Вы еще ничего не заказывали</h2>
+                        <p class="body-text">
+                           Возможно, найдется что-то подходящее в каталоге
+                        </p>
+                        <a href="catalog.html" class="home-garanty__link">
+                           <span style="translate: 0 2px;">Перейти в каталог</span>
+                           <div>
+                              <svg style="rotate: 180deg;" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="white" />
+                              </svg>
+
+                           </div>
+                        </a>
+                     </div> -->
+                  </div>
+                  <div class="account-tab" data-tab="profileTabs2">
+                     <div class="account-page__main account-orders__main">
+                        <div class="account-page__content account-orders">
+                           <h2 class="account-orders__title h3">избранное</h2>
+                           <ul class="account-favor">
+                              <li>
+                                 <a href="#" class="product-card">
+                                    <div class="product-card__image">
+                                       <div class="product-card__header">
+                                          <ul class="product-card__tags">
+                                             <li class="black">новинка</li>
+                                             <li class="purple">хит</li>
+                                          </ul>
+                                          <button class="product-card__show">
+                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 3C8 11 8 9.66667 8 8M8 8H3M8 8H13M8 8V13" stroke="black"
+                                                   stroke-width="0.85" stroke-linecap="round" />
+                                             </svg>
+                                          </button>
+                                          <ul class="product-card__actions">
+
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <path
+                                                         d="M13.8943 2.07333C13.5538 1.73267 13.1495 1.46243 12.7046 1.27805C12.2596 1.09368 11.7827 0.998779 11.301 0.998779C10.8193 0.998779 10.3424 1.09368 9.89742 1.27805C9.45245 1.46243 9.04816 1.73267 8.70766 2.07333L8.00099 2.78L7.29432 2.07333C6.60653 1.38553 5.67368 0.999136 4.70099 0.999136C3.7283 0.999136 2.79545 1.38553 2.10766 2.07333C1.41986 2.76112 1.03346 3.69397 1.03346 4.66666C1.03346 5.63935 1.41986 6.5722 2.10766 7.26L2.81432 7.96666L8.00099 13.1533L13.1877 7.96666L13.8943 7.26C14.235 6.91949 14.5052 6.51521 14.6896 6.07023C14.874 5.62526 14.9689 5.14832 14.9689 4.66666C14.9689 4.185 14.874 3.70807 14.6896 3.26309C14.5052 2.81812 14.235 2.41383 13.8943 2.07333V2.07333Z"
+                                                         stroke="black" stroke-width="0.850653" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                   </svg>
+
+
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M11.9996 13.3329V6.66626" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path d="M7.99905 13.3329V2.66626" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path d="M4.00051 13.3335V9.3335" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path
+                                                         d="M12.2096 2.52612C12.2096 4.54718 12.2096 4.21033 12.2096 3.78928M12.2096 3.78928H10.9465M12.2096 3.78928H13.4728M12.2096 3.78928V5.05244"
+                                                         stroke="black" stroke-width="0.85" stroke-linecap="round" />
+                                                   </svg>
+
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <rect x="0.4" y="0.4" width="15.2" height="15.2" rx="7.6"
+                                                         stroke="black" stroke-width="0.8" />
+                                                      <path
+                                                         d="M11.0576 8.08129L6.59167 10.6597L6.59167 5.50288L11.0576 8.08129Z"
+                                                         fill="black" />
+                                                   </svg>
+
+                                                </button>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="product-card__footer">
+                                          <ul class="product-card__colors">
+                                             <li class="active">
+                                                <button>
+                                                   <img src="img/products/product1.png" alt="">
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <img src="img/products/product1-white.png" alt="">
+                                                </button>
+                                             </li>
+                                          </ul>
+                                          <button class="product-card__cart">
+                                             <div></div>
+                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                   d="M6.32234 14.8927C6.46442 14.8927 6.60068 14.8363 6.70114 14.7358C6.80161 14.6353 6.85805 14.4991 6.85805 14.357C6.85805 14.2149 6.80161 14.0787 6.70114 13.9782C6.60068 13.8777 6.46442 13.8213 6.32234 13.8213C6.18026 13.8213 6.04399 13.8777 5.94353 13.9782C5.84306 14.0787 5.78662 14.2149 5.78662 14.357C5.78662 14.4991 5.84306 14.6353 5.94353 14.7358C6.04399 14.8363 6.18026 14.8927 6.32234 14.8927Z"
+                                                   fill="white" stroke="white" stroke-width="0.914286"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                   d="M13.8223 14.8927C13.9644 14.8927 14.1007 14.8363 14.2011 14.7358C14.3016 14.6353 14.358 14.4991 14.358 14.357C14.358 14.2149 14.3016 14.0787 14.2011 13.9782C14.1007 13.8777 13.9644 13.8213 13.8223 13.8213C13.6803 13.8213 13.544 13.8777 13.4435 13.9782C13.3431 14.0787 13.2866 14.2149 13.2866 14.357C13.2866 14.4991 13.3431 14.6353 13.4435 14.7358C13.544 14.8363 13.6803 14.8927 13.8223 14.8927Z"
+                                                   fill="white" stroke="white" stroke-width="0.914286"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2.03662 3.10706H4.17948L5.78662 12.2142H14.358" stroke="white"
+                                                   stroke-width="0.914286" stroke-linecap="round"
+                                                   stroke-linejoin="round" />
+                                                <path
+                                                   d="M5.78662 10.0715H14.138C14.2001 10.0717 14.2603 10.0504 14.3083 10.0112C14.3564 9.97196 14.3894 9.91728 14.4016 9.85646L15.3659 5.03503H12.1588"
+                                                   stroke="white" stroke-width="0.914286" stroke-linecap="round"
+                                                   stroke-linejoin="round" />
+                                             </svg>
+
+                                          </button>
+                                       </div>
+                                       <div class="product-card__bg">
+                                          <img src="img/products/product1.png" alt="">
+                                       </div>
+                                    </div>
+                                    <div class="product-card__main">
+                                       <span class="product-card__title">ЦИФРОВОЕ ПИАНИНО CVP-809 GP </span>
+                                       <span class="product-card__price">949 990 ₽</span>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#" class="product-card">
+                                    <div class="product-card__image">
+                                       <div class="product-card__header">
+                                          <ul class="product-card__tags">
+                                             <li class="black">новинка</li>
+                                             <li class="purple">хит</li>
+                                          </ul>
+                                          <button class="product-card__show">
+                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 3C8 11 8 9.66667 8 8M8 8H3M8 8H13M8 8V13" stroke="black"
+                                                   stroke-width="0.85" stroke-linecap="round" />
+                                             </svg>
+                                          </button>
+                                          <ul class="product-card__actions">
+
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <path
+                                                         d="M13.8943 2.07333C13.5538 1.73267 13.1495 1.46243 12.7046 1.27805C12.2596 1.09368 11.7827 0.998779 11.301 0.998779C10.8193 0.998779 10.3424 1.09368 9.89742 1.27805C9.45245 1.46243 9.04816 1.73267 8.70766 2.07333L8.00099 2.78L7.29432 2.07333C6.60653 1.38553 5.67368 0.999136 4.70099 0.999136C3.7283 0.999136 2.79545 1.38553 2.10766 2.07333C1.41986 2.76112 1.03346 3.69397 1.03346 4.66666C1.03346 5.63935 1.41986 6.5722 2.10766 7.26L2.81432 7.96666L8.00099 13.1533L13.1877 7.96666L13.8943 7.26C14.235 6.91949 14.5052 6.51521 14.6896 6.07023C14.874 5.62526 14.9689 5.14832 14.9689 4.66666C14.9689 4.185 14.874 3.70807 14.6896 3.26309C14.5052 2.81812 14.235 2.41383 13.8943 2.07333V2.07333Z"
+                                                         stroke="black" stroke-width="0.850653" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                   </svg>
+
+
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M11.9996 13.3329V6.66626" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path d="M7.99905 13.3329V2.66626" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path d="M4.00051 13.3335V9.3335" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path
+                                                         d="M12.2096 2.52612C12.2096 4.54718 12.2096 4.21033 12.2096 3.78928M12.2096 3.78928H10.9465M12.2096 3.78928H13.4728M12.2096 3.78928V5.05244"
+                                                         stroke="black" stroke-width="0.85" stroke-linecap="round" />
+                                                   </svg>
+
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <rect x="0.4" y="0.4" width="15.2" height="15.2" rx="7.6"
+                                                         stroke="black" stroke-width="0.8" />
+                                                      <path
+                                                         d="M11.0576 8.08129L6.59167 10.6597L6.59167 5.50288L11.0576 8.08129Z"
+                                                         fill="black" />
+                                                   </svg>
+
+                                                </button>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="product-card__footer">
+                                          <ul class="product-card__colors">
+                                             <li class="active">
+                                                <button>
+                                                   <img src="img/products/product1.png" alt="">
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <img src="img/products/product1-white.png" alt="">
+                                                </button>
+                                             </li>
+                                          </ul>
+                                          <button class="product-card__cart">
+                                             <div></div>
+                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                   d="M6.32234 14.8927C6.46442 14.8927 6.60068 14.8363 6.70114 14.7358C6.80161 14.6353 6.85805 14.4991 6.85805 14.357C6.85805 14.2149 6.80161 14.0787 6.70114 13.9782C6.60068 13.8777 6.46442 13.8213 6.32234 13.8213C6.18026 13.8213 6.04399 13.8777 5.94353 13.9782C5.84306 14.0787 5.78662 14.2149 5.78662 14.357C5.78662 14.4991 5.84306 14.6353 5.94353 14.7358C6.04399 14.8363 6.18026 14.8927 6.32234 14.8927Z"
+                                                   fill="white" stroke="white" stroke-width="0.914286"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                   d="M13.8223 14.8927C13.9644 14.8927 14.1007 14.8363 14.2011 14.7358C14.3016 14.6353 14.358 14.4991 14.358 14.357C14.358 14.2149 14.3016 14.0787 14.2011 13.9782C14.1007 13.8777 13.9644 13.8213 13.8223 13.8213C13.6803 13.8213 13.544 13.8777 13.4435 13.9782C13.3431 14.0787 13.2866 14.2149 13.2866 14.357C13.2866 14.4991 13.3431 14.6353 13.4435 14.7358C13.544 14.8363 13.6803 14.8927 13.8223 14.8927Z"
+                                                   fill="white" stroke="white" stroke-width="0.914286"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2.03662 3.10706H4.17948L5.78662 12.2142H14.358" stroke="white"
+                                                   stroke-width="0.914286" stroke-linecap="round"
+                                                   stroke-linejoin="round" />
+                                                <path
+                                                   d="M5.78662 10.0715H14.138C14.2001 10.0717 14.2603 10.0504 14.3083 10.0112C14.3564 9.97196 14.3894 9.91728 14.4016 9.85646L15.3659 5.03503H12.1588"
+                                                   stroke="white" stroke-width="0.914286" stroke-linecap="round"
+                                                   stroke-linejoin="round" />
+                                             </svg>
+
+                                          </button>
+                                       </div>
+                                       <div class="product-card__bg">
+                                          <img src="img/products/product1.png" alt="">
+                                       </div>
+                                    </div>
+                                    <div class="product-card__main">
+                                       <span class="product-card__title">ЦИФРОВОЕ ПИАНИНО CVP-809 GP </span>
+                                       <span class="product-card__price">949 990 ₽</span>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="#" class="product-card">
+                                    <div class="product-card__image">
+                                       <div class="product-card__header">
+                                          <ul class="product-card__tags">
+                                             <li class="black">новинка</li>
+                                             <li class="purple">хит</li>
+                                          </ul>
+                                          <button class="product-card__show">
+                                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 3C8 11 8 9.66667 8 8M8 8H3M8 8H13M8 8V13" stroke="black"
+                                                   stroke-width="0.85" stroke-linecap="round" />
+                                             </svg>
+                                          </button>
+                                          <ul class="product-card__actions">
+
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <path
+                                                         d="M13.8943 2.07333C13.5538 1.73267 13.1495 1.46243 12.7046 1.27805C12.2596 1.09368 11.7827 0.998779 11.301 0.998779C10.8193 0.998779 10.3424 1.09368 9.89742 1.27805C9.45245 1.46243 9.04816 1.73267 8.70766 2.07333L8.00099 2.78L7.29432 2.07333C6.60653 1.38553 5.67368 0.999136 4.70099 0.999136C3.7283 0.999136 2.79545 1.38553 2.10766 2.07333C1.41986 2.76112 1.03346 3.69397 1.03346 4.66666C1.03346 5.63935 1.41986 6.5722 2.10766 7.26L2.81432 7.96666L8.00099 13.1533L13.1877 7.96666L13.8943 7.26C14.235 6.91949 14.5052 6.51521 14.6896 6.07023C14.874 5.62526 14.9689 5.14832 14.9689 4.66666C14.9689 4.185 14.874 3.70807 14.6896 3.26309C14.5052 2.81812 14.235 2.41383 13.8943 2.07333V2.07333Z"
+                                                         stroke="black" stroke-width="0.850653" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                   </svg>
+
+
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <path d="M11.9996 13.3329V6.66626" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path d="M7.99905 13.3329V2.66626" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path d="M4.00051 13.3335V9.3335" stroke="black"
+                                                         stroke-width="0.85" stroke-linecap="round"
+                                                         stroke-linejoin="round" />
+                                                      <path
+                                                         d="M12.2096 2.52612C12.2096 4.54718 12.2096 4.21033 12.2096 3.78928M12.2096 3.78928H10.9465M12.2096 3.78928H13.4728M12.2096 3.78928V5.05244"
+                                                         stroke="black" stroke-width="0.85" stroke-linecap="round" />
+                                                   </svg>
+
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                      xmlns="http://www.w3.org/2000/svg">
+                                                      <rect x="0.4" y="0.4" width="15.2" height="15.2" rx="7.6"
+                                                         stroke="black" stroke-width="0.8" />
+                                                      <path
+                                                         d="M11.0576 8.08129L6.59167 10.6597L6.59167 5.50288L11.0576 8.08129Z"
+                                                         fill="black" />
+                                                   </svg>
+
+                                                </button>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                       <div class="product-card__footer">
+                                          <ul class="product-card__colors">
+                                             <li class="active">
+                                                <button>
+                                                   <img src="img/products/product1.png" alt="">
+                                                </button>
+                                             </li>
+                                             <li>
+                                                <button>
+                                                   <img src="img/products/product1-white.png" alt="">
+                                                </button>
+                                             </li>
+                                          </ul>
+                                          <button class="product-card__cart">
+                                             <div></div>
+                                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                   d="M6.32234 14.8927C6.46442 14.8927 6.60068 14.8363 6.70114 14.7358C6.80161 14.6353 6.85805 14.4991 6.85805 14.357C6.85805 14.2149 6.80161 14.0787 6.70114 13.9782C6.60068 13.8777 6.46442 13.8213 6.32234 13.8213C6.18026 13.8213 6.04399 13.8777 5.94353 13.9782C5.84306 14.0787 5.78662 14.2149 5.78662 14.357C5.78662 14.4991 5.84306 14.6353 5.94353 14.7358C6.04399 14.8363 6.18026 14.8927 6.32234 14.8927Z"
+                                                   fill="white" stroke="white" stroke-width="0.914286"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                   d="M13.8223 14.8927C13.9644 14.8927 14.1007 14.8363 14.2011 14.7358C14.3016 14.6353 14.358 14.4991 14.358 14.357C14.358 14.2149 14.3016 14.0787 14.2011 13.9782C14.1007 13.8777 13.9644 13.8213 13.8223 13.8213C13.6803 13.8213 13.544 13.8777 13.4435 13.9782C13.3431 14.0787 13.2866 14.2149 13.2866 14.357C13.2866 14.4991 13.3431 14.6353 13.4435 14.7358C13.544 14.8363 13.6803 14.8927 13.8223 14.8927Z"
+                                                   fill="white" stroke="white" stroke-width="0.914286"
+                                                   stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2.03662 3.10706H4.17948L5.78662 12.2142H14.358" stroke="white"
+                                                   stroke-width="0.914286" stroke-linecap="round"
+                                                   stroke-linejoin="round" />
+                                                <path
+                                                   d="M5.78662 10.0715H14.138C14.2001 10.0717 14.2603 10.0504 14.3083 10.0112C14.3564 9.97196 14.3894 9.91728 14.4016 9.85646L15.3659 5.03503H12.1588"
+                                                   stroke="white" stroke-width="0.914286" stroke-linecap="round"
+                                                   stroke-linejoin="round" />
+                                             </svg>
+
+                                          </button>
+                                       </div>
+                                       <div class="product-card__bg">
+                                          <img src="img/products/product1.png" alt="">
+                                       </div>
+                                    </div>
+                                    <div class="product-card__main">
+                                       <span class="product-card__title">ЦИФРОВОЕ ПИАНИНО CVP-809 GP </span>
+                                       <span class="product-card__price">949 990 ₽</span>
+                                    </div>
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+
+                     </div>
+                     <!-- <div class="account-orders__empty">
+                        <h2 class="account-orders__title h3">избранное</h2>
+                        <p class="body-text">
+                           Вы пока не добавили ни одного товара. Возможно, найдется что-то подходящее в каталоге
+                        </p>
+                        <a href="catalog.html" class="home-garanty__link">
+                           <span style="translate: 0 2px;">Перейти в каталог</span>
+                           <div>
+                              <svg style="rotate: 180deg;" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="white" />
+                              </svg>
+
+                           </div>
+                        </a>
+                     </div> -->
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+   </div>
+   </div>
+   @@include('html/footer.html', {})
+   </div>
+   @@include('html/scripts.html', {})
+</body>
+
+</html>

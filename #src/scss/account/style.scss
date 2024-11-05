@@ -1,0 +1,402 @@
+.account-page {
+   padding-bottom: 135px;
+   margin-top: 30px;
+   // .account-page__aside
+   &__wrapper {
+      display: flex;
+      gap: 125px;
+   }
+   &__aside {
+      position: sticky;
+      height: fit-content;
+      top: 100px;
+   }
+
+   // .account-page__main
+
+   &__main {
+      gap: 125px;
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   // .account-page__content
+
+   &__content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+   }
+
+   // .account-page__block
+
+   &__block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   // .account-page__title
+
+   &__title {
+   }
+
+   // .account-page__list
+
+   &__list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+   }
+
+   // .account-page__bonus
+
+   &__bonus {
+      height: fit-content;
+      flex: 0 0 335px;
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .modal__link {
+         border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+         color: rgba(0, 0, 0, 0.4);
+         font-family: $fontHelvetica;
+         font-size: 14px;
+         font-weight: 500;
+         line-height: 140%; /* 19.6px */
+         width: fit-content;
+      }
+      span {
+         font-size: 25px;
+      }
+   }
+   .home-garanty__link {
+      width: 100%;
+   }
+   @media (max-width: $tablet) {
+      padding-bottom: 90px;
+      margin-top: 30px;
+      &__bonus {
+         width: 100%;
+      }
+   }
+   @media (max-width: $mobile) {
+      padding-bottom: 60px;
+   }
+}
+.account-aside {
+   flex: 0 0 220px;
+   // .account-aside__list
+
+   &__list {
+      input {
+         display: none;
+      }
+      label,
+      button {
+         width: 100%;
+         cursor: pointer;
+         height: 50px;
+         display: flex;
+         align-items: center;
+         padding: 0 10px;
+         color: rgba(0, 0, 0, 0.85);
+         font-size: 18px;
+         line-height: 110%; /* 19.8px */
+         text-transform: uppercase;
+         transition: 0.4s;
+         @media (hover: hover) {
+            &:hover {
+               background: rgba(0, 0, 0, 0.05);
+            }
+         }
+         &:active {
+            background: rgba(0, 0, 0, 0.05);
+         }
+      }
+      .exit {
+         color: rgba(0, 0, 0, 0.4);
+      }
+      input:checked + label {
+         background: rgba(0, 0, 0, 0.05);
+      }
+   }
+}
+@media (max-width: $tablet) {
+   .account-page {
+      &__wrapper {
+         flex-direction: column;
+         gap: 20px;
+      }
+      &__main {
+         flex-direction: column-reverse;
+         gap: 40px;
+      }
+      &__bonus {
+         flex: 0;
+         position: relative;
+         gap: 20px;
+         .h2 {
+            font-size: 25px;
+            span {
+               font-size: 18px;
+            }
+         }
+         .modal__link {
+            bottom: 20px;
+            right: 20px;
+            position: absolute;
+         }
+      }
+   }
+   .account-aside {
+      position: relative;
+      top: unset;
+      height: 28px;
+      flex: unset;
+      &__list {
+         display: flex;
+         gap: 8px;
+         label,
+         button {
+            height: 28px;
+            padding: 0 8px;
+            color: rgba(0, 0, 0, 0.4);
+            /* body */
+            font-family: $fontHelvetica;
+            font-size: 14px;
+            line-height: 140%; /* 19.6px */
+            background: unset !important;
+            text-transform: unset;
+            white-space: nowrap;
+            position: relative;
+            &::after {
+               content: "";
+               display: block;
+               width: 100%;
+               position: absolute;
+               top: 100%;
+               left: 0;
+               translate: 0 -1px;
+               background-color: black;
+               scale: 0;
+               transition: 0.3s;
+               height: 1px;
+            }
+         }
+         input:checked + label {
+            color: black;
+            &::after {
+               scale: 1;
+            }
+         }
+      }
+      li:has(.exit) {
+         display: flex;
+         justify-content: flex-end;
+         flex: 1;
+         .exit {
+            width: fit-content;
+         }
+      }
+   }
+}
+@media (max-width: $mobile) {
+   .account-page {
+      &__bonus {
+         padding: 16px 10px;
+         .modal__link {
+            bottom: 16px;
+            right: 10px;
+            position: absolute;
+         }
+      }
+   }
+}
+.account-tab {
+   flex: 1;
+}
+.account-orders {
+   width: 100%;
+   gap: 30px;
+   // .account-orders__title
+
+   &__title {
+   }
+   &__main {
+      flex-wrap: wrap-reverse;
+      row-gap: 32px;
+      align-items: start;
+   }
+   // .account-orders__list
+
+   &__list {
+      li:last-child {
+         // border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      }
+   }
+
+   // .account-orders__categories
+
+   &__categories {
+      display: flex;
+      align-items: center;
+      gap: 94px;
+      color: rgba(0, 0, 0, 0.4);
+      font-family: $fontHelvetica;
+      font-size: 12px;
+      line-height: 140%; /* 16.8px */
+      margin-bottom: 12px;
+      @media (max-width: $mobile) {
+         gap: 40px;
+      }
+   }
+
+   // .account-orders__item
+
+   &__item {
+   }
+   &__empty {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      p {
+         max-width: 335px;
+      }
+      a {
+         max-width: 220px;
+      }
+      @media (max-width: $tablet) {
+         align-items: center;
+         text-align: center;
+         padding-top: 30px;
+      }
+   }
+}
+.account-order {
+   border-top: 1px solid rgba(0, 0, 0, 0.15);
+   // .account-order__header
+
+   &__header {
+      padding: 15px 0;
+      display: flex;
+      gap: 68px;
+      font-family: $fontHelvetica;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 140%; /* 19.6px */
+      .number {
+         color: black;
+      }
+      .price,
+      .date {
+         color: rgba(0, 0, 0, 0.4);
+      }
+      .status {
+         height: 20px;
+         padding: 0 7px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         border-radius: 81px;
+         font-family: $fontHelvetica;
+         font-size: 12px;
+         &.pay {
+            background-color: black;
+            color: white;
+         }
+         &.ready {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: black;
+         }
+      }
+      button {
+         flex: 1;
+         display: flex;
+         justify-content: end;
+         svg {
+            transform-origin: center;
+            transition: 0.4s;
+         }
+         &.active {
+            svg {
+               rotate: 180deg;
+            }
+         }
+      }
+   }
+   // .account-order__main
+
+   &__main {
+   }
+   // .account-order__items
+
+   &__items {
+   }
+
+   // .account-order__infos
+
+   &__infos {
+      padding: 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      li {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         color: rgba(0, 0, 0, 0.4);
+         font-family: $fontHelvetica;
+         font-size: 14px;
+         line-height: 140%; /* 19.6px */
+         border: 0 !important;
+         span {
+            &:nth-child(1) {
+               color: rgba(0, 0, 0, 0.4);
+            }
+            &:nth-child(2) {
+               color: rgba(0, 0, 0, 0.8);
+               font-weight: 500;
+            }
+         }
+      }
+   }
+
+   // .account-order__res
+
+   &__res {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #000;
+      font-family: $fontHelvetica;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 140%; /* 19.6px */
+   }
+   @media (max-width: $mobile) {
+      &__header {
+         gap: 25px;
+         font-size: 12px;
+         white-space: nowrap;
+      }
+   }
+}
+.account-favor {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   column-gap: 10px;
+   row-gap: 40px;
+   @media (max-width: $mobile) {
+      column-gap: 8px;
+      row-gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
