@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title": "Программа лояльности",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="main default-main">
+         <section class="error-page">
+            <div class="container">
+               <div class="error-page__wrapper">
+                  <div class="error-page__bg">404</div>
+                  <div class="error-page__main">
+                     <h1 class="error-page__title h2">страница не найдена</h1>
+                     <p class="body-text">К сожалению, неправильно набран адрес, или такой страницы на сайте больше не
+                        существует</p>
+                     <div class="error-page__btns">
+                        <a href="index.html" class="home-garanty__link">
+                           <span style="translate: 0 2px;">На главную</span>
+                           <div>
+                              <svg style="rotate: 180deg;" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M9.89731 12.8649C9.74953 13.0324 9.49661 13.046 9.33241 12.8952L4.00206 8L9.33241 3.10478C9.49661 2.95398 9.74953 2.96757 9.89731 3.13512C10.0451 3.30268 10.0318 3.56075 9.86758 3.71155L5.19794 8L9.86758 12.2884C10.0318 12.4392 10.0451 12.6973 9.89731 12.8649Z"
+                                    fill="white" />
+                              </svg>
+
+                           </div>
+                        </a>
+                        <a href="catalog.html" class="home-garanty__link">
+                           <span style="translate: 0 2px;">В каталог</span>
+
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+   </div>
+   </div>
+   @@include('html/footer.html', {})
+   </div>
+   @@include('html/scripts.html', {})
+</body>
+
+</html>

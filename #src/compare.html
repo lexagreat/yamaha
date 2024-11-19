@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html', {
+"title": "Сравнение",
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/header.html', {})
+      <main class="main default-main">
+         <section class="breadcrumbs dark">
+            <div class="container">
+               <ul class="breadcrumbs__list scrollbar-none">
+                  <li>
+                     <a href="index.html">Главная</a>
+                  </li>
+                  <li>
+                     <a href="compare.html">Сравнение товаров</a>
+                  </li>
+               </ul>
+            </div>
+         </section>
+         <section class="compare-page">
+            <div class="container">
+               <div class="compare-page__wrapper">
+                  <h1 class="compare-page__title h2">Сравнение товаров</h1>
+                  <ul class="product-section__tabs tabs-list body-text scrollbar-none">
+                     <li>
+                        <input checked type="radio" name="loyaltyTabs" id="loyaltyTabs0" value="loyaltyTabs0">
+                        <label class="header__link" for="loyaltyTabs0">
+                           Цифровые пианино
+                           <count><span style="translate: 0 1px;">3</span></count>
+                        </label>
+                     </li>
+                     <li>
+                        <input type="radio" name="loyaltyTabs" id="loyaltyTabs1" value="loyaltyTabs1">
+                        <label class="header__link" for="loyaltyTabs1">
+                           Цифровые рояли
+                           <count><span style="translate: 0 1px;">2</span></count>
+                        </label>
+                     </li>
+                     <li>
+                        <input type="radio" name="loyaltyTabs" id="loyaltyTabs2" value="loyaltyTabs2">
+                        <label class="header__link" for="loyaltyTabs2">
+                           Ударные
+                           <count><span style="translate: 0 1px;">1</span></count>
+                        </label>
+                     </li>
+                  </ul>
+                  <div class="compare-page__content">
+                     <div class="compare-page__slider">
+                        <div class="swiper">
+                           <div class="swiper-wrapper">
+                              <div class="swiper-slide compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare1.png" alt="">
+                                 </div>
+                                 <div class="compare-product__info">
+                                    <h5 class="compare-product__title h5">Цифровое пианино CLP-795GP </h5>
+                                    <span class="compare-product__price">949 990 ₽</span>
+                                 </div>
+                              </div>
+                              <div class="swiper-slide compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare2.png" alt="">
+                                 </div>
+                                 <div class="compare-product__info">
+                                    <h5 class="compare-product__title h5">Переходник для стойки под тарелку yamaha
+                                       CSAT942A </h5>
+                                    <span class="compare-product__price">32 000 ₽</span>
+                                 </div>
+                              </div>
+                              <div class="swiper-slide compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare3.png" alt="">
+                                 </div>
+                                 <div class="compare-product__info">
+                                    <h5 class="compare-product__title h5">Акустическая гитара Yamaha JR2S Tobacco Brown
+                                       Sunburst</h5>
+                                    <span class="compare-product__price">29 990 ₽</span>
+                                 </div>
+                              </div>
+                              <div class="swiper-slide compare-product">
+                                 <div class="compare-product__image">
+                                    <img src="img/compare1.png" alt="">
+                                 </div>
+                                 <div class="compare-product__info">
+                                    <h5 class="compare-product__title h5">Цифровое пианино CLP-795GP </h5>
+                                    <span class="compare-product__price">949 990 ₽</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="compare-page__results">
+                        <div class="compare-section">
+                           <h3 class="compare-section__title h3">клавиатура</h3>
+                           <div class="compare-section__content">
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Механика клавиатуры</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Клавиатура GrandTouch™: деревянные клавиши (только белые), покрытие клавиш
+                                             из
+                                             синтетических черного дерева и слоновой кости, возвратный механизм
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Клавиатура GrandTouch™: деревянные клавиши (только белые), покрытие клавиш
+                                             из
+                                             синтетических черного дерева и слоновой кости, возвратный механизм
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Клавиатура GrandTouch™: деревянные клавиши (только белые), покрытие клавиш
+                                             из
+                                             синтетических черного дерева и слоновой кости, возвратный механизм
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Клавиатура GrandTouch™: деревянные клавиши (только белые), покрытие клавиш
+                                             из
+                                             синтетических черного дерева и слоновой кости, возвратный механизм
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Тип клавиатуры</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Полновзвешенная, молоточковая
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Полновзвешенная, молоточковая
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Полновзвешенная, молоточковая
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Полновзвешенная, молоточковая
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Материал клавиатуры</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Дерево
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Дерево
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Дерево
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Дерево
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Крышка клавиатуры</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Чувствительность к касанию</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Hard2/Hard1/Medium/Soft1/Soft2/Fixed (Жесткая 2, Жесткая 1, Средняя, Мягкая
+                                             1, Мягкая 2, Фиксированная)
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Hard2/Hard1/Medium/Soft1/Soft2/Fixed (Жесткая 2, Жесткая 1, Средняя, Мягкая
+                                             1, Мягкая 2, Фиксированная)
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Hard2/Hard1/Medium/Soft1/Soft2/Fixed (Жесткая 2, Жесткая 1, Средняя, Мягкая
+                                             1, Мягкая 2, Фиксированная)
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Hard2/Hard1/Medium/Soft1/Soft2/Fixed (Жесткая 2, Жесткая 1, Средняя, Мягкая
+                                             1, Мягкая 2, Фиксированная)
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Неполное нажатие</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Количество клавиш</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             88
+                                          </div>
+                                          <div class="swiper-slide">
+                                             88
+                                          </div>
+                                          <div class="swiper-slide">
+                                             88
+                                          </div>
+                                          <div class="swiper-slide">
+                                             88
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="compare-section">
+                           <h3 class="compare-section__title h3">возможности инструмента</h3>
+                           <div class="compare-section__content">
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Автоаккомпанемент</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Возможность записи</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Наличие дисплея</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Встроенные композиции</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             25 композиций для демонстрации тембров + 50 классических композиций + 303
+                                             композиции для уроков
+                                          </div>
+                                          <div class="swiper-slide">
+                                             25 композиций для демонстрации тембров + 50 классических композиций + 303
+                                             композиции для уроков
+                                          </div>
+                                          <div class="swiper-slide">
+                                             25 композиций для демонстрации тембров + 50 классических композиций + 303
+                                             композиции для уроков
+                                          </div>
+                                          <div class="swiper-slide">
+                                             25 композиций для демонстрации тембров + 50 классических композиций + 303
+                                             композиции для уроков
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Метроном</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Есть
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Есть
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Есть
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Есть
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Транспонирование</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             -12 – 0 - +12
+                                          </div>
+                                          <div class="swiper-slide">
+                                             -12 – 0 - +12
+                                          </div>
+                                          <div class="swiper-slide">
+                                             -12 – 0 - +12
+                                          </div>
+                                          <div class="swiper-slide">
+                                             -12 – 0 - +12
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Внутренняя память инструмента</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             1,4 Мб
+                                          </div>
+                                          <div class="swiper-slide">
+                                             1,4 Мб
+                                          </div>
+                                          <div class="swiper-slide">
+                                             1,4 Мб
+                                          </div>
+                                          <div class="swiper-slide">
+                                             1,4 Мб
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Педаль</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Наличие Bluetooth</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Да
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="compare-block">
+                                 <h4 class="compare-block__title">Тип инструмента</h4>
+                                 <div class="compare-block__slider">
+                                    <div class="swiper" data-compare-slider>
+                                       <div class="swiper-wrapper">
+                                          <div class="swiper-slide">
+                                             Корпусный
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Корпусный
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Корпусный
+                                          </div>
+                                          <div class="swiper-slide">
+                                             Корпусный
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </main>
+   </div>
+   @@include('html/footer.html', {})
+   </div>
+   @@include('html/scripts.html', {})
+</body>
+
+</html>

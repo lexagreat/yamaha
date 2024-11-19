@@ -1,0 +1,51 @@
+.search-page {
+   // .search-page__wrapper
+
+   margin-bottom: 135px;
+   @media (max-width: $tablet) {
+      margin-bottom: 90px;
+   }
+   @media (max-width: $mobile) {
+      margin-bottom: 60px;
+   }
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 40px;
+      @media (max-width: $tablet) {
+         margin-top: 30px;
+         gap: 30px;
+      }
+   }
+
+   // .search-page__title
+
+   &__title {
+      text-align: center;
+      span {
+         display: block;
+         margin-top: 15px;
+         @media (max-width: $tablet) {
+            margin-top: 5px;
+         }
+      }
+   }
+
+   // .search-page__list
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 10px;
+      row-gap: 40px;
+      @media (max-width: $tablet) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: $mobile) {
+         grid-template-columns: repeat(2, 1fr);
+         column-gap: 8px;
+         row-gap: 30px;
+      }
+   }
+}

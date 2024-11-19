@@ -1,0 +1,229 @@
+.loyalty-tabs {
+   margin: 30px 0;
+   .tabs-list {
+      justify-content: center;
+      @media (max-width: $tablet) {
+         justify-content: start;
+         overflow: auto;
+         margin-left: -20px;
+         margin-right: -20px;
+         padding-left: 20px;
+         padding-right: 20px;
+         width: 100vw;
+      }
+      @media (max-width: $mobile) {
+         margin-left: -12px;
+         margin-right: -12px;
+         padding-left: 12px;
+         padding-right: 12px;
+      }
+   }
+}
+.loyalty-need {
+   margin-top: 145px;
+   // .loyalty-need__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+   }
+
+   // .loyalty-need__title
+
+   &__title {
+   }
+
+   // .loyalty-need__list
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      li {
+         padding: 30px;
+         display: flex;
+         flex-direction: column;
+         gap: 40px;
+         background-color: rgba(0, 0, 0, 0.05);
+         span {
+            background-color: #4b1e78;
+            color: white;
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      margin-top: 90px;
+      &__wrapper {
+         gap: 30px;
+      }
+      &__list {
+         grid-template-columns: 1fr;
+         li {
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+            padding: 25px;
+         }
+      }
+   }
+   @media (max-width: $mobile) {
+      margin-top: 60px;
+      &__title {
+         br {
+            display: none;
+         }
+      }
+      &__list {
+         li {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 30px;
+         }
+      }
+   }
+}
+
+.loyalty-features {
+   margin: 145px 0;
+   // .loyalty-features__wrapper
+
+   &__wrapper {
+   }
+
+   // .loyalty-features__main
+
+   &__main {
+      position: relative;
+      color: white;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      padding-top: 115px;
+      & > img {
+         left: 0;
+         top: 0;
+         pointer-events: none;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         z-index: -1;
+         position: absolute;
+      }
+
+      .container > div {
+         display: flex;
+         flex-direction: column;
+         gap: 60px;
+      }
+      @media (max-width: $tablet) {
+         padding-top: 60px;
+         padding-bottom: 60px;
+         padding-right: 0;
+      }
+      @media (max-width: $mobile) {
+         padding-top: 40px;
+         padding-bottom: 40px;
+         .container > div {
+            gap: 30px;
+         }
+      }
+   }
+
+   // .loyalty-features__title
+
+   &__title {
+   }
+
+   // .loyalty-features__list
+
+   &__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 125px;
+      row-gap: 40px;
+      li {
+         display: flex;
+         gap: 40px;
+         .circle {
+            background: rgba(255, 255, 255, 0.15);
+         }
+      }
+      @media (max-width: $tablet) {
+         grid-template-columns: repeat(2, 1fr);
+         column-gap: 70px;
+         li {
+            gap: 20px;
+         }
+      }
+      @media (max-width: $mobile) {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   // .loyalty-features__footer
+
+   &__footer {
+      background-color: #4b1e78;
+      padding: 35px 0;
+      .container > div {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         gap: 100px;
+         h4 {
+            color: var(--White-100, #fff);
+            font-family: $fontOswald;
+            font-size: 25px;
+            line-height: 120%; /* 30px */
+            letter-spacing: -0.25px;
+            text-transform: uppercase;
+         }
+         a {
+            white-space: nowrap;
+            border-color: rgba(255, 255, 255, 0.3);
+         }
+         @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+            text-align: center;
+         }
+      }
+   }
+   @media (max-width: $tablet) {
+      margin: 90px 0;
+   }
+   @media (max-width: $mobile) {
+      margin: 60px 0;
+   }
+}
+.loyalty-steps {
+   margin-bottom: 145px;
+   @media (max-width: $tablet) {
+      margin-bottom: 90px;
+   }
+   @media (max-width: $mobile) {
+      margin-bottom: 60px;
+   }
+   // .loyalty-steps__wrapper
+
+   &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      @media (max-width: $mobile) {
+         gap: 30px;
+      }
+   }
+
+   // .loyalty-steps__title
+
+   &__title {
+   }
+}
+.loyalty-rules {
+   .body-text {
+      max-width: 945px;
+   }
+}

@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
    initSeriaSwiper();
    initSaleSwiper();
    profilePage();
+   comparePage();
 });
 
 function headerWork() {
@@ -193,12 +194,27 @@ function headerWork() {
          };
       });
    };
-
+   const searchWork = () => {
+      const btn = document.querySelector("[data-search-open]");
+      const close = document.querySelector("[data-search-close]");
+      const search = document.querySelector(".header-search");
+      btn.addEventListener("click", (e) => {
+         e.preventDefault();
+         search.classList.add("active");
+         lenis.stop();
+      });
+      close.addEventListener("click", (e) => {
+         e.preventDefault();
+         search.classList.remove("active");
+         lenis.start();
+      });
+   };
    window.addEventListener("scroll", animateHeaderOnScroll);
    animateHeaderOnScroll();
    burgerHover();
    initColorTheme();
    menuWork();
+   searchWork();
 }
 
 function initHomeHeroSlider() {
@@ -1581,4 +1597,42 @@ function profilePage() {
    });
    tabs("[name='profileTabs']", ".account-tab");
    accordion(".account-order__header button", ".account-order__spoiler");
+}
+
+function comparePage() {
+   const productSlide = new Swiper(".compare-page__slider .swiper", {
+      slidesPerView: "auto",
+      breakpoints: {
+         1025: {
+            slidesPerView: 3,
+         },
+         569: {
+            slidesPerView: 2,
+         },
+      },
+      on: {
+         slideChange(s) {
+            let index = s.activeIndex;
+            diffSliders.forEach((slider) => {
+               slider.slideTo(index);
+            });
+         },
+      },
+   });
+   let diffSliders = [];
+   document.querySelectorAll("[data-compare-slider]").forEach((item) => {
+      let diffSlider = new Swiper(item, {
+         slidesPerView: "auto",
+         breakpoints: {
+            1025: {
+               slidesPerView: 3,
+            },
+            569: {
+               slidesPerView: 2,
+            },
+         },
+         // cssMode: true,
+      });
+      diffSliders.push(diffSlider);
+   });
 }
