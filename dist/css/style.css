@@ -696,7 +696,8 @@ body.lock {
 .header__circle,
 .header__circle svg path,
 .header__burger,
-.header__burger svg path {
+.header__burger svg path,
+.header__burger svg rect {
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -762,6 +763,12 @@ body.lock {
   background-color: #ffffff33;
   border-radius: 50%;
   position: relative;
+}
+
+.header__burger:hover svg path,
+.header__burger:hover svg rect {
+  fill: red;
+  stroke: red;
 }
 
 .header__burger svg {
@@ -2121,6 +2128,7 @@ input[type=range]::-webkit-slider-thumb {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 12px;
+  padding-top: 12px;
 }
 
 .app-select .select__title {
@@ -5671,14 +5679,21 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .product-description__list {
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
-  /* Указывает количество колонок */
-  -webkit-column-gap: 125px;
-     -moz-column-gap: 125px;
-          column-gap: 125px;
-  /* Расстояние между колонками */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+  gap: 125px;
+}
+
+.product-description__list > ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .product-description__item {
@@ -9689,7 +9704,7 @@ input[type=range]::-webkit-slider-thumb {
   translate: -50% 0;
   top: 0;
   font-family: "Oswald", sans-serif;
-  font-size: 500px;
+  font-size: 550px;
   font-weight: 400;
   line-height: 100%;
   /* 500px */
@@ -11022,6 +11037,10 @@ html.lenis body {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 175px;
             flex: 0 0 175px;
+  }
+
+  .product-description__list > ul {
+    gap: 40px;
   }
 
   .product-description__list {
@@ -12597,6 +12616,10 @@ html.lenis body {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 250px;
             flex: 0 0 250px;
+  }
+
+  .product-description__list > ul {
+    gap: 30px;
   }
 
   .product-description__list {

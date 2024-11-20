@@ -101,7 +101,8 @@
    &__circle,
    &__circle svg path,
    &__burger,
-   &__burger svg path {
+   &__burger svg path,
+   &__burger svg rect {
       transition: 0.5s;
    }
 
@@ -161,6 +162,13 @@
       background-color: #ffffff33;
       border-radius: 50%;
       position: relative;
+      &:hover {
+         svg path,
+         svg rect {
+            fill: red;
+            stroke: red;
+         }
+      }
       svg {
          position: absolute;
          top: 50%;

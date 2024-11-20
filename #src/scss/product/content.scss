@@ -506,8 +506,19 @@
    // .product-description__list
 
    &__list {
-      column-count: 2; /* Указывает количество колонок */
-      column-gap: 125px; /* Расстояние между колонками */
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 125px;
+      & > ul {
+         display: flex;
+         flex-direction: column;
+         @media (max-width: $tablet) {
+            gap: 40px;
+         }
+         @media (max-width: $mobile) {
+            gap: 30px;
+         }
+      }
    }
 
    // .product-description__item

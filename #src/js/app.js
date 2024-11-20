@@ -128,11 +128,14 @@ function headerWork() {
    const menuWork = () => {
       const toggleMenu = () => {
          if (menu.classList.contains("active")) {
-            bodyUnLock();
+            // bodyUnLock();
+            lenis.start();
             burger.classList.remove("active");
             menu.classList.remove("active");
          } else {
-            bodyLock();
+            // bodyLock();
+            lenis.stop();
+
             burger.classList.add("active");
             menu.classList.add("active");
             setTimeout(() => {
