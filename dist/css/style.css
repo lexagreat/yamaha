@@ -765,10 +765,12 @@ body.lock {
   position: relative;
 }
 
-.header__burger:hover svg path,
-.header__burger:hover svg rect {
-  fill: red;
-  stroke: red;
+.header__burger:hover .first path {
+  fill: white;
+}
+
+.header__burger:hover .second path {
+  stroke: white;
 }
 
 .header__burger svg {

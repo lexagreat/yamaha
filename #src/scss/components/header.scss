@@ -163,10 +163,15 @@
       border-radius: 50%;
       position: relative;
       &:hover {
-         svg path,
-         svg rect {
-            fill: red;
-            stroke: red;
+         .first {
+            path {
+               fill: white;
+            }
+         }
+         .second {
+            path {
+               stroke: white;
+            }
          }
       }
       svg {
