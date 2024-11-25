@@ -161,6 +161,11 @@
       gap: 10px;
       li {
          flex: 0 0 134px;
+         a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
          img {
             width: 100%;
             height: 100%;

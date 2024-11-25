@@ -1,10 +1,13 @@
 .error-page {
+   padding-bottom: 120px;
    // .error-page__wrapper
    padding-top: 50px;
    @media (max-width: $tablet) {
       padding-top: 0;
    }
-
+   @media (max-width: $mobile) {
+      padding-bottom: 0;
+   }
    &__wrapper {
       height: 500px;
       display: flex;
@@ -21,6 +24,7 @@
    // .error-page__bg
 
    &__bg {
+      pointer-events: none;
       left: 50%;
       translate: -50% 0;
       top: 0;
@@ -84,4 +88,7 @@
          }
       }
    }
+}
+.wrapper:has(.error-page) {
+   min-height: unset;
 }

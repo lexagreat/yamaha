@@ -192,6 +192,10 @@
          &.purple {
             background-color: #862a6f;
          }
+         &.grad {
+            background: linear-gradient(0deg, #4b1e78 0%, #9f44fb 100%);
+            color: white;
+         }
       }
    }
 

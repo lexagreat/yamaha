@@ -538,6 +538,9 @@
       font-size: 25px;
       line-height: 110%; /* 27.5px */
       text-transform: uppercase;
+      svg {
+         flex: 0 0 40px;
+      }
    }
 
    // .header-assort__list
@@ -574,7 +577,9 @@
    display: none;
    position: relative;
    padding-bottom: 20px;
-   overflow: auto;
+   overflow-y: auto;
+   overflow-x: hidden;
+   width: calc(100vw - 24px);
    // .menu-mobile__city
    &:has(.menu-mobile__parent.active) {
       overflow: hidden;
@@ -603,6 +608,8 @@
       display: flex;
       flex-direction: column;
       width: 100%;
+      overflow-x: hidden !important;
+      width: calc(100vw - 24px);
       // li:first-child {
       //    & > a,
       //    button,
