@@ -665,7 +665,7 @@ body.lock {
   background-color: #0000001a;
 }
 
-.header.fill .header__burger svg rect {
+.header.fill .header__burger svg path {
   fill: black;
 }
 
@@ -766,11 +766,11 @@ body.lock {
 }
 
 .header__burger:hover .first path {
-  fill: white;
+  fill: white !important;
 }
 
 .header__burger:hover .second path {
-  stroke: white;
+  stroke: white !important;
 }
 
 .header__burger svg {
@@ -3382,6 +3382,10 @@ input[type=range]::-webkit-slider-thumb {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.home-garanty .home-garanty__link {
+  padding-left: 20px;
 }
 
 .home-garanty__wrapper {
@@ -6895,6 +6899,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 .cart-aside__installment {
+  font-family: "NeueHelveticaPro", sans-serif;
   border: 1px solid rgba(0, 0, 0, 0.15);
   color: black;
   height: 52px;
@@ -8676,6 +8681,17 @@ input[type=range]::-webkit-slider-thumb {
   gap: 15px;
 }
 
+.account-page__list p {
+  margin-top: 10px;
+  color: var(--Black-100, #000);
+  font-family: "NeueHelveticaPro", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 16.8px */
+}
+
 .account-page__bonus {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -9103,6 +9119,7 @@ input[type=range]::-webkit-slider-thumb {
 .loyalty-features__footer .container > div a {
   white-space: nowrap;
   border-color: rgba(255, 255, 255, 0.3);
+  padding-left: 20px;
 }
 
 .loyalty-steps {

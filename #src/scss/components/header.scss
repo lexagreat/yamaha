@@ -51,7 +51,7 @@
          }
          &__burger {
             background-color: #0000001a;
-            svg rect {
+            svg path {
                fill: black;
             }
          }
@@ -86,6 +86,7 @@
                opacity: 1;
             }
          }
+
          // &__down {
          //    ul {
          //       background-color: rgba(255, 255, 255, 0.01);
@@ -165,12 +166,12 @@
       &:hover {
          .first {
             path {
-               fill: white;
+               fill: white !important;
             }
          }
          .second {
             path {
-               stroke: white;
+               stroke: white !important;
             }
          }
       }

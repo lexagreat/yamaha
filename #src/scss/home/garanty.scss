@@ -1,6 +1,8 @@
 .home-garanty {
    // .home-garanty__wrapper
-
+   .home-garanty__link {
+      padding-left: 20px;
+   }
    &__wrapper {
       display: flex;
       justify-content: space-between;
