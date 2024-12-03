@@ -232,6 +232,9 @@
             }
          }
       }
+      .header__phone {
+         margin: 0;
+      }
    }
 }
 .order-main {
@@ -342,6 +345,10 @@
       .product-card__image {
          height: 300px;
          flex: 0 0 300px;
+         @media (max-width: 1440px) {
+            height: calc(180px + 120 * ((100vw - 1024px) / (1440 - 1024)));
+            flex: 0 0 calc(180px + 120 * ((100vw - 1024px) / (1440 - 1024)));
+         }
       }
       @media (max-width: 1440px) {
          max-width: calc(415px + 515 * ((100vw - 1024px) / (1440 - 1024)));

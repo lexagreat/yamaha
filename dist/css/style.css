@@ -7296,6 +7296,10 @@ input[type=range]::-webkit-slider-thumb {
   fill: black;
 }
 
+.order-aside__footer .header__phone {
+  margin: 0;
+}
+
 .order-main__success {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10082,6 +10086,13 @@ html.lenis body {
 
   .order-news .swiper {
     max-width: calc(415px + 515 * (100vw - 1024px) / 416);
+  }
+
+  .order-news__products .product-card__image {
+    height: calc(180px + 120 * (100vw - 1024px) / 416);
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(180px + 120 * (100vw - 1024px) / 416);
+            flex: 0 0 calc(180px + 120 * (100vw - 1024px) / 416);
   }
 
   .order-news__products {
