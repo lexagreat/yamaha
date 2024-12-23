@@ -813,10 +813,17 @@
                               </div>
                               <h4 class="catalog-card__title">Клавишные</h4>
                            </div>
-                           <div class="catalog-card__back">
+                           <div class="catalog-card__back scrollbar-none">
                               <ul class="catalog-card__list">
                                  <li><a href="#">Цифровые пианино</a></li>
                                  <li><a href="#">Синтезаторы</a></li>
+                                 <li><a href="#">Акустические пианино</a></li>
+                                 <li><a href="#">Акустические пианино</a></li>
+                                 <li><a href="#">Акустические пианино</a></li>
+                                 <li><a href="#">Акустические пианино</a></li>
+                                 <li><a href="#">Акустические пианино</a></li>
+                                 <li><a href="#">Акустические пианино</a></li>
+                                 <li><a href="#">Акустические пианино</a></li>
                                  <li><a href="#">Акустические пианино</a></li>
                                  <li><a href="#">Акустические рояли</a></li>
                                  <li><a href="#">Дисклавиры</a></li>
@@ -869,7 +876,7 @@
                               </div>
                               <h4 class="catalog-card__title">Звуковое оборудование</h4>
                            </div>
-                           <div class="catalog-card__back">
+                           <div class="catalog-card__back scrollbar-none">
                               <ul class="catalog-card__list">
                                  <li>
                                     <a href="#">Колонки</a>
@@ -915,7 +922,7 @@
                               </div>
                               <h4 class="catalog-card__title">Духовые</h4>
                            </div>
-                           <div class="catalog-card__back">
+                           <div class="catalog-card__back scrollbar-none">
                               <ul class="catalog-card__list">
                                  <li>
                                     <a href="#">Флейта</a>
@@ -985,7 +992,7 @@
                               </div>
                               <h4 class="catalog-card__title">Акустические ударные</h4>
                            </div>
-                           <div class="catalog-card__back">
+                           <div class="catalog-card__back scrollbar-none">
                               <ul class="catalog-card__list">
                                  <li>
                                     <a href="#">Барабаны</a>
@@ -1052,7 +1059,7 @@
                               </div>
                               <h4 class="catalog-card__title">Смычковые</h4>
                            </div>
-                           <div class="catalog-card__back">
+                           <div class="catalog-card__back scrollbar-none">
                               <ul class="catalog-card__list">
                                  <li>
                                     <a href="#">Скрипки</a>
@@ -1119,7 +1126,7 @@
                               <h4 class="catalog-card__title">
                                  Электронные ударные</h4>
                            </div>
-                           <div class="catalog-card__back">
+                           <div class="catalog-card__back scrollbar-none">
                               <ul class="catalog-card__list">
                                  <li>
                                     <a href="#">Электронные Барабаны</a>
@@ -1471,7 +1478,22 @@
       @@include('html/footer.html', {})
    </div>
    @@include('html/scripts.html', {})
+   <script>
+      const scrollableElements = document.querySelectorAll('.catalog-card__back');
+      scrollableElements.forEach(item => {
+         item.addEventListener('wheel', function (event) {
+            // Предотвращаем скроллинг страницы
+            event.preventDefault();
+            // lenis.stop()
+            // Скроллим только внутри элемента
+            item.scrollTop += event.deltaY;
+         });
+         // item.addEventListener('mouseleave', () => {
+         //    lenis.start()
+         // })
+      })
 
+   </script>
 </body>
 
 </html>

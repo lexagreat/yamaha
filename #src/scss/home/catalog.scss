@@ -133,6 +133,8 @@
       height: 100%;
       padding: 25px;
       display: flex;
+      gap: 24px;
+      overflow: auto;
       flex-direction: column;
       a {
          color: #ffffff66;
