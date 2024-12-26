@@ -5006,6 +5006,30 @@ input[type=range]::-webkit-slider-thumb {
   line-height: 1;
   color: black;
   white-space: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.product-price__value span:nth-child(2) {
+  color: #b5b5b5;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.product-price__value span:nth-child(2)::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #b5b5b5;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  translate: 0 -50%;
 }
 
 .product-price__hint {
