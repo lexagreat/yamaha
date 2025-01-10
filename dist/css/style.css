@@ -6856,6 +6856,7 @@ input[type=range]::-webkit-slider-thumb {
   display: -ms-flexbox;
   display: flex;
   gap: 5px;
+  position: relative;
 }
 
 .cart-aside__promo input {
@@ -6870,6 +6871,17 @@ input[type=range]::-webkit-slider-thumb {
 
 .cart-aside__promo button svg path {
   stroke: rgba(0, 0, 0, 0.15);
+}
+
+.cart-aside__promo_clear {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  right: 50px;
+}
+
+.cart-aside__promo_clear svg path {
+  stroke: black !important;
 }
 
 .cart-aside__list {
