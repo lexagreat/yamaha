@@ -37,10 +37,13 @@
    // .loyalty-need__list
 
    &__list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      // display: grid;
+      // grid-template-columns: repeat(3, 1fr);
+      // gap: 10px;
+      display: flex;
       gap: 10px;
       li {
+         flex: 1;
          padding: 30px;
          display: flex;
          flex-direction: column;
@@ -58,6 +61,7 @@
          gap: 30px;
       }
       &__list {
+         display: grid;
          grid-template-columns: 1fr;
          li {
             flex-direction: row;

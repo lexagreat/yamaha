@@ -40,8 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
    initSaleSwiper();
    profilePage();
    comparePage();
+   catalogPage();
+   tabs("[name='loyaltyTabs']", ".loyalty-tab");
 });
-
+function catalogPage() {
+   const swiper = new Swiper(".catalog-hero__categories .swiper", {
+      slidesPerView: "auto",
+   });
+}
 function headerWork() {
    const header = document.querySelector(".header");
    const hero = document.querySelector(".hero");
