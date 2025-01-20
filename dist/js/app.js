@@ -42,11 +42,22 @@ document.addEventListener("DOMContentLoaded", () => {
    comparePage();
    catalogPage();
    tabs("[name='loyaltyTabs']", ".loyalty-tab");
+   checkForChangePassword();
 });
 function catalogPage() {
    const swiper = new Swiper(".catalog-hero__categories .swiper", {
       slidesPerView: "auto",
    });
+}
+function checkForChangePassword() {
+   // Получаем текущий URL
+   const url = new URL(window.location.href);
+
+   // Получаем объект с query-параметрами
+   const params = url.searchParams;
+   if (params.get("change_password") == "yes") {
+      popupOpen(document.querySelector("#newPassword"));
+   }
 }
 function headerWork() {
    const header = document.querySelector(".header");
@@ -1162,7 +1173,6 @@ function tabs(linkSelector, contentSelector) {
       });
    }
 }
-
 // Popup
 const popupLinks = document.querySelectorAll(".modal__link");
 const lockPadding = document.querySelectorAll(".lock-padding");
